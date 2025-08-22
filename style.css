@@ -1,122 +1,91 @@
 :root {
-  --white: #fff;
-  --yellow: #ffd500;
-  --grey: #a5a5a5;
-  --black: #000;
+    /* Color */
+    --white-color: rgb(255, 255, 255);
+    --yellow-color: rgb(255, 213, 0);
+    --warm-grey-color: rgb(165, 165, 165);
+    --black-color: rgb(0, 0, 0);
+
+
+    /* Size */
+    --side-padding: 10px;
+
+    /* Font Size */
+    --font-large: 2rem;
+    --font-medium: 1.5rem;
+    --font-small: .7rem;
+    --font-x-small: .4rem;
+
 }
 
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+    padding: var(--side-padding);
+    background-color: var(--black-color);
+    text-transform: lowercase;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-/* Base */
-html, body {
-  height: 100%;
-  background: var(--black);
-  color: var(--white);
-  font-family: "Courier New", Courier, monospace;
-  font-size: 14px;
-  text-transform: lowercase;
-}
-
-/* Layout */
 main {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    align-content: center;
+    align-self: center;
 }
+
 
 #lighthouse {
-  width: min(560px, 90vw);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 10px;
+    color: var(--white-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    align-content: center;
+    align-self: center;
+    flex-basis: auto;   
+
 }
 
-/* ASCII block */
-pre {
-  margin: 0;
-  padding: 0;
-  white-space: pre;
-  line-height: 1;
-  letter-spacing: 0;
-  text-transform: none;
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  font-variant-ligatures: none;
-}
-
-/* Text */
-#title,
-#thoughts {
-  margin-top: 1rem;
-}
-#thoughts {
-  font-style: italic;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-/* Default navigation (two buttons side by side) */
 #navigate {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    display: flex;
+    text-align: center;
 }
 
-/* Arrow-key navigation (↑↓ or full inverted-T) */
-#navigate.arrows {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(2, auto);
-  gap: 14px;
-  justify-content: center;
+#title {
+    text-align: center;
 }
-#navigate.arrows .A:nth-child(1) { grid-column: 2; grid-row: 1; } /* ↑ */
-#navigate.arrows .A:nth-child(2) { grid-column: 2; grid-row: 2; } /* ↓ */
-#navigate.arrows .A:nth-child(3) { grid-column: 3; grid-row: 2; } /* → (if exists) */
-#navigate.arrows .A:nth-child(4) { grid-column: 1; grid-row: 2; } /* ← (if exists) */
 
-/* Button look */
+#thoughts {
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
 .A {
-  background: transparent;
-  border: 1px solid var(--yellow);
-  color: var(--yellow);
-  padding: 4px 10px;
-  text-decoration: none;
-  transition: .2s;
+    background-color: transparent;
+    border-style:solid;
+    color: var(--yellow-color);
+    border-width: .5px;
+    border-color: var(--yellow-color);
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 .A:hover {
-  background: var(--yellow);
-  color: #000;
-  text-decoration: none;
-}
-.A:link,
-.A:visited {
-  text-decoration: none;
+    color:black;
+    text-decoration: none;
+    background-color: var(--yellow-color);
 }
 
-/* Safari ASCII fidelity */
-@supports (-webkit-touch-callout:none) {
-  pre {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
-    font-variant-ligatures: none !important;
+.A:link {
+    text-decoration: none;
   }
+
+.A:visited {
+    text-decoration: none;
 }
 
-/* Mobile shrink */
-@media (max-width: 800px) {
-  pre { font-size: .9rem; }
-}
 
-pre,pre *{padding:0!important;background:transparent!important;text-transform:none!important;
-font:16px/1 Menlo,Monaco,Consolas,"Courier New",monospace!important;letter-spacing:0;font-variant-ligatures:none}
-#thoughts{max-width:36ch;margin:1.25rem auto 0;line-height:1.6;text-transform:none}
-#navigate{margin-top:1.5rem}
