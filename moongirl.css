@@ -3,21 +3,18 @@
             /* Color */
             --white-color: rgb(255, 255, 255);
             --yellow-color: rgb(255, 213, 0);
-            --green-color:  rgb(0, 159, 50);
             --warm-grey-color: rgb(165, 165, 165);
             --black-color: rgb(0, 0, 0);
 
 
             /* Size */
             --side-padding: 10px;
-            --top-padding: 20px;
 
             /* Font Size */
             --font-large: 2rem;
             --font-medium: 1.5rem;
             --font-small: .7rem;
             --font-x-small: .4rem;
-
         }
 
         * {
@@ -30,7 +27,6 @@
             background: black;
             color:#000;
             padding: 10px;
-            margin: 0;
             background-color: black;
             font-family: 'Courier New', Courier, monospace;
             text-transform: lowercase;
@@ -38,24 +34,10 @@
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
-            font-size: medium;
+            font-size: small;
             align-items: center;
-            justify-content:center;
-            align-content: center;
-            align-self: center;
             }
             
-        a{
-            color: #009;
-            text-decoration: none;
-            border-bottom: 1px dotted #4040D9;
-            }
-            
-        a:hover{
-            text-decoration: none;
-            border-bottom: 1px solid #009;
-        }
-        
 
         #navigate {
             text-decoration: none;
@@ -78,6 +60,14 @@
             font-size: 15px;
         }
 
+
+        #thoughts {
+            font-style: italic;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            color: white;
+            font-size: small;
+        }
 
         .A {
             background-color: black;
@@ -103,86 +93,13 @@
             text-decoration: none;
         }
         
-        .B {
-            background-color: black;
-            border-style: solid;
-            color: var(--yellow-color);
-            padding: 7px;
-            border-width: 1px;
-            border-color: var(--yellow-color);
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-        .B:hover{
-            color:black;
-            text-decoration: none;
-            background-color: var(--yellow-color);
-        }
-        
-        .B:link {
-          text-decoration: none;
-        }
-        
-        .B:visited {
-            text-decoration: none;
-        }
-        
-        .C {
-            background-color: black;
-            border-style: solid;
-            padding: 7px;
-            color: var(--yellow-color);
-            border-width: 1px;
-            border-color: var(--yellow-color);
-            margin-right: 10px;
-            margin-bottom: 10px;
-        
-        }
-        .C:hover {
-            color:black;
-            text-decoration: none;
-            background-color: var(--yellow-color);
-        }
-        
-        .C:link {
-            text-decoration: none;
-          }
-        
-        .C:visited {
-            text-decoration: none;
-        }
-        
-        
-        .D {
-            background-color: black;
-            border-style: solid;
-            color: var(--yellow-color);
-            padding: 7px;
-            border-width: 1px;
-            border-color: var(--yellow-color);
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-        .D:hover {
-            color:black;
-            text-decoration: none;
-            background-color: var(--yellow-color);
-        }
-        
-        
-        
-        .D:link {
-            text-decoration: none;
-          }
-        
-        .D:visited {
-            text-decoration: none;
-        }
-
-
 
         pre{
             font-size: 5px;
-            font:Georgia, sans-serif; 
+            font: Georgia, sans-serif; 
             line-height:7px;
+        }
+
+        .E {
+            text-decoration: none;
         }
