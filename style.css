@@ -1,93 +1,95 @@
 :root {
-    /* Colors */
-    --white-color: rgb(255, 255, 255);
-    --yellow-color: rgb(255, 213, 0);
-    --warm-grey-color: rgb(165, 165, 165);
-    --black-color: rgb(0, 0, 0);
+  /* Colors */
+  --white-color: rgb(255, 255, 255);
+  --yellow-color: rgb(255, 213, 0);
+  --warm-grey-color: rgb(165, 165, 165);
+  --black-color: rgb(0, 0, 0);
 
-    /* Sizes */
-    --side-padding: 10px;
+  /* Sizes */
+  --side-padding: 10px;
 
-    /* Font Sizes */
-    --font-large: 2rem;
-    --font-medium: 1.5rem;
-    --font-small: .7rem;
-    --font-x-small: .4rem;
+  /* Font Sizes */
+  --font-large: 2rem;
+  --font-medium: 1.5rem;
+  --font-small: .7rem;
+  --font-x-small: .4rem;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
-    height: 100%;
-    background-color: var(--black-color);
-    color: var(--white-color);
-    font-family: 'Courier New', Courier, monospace;
-    font-size: small;
-    text-transform: lowercase;
+  height: 100%;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: small;
+  text-transform: lowercase;
 }
 
 main {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #lighthouse {
-    position: relative;
-    width: min(560px, 90vw);
-    padding: var(--side-padding);
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  width: min(560px, 90vw);
+  min-height: 80vh;        /* consistent vertical space */
+  padding: var(--side-padding);
+  padding-bottom: 4rem;    /* room reserved for buttons */
 }
 
 pre {
-    margin: 0;
-    line-height: 1;
-    white-space: pre;
+  margin: 0;
+  line-height: 1;
+  white-space: pre;
 }
 
-#title, #thoughts {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
+#title,
+#thoughts {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 #thoughts {
-    font-style: italic;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #navigate {
-  position: fixed;      /* detach from the flow */
-  bottom: 2rem;         /* 2rem from the bottom of the screen */
-  left: 50%;            /* center horizontally */
-  transform: translateX(-50%);
+  margin-top: 2rem;       /* buffer below ASCII */
   display: flex;
-  gap: 10px;
-  z-index: 10;
+  justify-content: center;
+  gap: 20px;              /* space between buttons */
 }
 
 .A {
-    background-color: transparent;
-    border: 0.5px solid var(--yellow-color);
-    color: var(--yellow-color);
-    margin-bottom: 10px;
-    padding: 2px 6px;
-    text-decoration: none;
+  background-color: transparent;
+  border: 1px solid var(--yellow-color);
+  color: var(--yellow-color);
+  padding: 4px 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .A:hover {
-    color: black;
-    background-color: var(--yellow-color);
-    text-decoration: none;
+  color: black;
+  background-color: var(--yellow-color);
+  text-decoration: none;
 }
 
 .A:link,
 .A:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
-
