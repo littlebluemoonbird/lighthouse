@@ -50,10 +50,14 @@ main {
 
 }
 
-pre{
-  font-family: ui-monospace,Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-size:16px; line-height:1; letter-spacing:0;
-  white-space:pre; font-variant-ligatures:none; text-align:left;
+/* Force Safari to render ASCII correctly */
+@supports (-webkit-touch-callout: none) {
+  pre {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
+    font-variant-ligatures: none !important;
+    white-space: pre !important;
+    letter-spacing: 0 !important;
+  }
 }
 
 
