@@ -1,91 +1,92 @@
 :root {
-    /* Color */
+    /* Colors */
     --white-color: rgb(255, 255, 255);
     --yellow-color: rgb(255, 213, 0);
     --warm-grey-color: rgb(165, 165, 165);
     --black-color: rgb(0, 0, 0);
 
-
-    /* Size */
+    /* Sizes */
     --side-padding: 10px;
 
-    /* Font Size */
+    /* Font Sizes */
     --font-large: 2rem;
     --font-medium: 1.5rem;
     --font-small: .7rem;
     --font-x-small: .4rem;
-
 }
 
-*{
-    padding: var(--side-padding);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
     background-color: var(--black-color);
-    text-transform: lowercase;
-    font-size: small;
+    color: var(--white-color);
     font-family: 'Courier New', Courier, monospace;
+    font-size: small;
+    text-transform: lowercase;
 }
 
 main {
-    height: 90vh;
+    min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     align-items: center;
-    justify-content:center;
-    align-content: center;
-    align-self: center;
+    justify-content: center;
 }
-
 
 #lighthouse {
-    color: var(--white-color);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    align-content: center;
-    align-self: center;
-    flex-basis: auto;   
-
-}
-
-#navigate {
-    display: flex;
+    position: relative;
+    width: min(560px, 90vw);
+    padding: var(--side-padding);
     text-align: center;
 }
 
-#title {
+pre {
+    margin: 0;
+    line-height: 1;
+    white-space: pre;
+}
+
+#title, #thoughts {
+    display: block;
     text-align: center;
+    margin-top: 1rem;
 }
 
 #thoughts {
     font-style: italic;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#navigate {
+    position: absolute;
+    left: 50%;
+    bottom: 2rem;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
     text-align: center;
 }
 
 .A {
     background-color: transparent;
-    border-style:solid;
+    border: 0.5px solid var(--yellow-color);
     color: var(--yellow-color);
-    border-width: .5px;
-    border-color: var(--yellow-color);
-    margin-right: 10px;
     margin-bottom: 10px;
+    padding: 2px 6px;
+    text-decoration: none;
 }
+
 .A:hover {
-    color:black;
-    text-decoration: none;
+    color: black;
     background-color: var(--yellow-color);
+    text-decoration: none;
 }
 
-.A:link {
-    text-decoration: none;
-  }
-
+.A:link,
 .A:visited {
     text-decoration: none;
 }
-
-
