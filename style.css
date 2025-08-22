@@ -1,103 +1,79 @@
-:root {
-    /* Color */
-    --white-color: rgb(255, 255, 255);
-    --yellow-color: rgb(255, 213, 0);
-    --warm-grey-color: rgb(165, 165, 165);
-    --black-color: rgb(0, 0, 0);
-
-
-    /* Size */
-    --side-padding: 10px;
-
-    /* Font Size */
-    --font-large: 2rem;
-    --font-medium: 1.5rem;
-    --font-small: .7rem;
-    --font-x-small: .4rem;
-
+:root{
+  --white-color:#fff;
+  --yellow-color:#ffd500;
+  --warm-grey-color:#a5a5a5;
+  --black-color:#000;
+  --side-padding:10px;
 }
 
-*{
-    padding: var(--side-padding);
-    background-color: var(--black-color);
-    text-transform: lowercase;
-    font-size: small;
-    font-family: 'Courier New', Courier, monospace;
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+  height:100%;
+  background:var(--black-color);
+  color:var(--white-color);
+  font-family:"Courier New",Courier,monospace;
+  font-size:14px;
+  text-transform:lowercase;
 }
 
-main {
-    height: 90vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content:center;
-    align-content: center;
-    align-self: center;
+main{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 0;
 }
 
-
-#lighthouse {
-    color: var(--white-color);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    align-content: center;
-    align-self: center;
-    flex-basis: auto;   
-
+#lighthouse{
+  width:min(560px,90vw);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:var(--side-padding);
 }
 
-/* Force Safari to render ASCII correctly */
-@supports (-webkit-touch-callout: none) {
-  pre {
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
-    font-variant-ligatures: none !important;
-    white-space: pre !important;
-    letter-spacing: 0 !important;
+pre{
+  margin:0;
+  white-space:pre;
+  line-height:1;
+  font-family:Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-variant-ligatures:none;
+  letter-spacing:0;
+  text-transform:none;
+}
+
+#title,#thoughts{margin-top:1rem}
+#thoughts{font-style:italic;font-family:"Franklin Gothic Medium","Arial Narrow",Arial,sans-serif}
+
+#navigate{
+  margin-top:2rem;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.A{
+  background:transparent;
+  border:1px solid var(--yellow-color);
+  color:var(--yellow-color);
+  padding:4px 10px;
+  text-decoration:none;
+  transition:.2s;
+}
+.A:hover{background:var(--yellow-color);color:#000;text-decoration:none}
+.A:link,.A:visited{text-decoration:none}
+
+/* Safari ASCII fidelity */
+@supports (-webkit-touch-callout:none){
+  pre{
+    font-family:Menlo,Monaco,Consolas,"Courier New",monospace !important;
+    font-variant-ligatures:none !important;
   }
 }
 
-
-#navigate {
-    display: flex;
-    text-align: center;
+/* Mobile: gently shrink ASCII */
+@media (max-width:800px){
+  pre{font-size:.9rem}
 }
-
-#title {
-    text-align: center;
-}
-
-#thoughts {
-    font-style: italic;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
-}
-
-.A {
-    background-color: transparent;
-    border-style:solid;
-    color: var(--yellow-color);
-    border-width: .5px;
-    border-color: var(--yellow-color);
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-.A:hover {
-    color:black;
-    text-decoration: none;
-    background-color: var(--yellow-color);
-}
-
-.A:link {
-    text-decoration: none;
-  }
-
-.A:visited {
-    text-decoration: none;
-}
-
-
-
