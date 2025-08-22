@@ -61,7 +61,15 @@ pre {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#navigate{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);display:flex;gap:10px}
+#navigate {
+  position: fixed;      /* detach from the flow */
+  bottom: 2rem;         /* 2rem from the bottom of the screen */
+  left: 50%;            /* center horizontally */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
 
 .A {
     background-color: transparent;
