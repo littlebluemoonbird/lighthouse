@@ -49,11 +49,14 @@ main {
   padding-bottom: 4rem;    /* room reserved for buttons */
 }
 
-pre {
-  margin: 0;
-  line-height: 1;
-  white-space: pre;
+pre{
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size:14px; line-height:1; letter-spacing:0;
+  white-space:pre; margin:0; padding:0; text-transform:none;
+  font-variant-ligatures:none;
 }
+#lighthouse{min-height:auto;padding-bottom:2rem}
+#navigate{margin-top:1.25rem;gap:16px}
 
 #title,
 #thoughts {
