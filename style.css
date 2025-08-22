@@ -61,15 +61,7 @@ pre {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#navigate {
-    position: absolute;
-    left: 50%;
-    bottom: 2rem;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    text-align: center;
-}
+#navigate{position:fixed;left:50%;bottom:2rem;transform:translateX(-50%);display:flex;gap:10px}
 
 .A {
     background-color: transparent;
@@ -90,3 +82,4 @@ pre {
 .A:visited {
     text-decoration: none;
 }
+
