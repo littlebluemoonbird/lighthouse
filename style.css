@@ -47,13 +47,15 @@ pre{
 #title,#thoughts{margin-top:1rem}
 #thoughts{font-style:italic;font-family:"Franklin Gothic Medium","Arial Narrow",Arial,sans-serif}
 
-#navigate{
-  margin-top:2rem;
-  display:flex;
-  justify-content:center;
-  gap:20px;
+#navigate {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;       /* lift above Safari’s bar */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 1000;
 }
-
 .A{
   background:transparent;
   border:1px solid var(--yellow-color);
