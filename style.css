@@ -50,6 +50,13 @@ main {
 
 }
 
+pre{
+  font-family: ui-monospace,Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size:16px; line-height:1; letter-spacing:0;
+  white-space:pre; font-variant-ligatures:none; text-align:left;
+}
+
+
 #navigate {
     display: flex;
     text-align: center;
@@ -87,4 +94,6 @@ main {
 .A:visited {
     text-decoration: none;
 }
+
+
 
