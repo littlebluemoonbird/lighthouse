@@ -1,113 +1,95 @@
 :root {
-    /* Color */
-    --white-color: rgb(255, 255, 255);
-    --yellow-color: rgb(255, 213, 0);
-    --warm-grey-color: rgb(165, 165, 165);
-    --black-color: rgb(0, 0, 0);
-
-
-    /* Size */
-    --side-padding: 10px;
-
-    /* Font Size */
-    --font-large: 2rem;
-    --font-medium: 1.5rem;
-    --font-small: .7rem;
-    --font-x-small: .4rem;
-
+  --white: #fff;
+  --yellow: #ffd500;
+  --black: #000;
 }
 
-*{
-    padding: var(--side-padding);
-    background-color: var(--black-color);
-    text-transform: lowercase;
-    font-size: small;
-    font-family: 'Courier New', Courier, monospace;
+/* reset */
+* { box-sizing:border-box; margin:0; padding:0; }
+
+/* base */
+html,body {
+  height:100%;
+  background:var(--black);
+  color:var(--white);
+  font-family:"Courier New",Courier,monospace;
+  font-size:14px;
+  text-transform:lowercase;
 }
 
 main {
-    height: 90vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content:center;
-    align-content: center;
-    align-self: center;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem 0;
 }
-
 
 #lighthouse {
-    color: var(--white-color);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    align-content: center;
-    align-self: center;
-    flex-basis: auto;   
-
+  width:min(560px,90vw);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:10px;
 }
 
-#navigate {
-    display: flex;
-    text-align: center;
+/* ascii strict */
+pre {
+  margin:0;
+  white-space:pre;
+  line-height:1;
+  letter-spacing:0;
+  text-transform:none;
+  font-family:Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-variant-ligatures:none;
 }
 
-#title {
-    text-align: center;
-}
-
+/* text */
+#title,#thoughts { margin-top:1rem; }
 #thoughts {
-    font-style: italic;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: center;
+  font-style:italic;
+  font-family:"Franklin Gothic Medium","Arial Narrow",Arial,sans-serif;
 }
 
-.A {
-    background-color: transparent;
-    border-style:solid;
-    color: var(--yellow-color);
-    border-width: .5px;
-    border-color: var(--yellow-color);
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-.A:hover {
-    color:black;
-    text-decoration: none;
-    background-color: var(--yellow-color);
+/* default navigation */
+#navigate {
+  margin-top:1.5rem;
+  display:flex;
+  justify-content:center;
+  gap:20px;
 }
 
-.A:link {
-    text-decoration: none;
-  }
-
-.A:visited {
-    text-decoration: none;
-}
-
-
-/* lock ASCII + stop global padding from breaking it */
-pre, pre *{
-  padding:0!important;background:transparent!important;text-transform:none!important;
-  font:16px/1 Menlo,Monaco,Consolas,"Courier New",monospace!important;
-  letter-spacing:0!important;font-variant-ligatures:none!important;
-}
-
-/* force inverted-T */
-#navigate{display:block!important}
-#navigate.arrows{
-  display:grid!important;
+/* arrow navigation (inverted-T) */
+#navigate.arrows {
+  display:grid !important;
   grid-template-columns:repeat(3,auto);
   grid-template-rows:repeat(2,auto);
-  gap:14px;justify-content:center;margin-top:1.5rem;
+  gap:14px;
+  justify-content:center;
+  margin-top:1.5rem;
 }
-#navigate.arrows .A:nth-child(1){grid-column:2;grid-row:1}
-#navigate.arrows .A:nth-child(2){grid-column:2;grid-row:2}
-#navigate.arrows .A:nth-child(3){grid-column:3;grid-row:2}
-#navigate.arrows .A:nth-child(4){grid-column:1;grid-row:2}
+#navigate.arrows .A:nth-child(1){grid-column:2;grid-row:1;} /* ↑ */
+#navigate.arrows .A:nth-child(2){grid-column:2;grid-row:2;} /* ↓ */
+#navigate.arrows .A:nth-child(3){grid-column:3;grid-row:2;} /* → */
+#navigate.arrows .A:nth-child(4){grid-column:1;grid-row:2;} /* ← */
 
-/* lock ASCII */
-pre{font:16px/1 Menlo,Monaco,Consolas,"Courier New",monospace;white-space:pre;letter-spacing:0;font-variant-ligatures:none}
+/* buttons */
+.A {
+  display:inline-grid;
+  place-items:center;
+  min-width:40px;
+  min-height:40px;
+  background:transparent;
+  border:1px solid var(--yellow);
+  color:var(--yellow);
+  text-decoration:none;
+  transition:.2s;
+}
+.A:hover { background:var(--yellow); color:#000; text-decoration:none; }
+.A:link,.A:visited { text-decoration:none; }
+
+/* mobile */
+@media(max-width:800px){
+  pre { font-size:.9rem; }
+}
