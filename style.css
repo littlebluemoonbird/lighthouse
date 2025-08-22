@@ -115,3 +115,8 @@ pre {
 @media (max-width: 800px) {
   pre { font-size: .9rem; }
 }
+
+pre,pre *{padding:0!important;background:transparent!important;text-transform:none!important;
+font:16px/1 Menlo,Monaco,Consolas,"Courier New",monospace!important;letter-spacing:0;font-variant-ligatures:none}
+#thoughts{max-width:36ch;margin:1.25rem auto 0;line-height:1.6;text-transform:none}
+#navigate{margin-top:1.5rem}
