@@ -1,98 +1,90 @@
 :root {
-  /* Colors */
-  --white-color: rgb(255, 255, 255);
-  --yellow-color: rgb(255, 213, 0);
-  --warm-grey-color: rgb(165, 165, 165);
-  --black-color: rgb(0, 0, 0);
+    /* Color */
+    --white-color: rgb(255, 255, 255);
+    --yellow-color: rgb(255, 213, 0);
+    --warm-grey-color: rgb(165, 165, 165);
+    --black-color: rgb(0, 0, 0);
 
-  /* Sizes */
-  --side-padding: 10px;
 
-  /* Font Sizes */
-  --font-large: 2rem;
-  --font-medium: 1.5rem;
-  --font-small: .7rem;
-  --font-x-small: .4rem;
+    /* Size */
+    --side-padding: 10px;
+
+    /* Font Size */
+    --font-large: 2rem;
+    --font-medium: 1.5rem;
+    --font-small: .7rem;
+    --font-x-small: .4rem;
+
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
-  background-color: var(--black-color);
-  color: var(--white-color);
-  font-family: 'Courier New', Courier, monospace;
-  font-size: small;
-  text-transform: lowercase;
+*{
+    padding: var(--side-padding);
+    background-color: var(--black-color);
+    text-transform: lowercase;
+    font-size: small;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 main {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    align-content: center;
+    align-self: center;
 }
+
 
 #lighthouse {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-  width: min(560px, 90vw);
-  min-height: 80vh;        /* consistent vertical space */
-  padding: var(--side-padding);
-  padding-bottom: 4rem;    /* room reserved for buttons */
-}
+    color: var(--white-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    align-content: center;
+    align-self: center;
+    flex-basis: auto;   
 
-pre{
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-size:14px; line-height:1; letter-spacing:0;
-  white-space:pre; margin:0; padding:0; text-transform:none;
-  font-variant-ligatures:none;
-}
-#lighthouse{min-height:auto;padding-bottom:2rem}
-#navigate{margin-top:1.25rem;gap:16px}
-
-#title,
-#thoughts {
-  display: block;
-  text-align: center;
-  margin-top: 1rem;
-}
-
-#thoughts {
-  font-style: italic;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #navigate {
-  margin-top: 2rem;       /* buffer below ASCII */
-  display: flex;
-  justify-content: center;
-  gap: 20px;              /* space between buttons */
+    display: flex;
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+}
+
+#thoughts {
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
 }
 
 .A {
-  background-color: transparent;
-  border: 1px solid var(--yellow-color);
-  color: var(--yellow-color);
-  padding: 4px 10px;
-  text-decoration: none;
-  transition: all 0.2s ease;
+    background-color: transparent;
+    border-style:solid;
+    color: var(--yellow-color);
+    border-width: .5px;
+    border-color: var(--yellow-color);
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-
 .A:hover {
-  color: black;
-  background-color: var(--yellow-color);
-  text-decoration: none;
+    color:black;
+    text-decoration: none;
+    background-color: var(--yellow-color);
 }
 
-.A:link,
+.A:link {
+    text-decoration: none;
+  }
+
 .A:visited {
-  text-decoration: none;
+    text-decoration: none;
 }
+
