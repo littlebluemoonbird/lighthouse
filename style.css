@@ -47,15 +47,27 @@ pre{
 #title,#thoughts{margin-top:1rem}
 #thoughts{font-style:italic;font-family:"Franklin Gothic Medium","Arial Narrow",Arial,sans-serif}
 
+
 #navigate {
-  position: fixed;
-  left: 50%;
-  bottom: 1.5rem;       /* lift above Safari’s bar */
-  transform: translateX(-50%);
+  margin-top: 2rem;
   display: flex;
+  justify-content: center;
   gap: 20px;
-  z-index: 1000;
 }
+
+/* Hallway / door pages: inverted-T arrow layout */
+#navigate.arrows {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 14px;
+  justify-content: center;
+}
+
+#navigate.arrows .A:nth-child(1) { grid-column: 2; } /* up */
+#navigate.arrows .A:nth-child(2) { grid-column: 2; } /* down */
+#navigate.arrows .A:nth-child(3) { grid-column: 3; } /* right */
+#navigate.arrows .A:nth-child(4) { grid-column: 1; } /* left */
+
 .A{
   background:transparent;
   border:1px solid var(--yellow-color);
