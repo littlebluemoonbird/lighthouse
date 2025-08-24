@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .55rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .flicker {
+      animation: flicker 1.4s infinite;
+    }
 
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      15% { opacity: 0.85; }
+      30% { opacity: 0.4; }
+      45% { opacity: 0.9; }
+      60% { opacity: 0.6; }
+      75% { opacity: 1; }
+    }
+
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .55rem;
+      }
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-       
+      <div class="flicker">
+        <pre> 
   .           .-='-. _db_      .--==-,      .
        .     (_  (  _IIII_   _(    )  `.
                (    |" " |-.(  ` ,_  `  )
            .    '-._HHHHHH  `)---' `'--'    .
  .                  |.   |--`                    
                     |    |   .   
-   .      _H___,=====;___|           .
+   .      _H___,=====;___|           
       n_/____/____/``\__\
-      /__|:: :|. .|:::|::|   .               .
-  _%&|__&%_"_|_"_|_ H|__|__        .
+      /__|:: :|. .|:::|::|               
+  _%&|__&%_"_|_"_|_ H|__|__        
      `";;;;`";;;;'";;'"';;;;``;;-.
-  .  ' `";;'  `;;;  `;'   `;  .`' `\     .
+  .  ' `";;'  `;;;  `;'   `;  .`' `\     
   . '  .  `' .  `';.    '   .   .  |^-`^~_^^~``-
+        </pre>
+      </div>
 
-    </pre>
-    <span id="title"> I am the keeper of the lighthouse. <br></span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_3.html">the lighthouse?</a>  
+      <span id="title">
+something pulses through the fog. not strong. but steady.
+        <br><br>
+        a voice drifts through the mist —  
+        <br>“it’s faint, i know. but the light still remembers.”
+      </span>
+
+      <div id="navigate">
+        <a class="A" href="A_ocean_3.html">…who are you?</a>  
+      </div>
+
+      <!-- ascii art by jgs -->
     </div>
-
-
-<!-- work by jgs -->
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

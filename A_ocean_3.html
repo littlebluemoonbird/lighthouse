@@ -1,23 +1,35 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .6rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .flicker {
+      animation: flicker 1.4s infinite;
+    }
 
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      15% { opacity: 0.85; }
+      30% { opacity: 0.4; }
+      45% { opacity: 0.9; }
+      60% { opacity: 0.6; }
+      75% { opacity: 1; }
+    }
+
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .6rem; }
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <div class="flicker">
+        <pre> 
                .                .                                 .
            *                 *                                   *
        .                 .                 .                 .
@@ -35,20 +47,22 @@
      AMMMMMA   .                .           ~~--__
   ___MMM^MMM            +                         ~~--__
               `\AwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAw^v^v^v^v^v^v^v^
+        </pre>
+      </div>
 
-    </pre>
-    <span id="title">yes. the lighthouse. </span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_4.html">what is the lighthouse?</a>
-        </a>  
+      <span id="title">
+        a voice, light as mist —  
+        <br>“you found me. or... maybe i’ve always been here.”  
+        <br><br>
+        the lighthouse breathes, slow and silver.
+      </span>
+
+      <div id="navigate">
+        <a class="A" href="A_ocean_4.html">go closer</a>
+      </div>
+
+      <!-- artwork by Erwin Wessels -->
     </div>
-
-
-
-
-    </div>
-    </main>
-    </html>
+  </main>
 </body>
-
-artwork by -Erwin Wessels-
+</html>
