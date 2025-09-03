@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .4rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .4rem; }
+    }
 
+    .moonflicker {
+      color: #ffe066; /* moonlight yellow */
+      animation: moonflicker 2.5s infinite;
+      text-shadow: 0 0 6px #ffe066, 0 0 12px #ffd43b;
+    }
+
+    @keyframes moonflicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 6px #ffe066, 0 0 14px #ffd43b; }
+      20% { opacity: .7; text-shadow: 0 0 3px #ffd43b, 0 0 8px #ffc107; }
+      45% { opacity: .4; text-shadow: 0 0 2px #ffd43b; }
+      65% { opacity: .85; text-shadow: 0 0 5px #ffe066, 0 0 10px #ffd43b; }
+      80% { opacity: .6; text-shadow: 0 0 3px #ffc107; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre> 
 
                                    _______________________      |
                                   |  ________   ________  |     |
@@ -42,23 +54,26 @@
                                                                   `.
                                                                     `.
                                                                       `.
-             ..:::::::::::::::::' .:::::::::::::::::                    `.
-         ..::::::::::::::::::::' .:::::::::::::::::'                      `.
+<span class="moonflicker">             ..:::::::::::::::::' .:::::::::::::::::                    
+         ..::::::::::::::::::::' .:::::::::::::::::'                      
      ..::::::::::::::::::::::' .:::::::::::::::::::
  ..:::::::::::::::::::::::::' .:::::::::::::::::::'
-..........................  ......................
 :::::::::::::::::::::::::' .:::::::::::::::::::::'
 :::::::::::::::::::::::' .:::::::::::::::::::::::
+</span>
     </pre>
-    <span id="thoughts">a bright moonlight illuminates the night.<br> That reminds me of the fairytale <br>about the rabbit that lives on the moon....</span>
+
+    <span id="thoughts">
+      a bright moonlight illuminates the night.<br>
+      That reminds me of the fairytale <br>
+      about the rabbit that lives on the moon....
+    </span>
+
     <div id="navigate">
-        <a class="A" href="G_door_3_c.html">[wave hello]</a>  
-        <a class="A" href="F_hallway_3_a.html">⇣</a>  
+      <a class="A" href="G_door_3_c.html">[wave hello]</a>  
+      <a class="A" href="F_hallway_3_a.html">⇣</a>  
     </div>
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

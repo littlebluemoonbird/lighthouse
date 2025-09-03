@@ -62,7 +62,7 @@
 		font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		text-align: center;
 		color: white;
-		font-size: small;
+		font-size: 1.5rem;
 	}
 
   
@@ -146,14 +146,55 @@
 
 </script>
 </div>
-<span id="thoughts">how could something be so...<br> terrifying and awe-inspiring at the same time?<br><br>
-	I remember one evening so clearly... <br> I was a child, sitting on the laps of my mother, <br> both of us gazing at the purple sky as darkness descended, <br>so too did the storm, the rain pelted the window,<br> and then in a blink of an eye, the sky lit up by a streak of white.. <br>bolts of lightning flashed, and the thunder roared.. <br> I whimpered at the sight of this enormous terror that flashed before my eyes, <br> then my mother sensing the fear through our touching skin,<br> she leaned into whisper to me, <br><br> " don't be afraid.. <br> <br> and imagine the thunder as the voice of the lightning, <br><br> telling us to be brave and to keep going... <br><br>  then, imagine the thunder as the sound of the Earth, <br><br> telling us that we are all connected.. <br><br> then, imagine the thunder as the sound of our hearts, <br><br> telling us to be kind and to love one another.. <br><br>  then, imagine the thunder as the sound of the universe, <br><br> telling us to be curious and to explore.. <br><br> and now.. imagine the thunder as the sound of hope, <br><br> telling us to believe in ourselves and in the power of our dreams.."<br>
-</span>
-<br><br><br>
-<div id="navigate">
-<br>
-<a class="A" href="F_hallway_2_a.html">⇣</a>  
+<span id="thoughts"></span>
+<br><br>
+<div id="navigate" style="display: none;">
+  <a class="A" href="F_hallway_2_a.html">⇣</a>
 </div>
+
+<script>
+  const lines = [
+    "Oh…",
+    "a thunder.",
+    "",
+    "Suddenly, I’m brought back to something —",
+    "a memory I didn’t know was still inside me.",
+    "",
+    "I remember being so small,",
+    "wrapped in my mother’s arms.",
+    "The storm was loud. I was afraid.",
+    "",
+    "But then I looked up at her.",
+    "And her eyes —",
+    "they weren’t afraid at all.",
+    "",
+    "They were wide with wonder......"
+
+  ];
+
+  const container = document.getElementById("thoughts");
+  const nav = document.getElementById("navigate");
+  let i = 0;
+
+  function showNextLine() {
+    if (i < lines.length) {
+      const line = document.createElement("div");
+      line.textContent = lines[i];
+      line.style.opacity = 0;
+      line.style.transition = "opacity 0.8s ease";
+      container.appendChild(line);
+      requestAnimationFrame(() => {
+        line.style.opacity = 1;
+      });
+      i++;
+      setTimeout(showNextLine, 600); // Delay between lines
+    } else {
+      nav.style.display = "block"; // Show nav at the end
+    }
+  }
+
+  showNextLine();
+</script>
 
 
 </div>

@@ -4,122 +4,135 @@
 <meta charset="UTF-8">
 <title>journal</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="style.css">
 <style>
-  :root{
-    --paper:#f7efe6;
-    --ink:#1e1b18;
-    --gold:#deb9a3;
-    --rule:#e7d9cc;
+  html, body {
+    background: #000;
+    margin: 0;
+    font-family: Georgia, serif;
+    color: #f2f2f2;
   }
-  html,body{background:#000;margin:0}
-  body{display:flex;flex-direction:column;align-items:center;min-height:100dvh;padding:24px}
 
-  /* --- Notebook page --- */
-  .page{
-    width:min(820px,92vw);
-    position:relative;
-    padding:48px 42px 56px;
-    color:var(--ink);
-    background:repeating-linear-gradient(to bottom,
-        var(--paper) 0 34px,
-        var(--rule) 34px 35px);
-    border-radius:14px;
-    box-shadow:0 20px 40px rgba(0,0,0,.55),
-               0 1px 0 rgba(255,255,255,.2) inset;
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    min-height: 100vh;
   }
-  .tape{
-    position:absolute;top:-18px;left:32px;width:110px;height:34px;
-    background:linear-gradient(135deg,#f8e2c8 0%,#f1d4b9 100%);
-    opacity:.9;transform:rotate(-7deg);
-    box-shadow:0 2px 10px rgba(0,0,0,.25);
-    clip-path:polygon(0 12%,100% 0,100% 88%,0% 100%);
-    mix-blend-mode:multiply;
-  }
-  .tape.r{left:auto;right:36px;transform:rotate(6deg)}
-  .blot{
-    position:absolute;pointer-events:none;opacity:.22;
-    background:radial-gradient(60px 36px at 30px 28px,#111 0 55%,transparent 56%),
-               radial-gradient(24px 16px at 86px 12px,#111 0 60%,transparent 61%),
-               radial-gradient(12px 10px at 12px 2px,#111 0 60%,transparent 61%);
-    width:120px;height:80px;filter:blur(.3px);
-  }
-  .blot.b1{bottom:36px;right:80px;transform:rotate(8deg) scale(1.05)}
-  .blot.b2{top:68px;left:78px;transform:rotate(-10deg) scale(.9)}
 
-  h1{margin:0 0 6px;font:700 22px/1.1 "Times New Roman",Georgia,serif;
-     letter-spacing:.18em;color:var(--gold);text-transform:uppercase;}
-  .subtitle{margin:0 0 24px;color:#6b5b52;font:400 14px/1.3 ui-sans-serif,system-ui;
-     letter-spacing:.08em;}
-
-  article{margin:26px 0 30px}
-  .date{color:#705f56;font:600 15px/1.2 "Times New Roman",serif;letter-spacing:.08em;margin-bottom:8px}
-  .hand{font-family:"Snell Roundhand","Segoe Script","Brush Script MT","Lucida Handwriting","Apple Chancery",cursive;
-        font-size:clamp(20px,2.4vw,28px);line-height:1.6;}
-  .pull{display:block;font-size:clamp(24px,3vw,34px);line-height:1.4;margin:10px 0}
-  .hand:first-letter{font-size:1.25em;margin-right:2px}
-  .doodle{margin:18px 0;color:#9a8578;font-size:18px;opacity:.8;user-select:none}
-
-  /* --- Global nav button style --- */
-  .A{
-    background:transparent;color:#fff;border:1px solid #fff;
-    padding:8px 14px;text-decoration:none;display:inline-block;
-    transition:all .15s ease;letter-spacing:.05em;
+  .page {
+    background: #1b1613;
+    width: min(820px, 92vw);
+    padding: 48px 42px 56px;
+    border-radius: 14px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,.55);
+    line-height: 1.6;
+    border: 1px solid #3a2f29;
   }
-  .A:hover{color:#000;background:#fff;box-shadow:0 0 12px rgba(255,255,255,.7)}
+
+  h1 {
+    margin-top: 0;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    color: #d8c1b3;
+    text-transform: uppercase;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    color: #9a8578;
+    margin-bottom: 24px;
+  }
+
+  .date {
+    font-size: 15px;
+    font-weight: bold;
+    color: #c4b0a4;
+    margin-top: 28px;
+    margin-bottom: 6px;
+  }
+
+  .hand {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: #e7d9cc;
+  }
+
+  .pull {
+    display: block;
+    font-size: 22px;
+    font-style: italic;
+    margin: 12px 0;
+    color: #deb9a3;
+  }
+
+  .doodle {
+    color: #9a8578;
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.7;
+  }
+
+  .A {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 14px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.15s ease;
+    letter-spacing: 0.05em;
+  }
+
+  .A:hover {
+    background: #fff;
+    color: #000;
+  }
 </style>
 </head>
 <body>
 
-  <div class="page">
-    <div class="tape"></div><div class="tape r"></div>
-    <div class="blot b1"></div><div class="blot b2"></div>
+<div class="page">
+  <h1>journal</h1>
+  <p class="subtitle"></p>
 
-    <h1>journal</h1>
-    <p class="subtitle">found in the lighthouse library — ink soft, pages warm</p>
+  <div class="date">07‧26</div>
+  <p class="hand">
+    The lighthouse <em>breathes</em> when I’m quiet enough to listen.
+    Walls in, walls out — a pulse I can’t tell from my own.
+    <span class="pull">I woke with salt on my mouth, like the sea signed my name.</span>
+  </p>
+  <div class="doodle">✶ ✷ ✶</div>
 
-    <article>
-      <div class="date">07‧26</div>
-      <p class="hand">
-        The lighthouse <em>breathes</em> when I’m quiet enough to listen.
-        Walls in, walls out — a pulse I can’t tell from my own.
-        <span class="pull">I woke with salt on my mouth, like the sea signed my name.</span>
-      </p>
-      <div class="doodle">✶ ✷ ✶</div>
-    </article>
+  <div class="date">04‧30</div>
+  <p class="hand">
+    Loneliness isn’t empty; it’s heavy. It settles under the ribs and
+    asks to be carried. On good days I balance it like a bowl of water.
+    On bad days, I spill.
+  </p>
+  <div class="doodle">⋯ ⋯ ⋯</div>
 
-    <article>
-      <div class="date">04‧30</div>
-      <p class="hand">
-        Loneliness isn’t empty; it’s heavy. It settles under the ribs and
-        asks to be carried. On good days I balance it like a bowl of water.
-        On bad days, I spill.
-      </p>
-      <div class="doodle">⋯ ⋯ ⋯</div>
-    </article>
+  <div class="date">03‧14</div>
+  <p class="hand">
+    When joy visits, I stand very still, afraid the floor will give.
+    Maybe that’s why fog feels kind — it doesn’t promise; it <em>holds</em>.
+  </p>
+  <div class="doodle">✧</div>
 
-    <article>
-      <div class="date">03‧14</div>
-      <p class="hand">
-        When joy visits, I stand very still, afraid the floor will give.
-        Maybe that’s why fog feels kind — it doesn’t promise; it <em>holds</em>.
-      </p>
-      <div class="doodle">✧</div>
-    </article>
+  <div class="date">01‧04</div>
+  <p class="hand">
+    Writing keeps me from dissolving. If I stop, will I blur into the tide?
+    Tonight I pressed my ear to the stone and heard a voice say,
+    <span class="pull">"dear..little light...”</span>
+  </p>
+</div>
 
-    <article>
-      <div class="date">01‧04</div>
-      <p class="hand">
-        Writing keeps me from dissolving. If I stop, will I blur into the tide?
-        Tonight I pressed my ear to the stone and heard a voice say,
-        <span class="pull">“keep the small light.”</span>
-      </p>
-    </article>
-  </div>
-
-  <!-- Close journal button below the page -->
-  <div style="margin-top:22px">
-    <a class="A" href="F_hallway_3_a.html">[close journal]</a>
-  </div>
+<div style="margin-top:22px">
+  <a class="A" href="F_hallway_3_a.html">[close journal]</a>
+</div>
 
 </body>
 </html>
