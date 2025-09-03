@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .65rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+  <style>
+    /* Stronger lighthouse flicker */
+    .flicker {
+      animation: flicker 2s infinite;
+      will-change: opacity;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      10% { opacity: 0.65; }
+      20% { opacity: 0.35; }
+      30% { opacity: 0.9; }
+      45% { opacity: 0.5; }
+      60% { opacity: 0.95; }
+      75% { opacity: 0.4; }
+      85% { opacity: 0.8; }
+    }
 
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .65rem; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-  .          ✦     ˚              *                        . 
+<pre> 
+  .          <span class="flicker">✦</span>     ˚              *                        . 
         ✦                                   ,      
   .             .   ﾟ      .
-        ✦             ✦                      ✦              ✦ 
+        <span class="flicker">✦</span>             ✦                      ✦              ✦ 
      ,       .                ☀️           ✦     
                     *         .           .             .     ✦
  ,         *      🚀        ,             .            .
         ˚            ,
                                         .           .       .
-            *            ✦               .
+            *            <span class="flicker">✦</span>               .
     .           .        .     🌕      .           .       
                                             ✦          ✦     
     ﾟ     .               .      🌎           ,  
             * .      .                ✦             ˚         *
  .          .              .
-    </pre>
-    <span id="title"> and then, let kindness guide you
-    </span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_10.html">what do you mean?</a>  
-        <a class="A" href="x.html">there are other ways to get around</a>  
+</pre>
+
+      <span id="title">
+        sometimes the smallest thing can keep you moving..
+      </span>
+
+      <div id="navigate">
+        <a class="A" href="A_ocean_10.html">what do you mean?</a>
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

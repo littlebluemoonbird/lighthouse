@@ -32,7 +32,7 @@
 |.'.'.'.'.','.''..'|???????|'|.'|:::|.'.'.'.'.|
 |.'.'.'.'.','.','    /%%%\   ','|---|.'.'.'.'.|
 |.'.'.'.'.','.'     /%%%%%\    ':===|.'.'.'.'.|
-|.'.'.'.'.','      /%%%%%%%\        |.'.'.'.'.|
+|.'.'.'.'.','      / ❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄|.'.'.'.'.|
 |.'.'.'.','       /%%%%%%%%%\       ','.'.'.'.|
 |.'.'.','        /%%%%%%%%%%%\        ','.'.'.|
 |.'.','         /%%%%%%%%%%%%%\         ','.'.|
@@ -41,9 +41,9 @@
     </pre>
     <br>
 
-<span id="thoughts">where should i go?</span>
+<span id="thoughts">The air feels colder here... <br>Is someone out there?</span>
 <br>
-<div id="navigate">
+<div id="navigate" class="arrows">
     <a class="A" href="F_hallway_8_a.html">⇡</a>  
     <a class="A" href="G_door_1_a_a.html">⇢</a> 
     <a class="A" href="F_hallway_6_a.html">⇣</a>
@@ -53,5 +53,20 @@
 
     </div>
     </main>
+    <script>
+  document.addEventListener("keydown", function (e) {
+    const links = {
+      ArrowLeft: "G_door_6_a.html",  // ⇠
+      ArrowUp: "G_door_6_a.html",    // ⇡
+      ArrowRight: "G_door_6_a.html", // ⇢
+      ArrowDown: "D_hallway_1_c.html" // ⇣
+    };
+
+    const url = links[e.key];
+    if (url) {
+      window.location.href = url;
+    }
+  });
+</script>
 </body>
 </html>

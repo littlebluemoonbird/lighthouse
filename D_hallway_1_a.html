@@ -38,7 +38,7 @@
 |.','          /%%%%%%%%%%%%%%%(\|||/)    ','.|
 |;____________/%%%%%%%%%%%%%%%%%\____________;|
     </pre>
-    <span id="thoughts"> a hallway..</span>
+    <span id="thoughts"> a hallway.. and neko!</span>
     <div id="navigate">
         <a class="A" href="E_livingroom_a.html">⇡</a>  
         <a class="A" href="x_1.html">⇣</a>  
@@ -46,6 +46,22 @@
     </div>
 <!-- Public Library Halls by Spicer -->
     </main>
+
+        <script>
+  document.addEventListener("keydown", function (e) {
+    const links = {
+      ArrowLeft: "G_door_6_a.html",  // ⇠
+      ArrowUp: "G_door_6_a.html",    // ⇡
+      ArrowRight: "G_door_6_a.html", // ⇢
+      ArrowDown: "D_hallway_1_c.html" // ⇣
+    };
+
+    const url = links[e.key];
+    if (url) {
+      window.location.href = url;
+    }
+  });
+</script>
 </body>
 </html>
 

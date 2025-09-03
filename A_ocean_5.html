@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .8rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    .flicker {
+      animation: flicker 1.6s infinite;
+    }
+    @keyframes flicker {
+      0%,100% { opacity: 1; }
+      20% { opacity: 0.8; }
+      40% { opacity: 0.3; }
+      55% { opacity: 0.9; }
+      70% { opacity: 0.5; }
+      85% { opacity: 0.95; }
+    }
 
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .8rem; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-        +             /
-        \           |           /
-          \         |         /
-            \      / \      /
-              \  /_____\  /
-              /  |__|__|  \
-            /  |;|     |;|  \
-          /    \\.    .  /    \
-        /       ||:  .  |       \
-                ||:     |         \
-                ||:.    |           \
-               ||:      .|
-               ||:     , |         /`\
-              ||:         |          
-              ||:   _   . |        
-            ||_| .       |__|   
-          __|_|          |___         
-        -~                  ~---___,
+<pre> 
+        +             <span class="flicker">/</span>
+        <span class="flicker">\</span>           |           <span class="flicker">/</span>
+          <span class="flicker">\</span>         |         <span class="flicker">/</span>
+            <span class="flicker">\</span>      / \      <span class="flicker">/</span>
+              <span class="flicker">\</span>  /_____\  <span class="flicker">/</span>
+              <span class="flicker">/</span>  |__|__|  <span class="flicker">\</span>
+            <span class="flicker">/</span>  |;|     |;|  <span class="flicker">\</span>
+          <span class="flicker">/</span>    \\.    .  /    <span class="flicker">\</span>
+        <span class="flicker">/</span>       ||:  .   |       <span class="flicker">\</span>
+                   ||:     |         <span class="flicker">\</span>
+                   ||:.     |           <span class="flicker">\</span>
+                   ||:      .|
+                  ||:      , |         <span class="flicker">/` \</span>
+                  ||:         |          
+                 ||:   _    . |        
+               ||_| .        |__|   
+             __|_|           |___         
+           -~                  ~---___,
         `~----,____                     
-    </pre>
-    <span id="title">Because the lighthouse is..<br> also a warning. <br>Its beacon is a signal for danger. <br><br>
-        And you were lost... <br>So the lighthouse found you.
-        </span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_6.html">what do I do?</a>
-        <a class="A" href="x.html">I don't need your help</a>  
+</pre>
+
+      <span id="title">
+        you see, the beacon is..<br> both a warning and a welcome. <br>
+        and right now, it seems that we are both trying to hold the light.
+      </span>
+
+      <div id="navigate">
+        <a class="A" href="A_ocean_6_a.html">what’s happening to you?</a>
+                <a class="A" href="A_ocean_6_b.html">i don't understand</a>
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
-    </html>
+  </main>
 </body>
-
-Artwork by  -Niall-
+</html>

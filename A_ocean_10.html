@@ -1,30 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: 0.7rem;
+      }
+    }
+
+    /* Strong flicker */
+    .scene-flicker {
+      animation: pulseFlicker 3s infinite ease-in-out;
+      filter: brightness(1);
+      transition: filter 0.3s;
+    }
+
+    @keyframes pulseFlicker {
+      0%, 100% { filter: brightness(1); }
+      15% { filter: brightness(0.5); }
+      35% { filter: brightness(0.8); }
+      60% { filter: brightness(0.4); }
+      80% { filter: brightness(0.9); }
+    }
+
+    /* Typewriter with no dash */
+    #title {
+      display: inline-block;
+      margin-top: 1.5rem;
+      text-align: center;
+      font-family: monospace;
+      font-size: 1rem;
+      color: #ccc;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(30, end) forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    /* Delayed appearance of navigation */
+    #navigate {
+      text-align: center;
+      margin-top: 1.2rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="scene-flicker"> 
          .                      .
          .                      ;
          :                  - --+- -
          !           .          !
          |        .             .
-         |_         +
-      ,  | `.
+        .|_         +
+      ," | `.
 --- --+-<#>-+- ---  --  -
       `._|_,'
          T
@@ -32,16 +80,14 @@
          !
          :         . : 
          .       *
-    </pre>
-    <span id="title">The light will be yours when you're ready.. </span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_11.html">I don't understand..</a>
+      </pre>
+
+      <span id="title">even a flicker can be a direction...</span>
+
+      <div id="navigate">
+        <a class="A" href="A_ocean_12.html">I think I get it...</a>
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
-    </html>
+  </main>
 </body>
+</html>

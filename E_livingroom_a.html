@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .65rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    /* Flicker red/white effect */
+    .ship-flicker {
+      animation: shipFlicker 2s infinite;
+      white-space: pre;
+      display: inline-block;
+    }
+    @keyframes shipFlicker {
+      0%, 100% { color: #fff; }
+      20% { color: #f4ffd2; }   /* red */
+      40% { color: #fff; }      /* white */
+      60% { color: #ffdc7d; }   /* stronger red */
+      80% { color: #e6e6e6; }   /* softer white */
+    }
 
-
+    @media (max-width:800px){
+      pre { font-size:.65rem; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      
+<pre class="ship-flicker">
 ,_____=====_____________`;;;;;;;;*;;;;;;;'_______________=====_____.
 |~~|  __________________________________________________________|~~|
 |_||  ||____|____|____|____|____|____|____|____|____|____|_______|_|
@@ -38,7 +50,9 @@
 |_|____|__I/______!  ::::;;           ;;;;;;    !______\I_|____|___|
 ~~~~~~~~~/       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       \~~~~~~~~~~
         /_______________________________________________\      
+</pre>
 
+<pre>
                        /\____/\    __
                      .'  """"  `,-'  `--.__
                 __,- :   -  -  ;  " ::     `-. -.__
@@ -49,12 +63,19 @@
              `-ssssssssssssssssss ~~~~~~~~~~~~ ssss.-'
                   `---.sssssssssssssssssssss.---'
 </pre>  
-    <span id="thoughts">A fireplace.. <br><br> This place is so warm.. <br><br> neko seems to enjoy the warmth..<br><br> I wonder if there's something I can drink..</span>
-    <div id="navigate">
-        <a class="A" href="E_livingroom_dragon_a.html"> [look around] </a>  
 
+    <span id="thoughts">
+      A fireplace..<br><br>
+      This place is so warm..<br><br>
+      neko seems to enjoy the warmth..<br><br>
+      I wonder if there's something I can drink..
+    </span>
+
+    <div id="navigate">
+      <a class="A" href="E_livingroom_dragon_a.html"> [look around] </a>
     </div>
+    
     </div>
-    </main>
+  </main>
 </body>
 </html>

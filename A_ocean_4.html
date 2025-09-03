@@ -1,23 +1,43 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    .flicker {
+      animation: flicker 1.6s infinite;
+    }
+    .wave {
+      display: inline-block;
+      animation: wave 3s ease-in-out infinite alternate;
+    }
 
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      15% { opacity: 0.85; }
+      30% { opacity: 0.4; }
+      45% { opacity: 0.9; }
+      60% { opacity: 0.6; }
+      75% { opacity: 1; }
+    }
+
+    @keyframes wave {
+      from { transform: translateX(-0.7rem); }
+      to   { transform: translateX(0.7rem); }
+    }
+
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .55rem; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+
+      <pre class="flicker">
            '-.        /\        .-'
                '-.   /__\    .-'  
                   '-.:  : .-'       
@@ -39,22 +59,24 @@
                  :.--------.:         
                 :     __     :         
                 :    |  |    :         
-              ###    |  |  ###       
+                :    |  |    :            </pre>
+      <pre class="wave">
  ##  ##     ### ## ##     ## ##       ##  ## ##
 # #### ######### ############ ##########\,,)\/\
 ###############################################
-    </pre>
-    <span id="title">The lighthouse is a shelter. <br>Its beacon is an invitation. </span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_5.html">how did you find me?</a>
-        </a>  
+      </pre>
+
+      <span id="title"> I.. I am... the..<pre class="flicker">light..</pre>
+        you found me. or... maybe i’ve always been here.. 
+</span>
+      </span>
+
+      <div id="navigate">
+        <a class="A" href="A_ocean_5.html">why me?</a>
+      </div>
+
+      <!-- ascii by Jope -->
     </div>
-
-
-
-    </div>
-    </main>
-    </html>
+  </main>
 </body>
-
-artwork by -Jope-
+</html>

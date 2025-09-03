@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: 1rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: 1rem; }
+    }
 
+    #title {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    .fade-line {
+      display: block;
+      opacity: 1;
+      animation: fadeout 3s ease forwards;
+    }
+
+    .line1 { animation-delay: 1s; }
+    .line2 { animation-delay: 3s; }
+    .line3 { animation-delay: 5s; }
+    .line4 { animation-delay: 7s; }
+
+    @keyframes fadeout {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre>                       :
+<pre>                       :
         .n.                     |
        /___\          _.---.  \ _ /
        [|||]         (_._ ) )--;_) =- -
@@ -25,18 +44,25 @@
        }-=-{                    |
        |-" |                    :
        |.-"|                   
-~^=~^~-|_.-|~^-~^~ ~^~ -^~^~|\ ~^-~^~-
-^   .=.| _.|__  ^       ~  /| \
- ~ /:. \" _|_/\    ~      /_|__\  ^
-.-/::.  |   |""|-._    ^   ~~~~
-  `===-'-----'""`  '-.              ~
+~^=~^~-|_.-|~^-~^~ ~^~ -~^ -^~^~|\ ~^-~^~-
+^   .=.| _.|__  ^     ~     ~  /| \
+ ~ /:. \" _|_/\  ~.    ~      /_|__\  ^
+.-/::.  |   |""|-._    ^   ~.  ~~~~
+  `===-'-----'""`  '-.                ~
                  __.-'      ^
-    </pre>
-    <span id="title"> once you are at the light house,<br> my voice won't reach you anymore.<br> You'll have to listen to yourself <br> and trust that voice.</span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_13.html">what does this all mean?</a>  
+</pre>
+
+<span id="title">
+  <span class="fade-line line1">When you reach the lighthouse,</span>
+  <span class="fade-line line2">my voice will fade out.</span>
+  <span class="fade-line line3">Yours will be the only one left.</span>
+  <span class="fade-line line4">Listen closely..</span>
+</span>
+
+<div id="navigate">
+  <a class="A" href="B_entrance_1.html">I'm ready now...</a>  
+</div>
     </div>
-    </div>
-    </main>
+  </main>
 </body>
 </html>

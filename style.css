@@ -1,95 +1,91 @@
 :root {
-  --white: #fff;
-  --yellow: #ffd500;
-  --black: #000;
+    /* Color */
+    --white-color: rgb(255, 255, 255);
+    --yellow-color: rgb(255, 213, 0);
+    --warm-grey-color: rgb(165, 165, 165);
+    --black-color: rgb(0, 0, 0);
+
+
+    /* Size */
+    --side-padding: 10px;
+
+    /* Font Size */
+    --font-large: 4rem;
+    --font-medium: 1.5rem;
+    --font-small: .7rem;
+    --font-x-small: .4rem;
+
 }
 
-/* reset */
-* { box-sizing:border-box; margin:0; padding:0; }
-
-/* base */
-html,body {
-  height:100%;
-  background:var(--black);
-  color:var(--white);
-  font-family:"Courier New",Courier,monospace;
-  font-size:14px;
-  text-transform:lowercase;
+*{
+    padding: var(--side-padding);
+    background-color: var(--black-color);
+    text-transform: lowercase;
+    font-size: 1.1rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 main {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:2rem 0;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    align-content: center;
+    align-self: center;
 }
+
 
 #lighthouse {
-  width:min(560px,90vw);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  padding:10px;
+    color: var(--white-color);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    align-content: center;
+    align-self: center;
+    flex-basis: auto;   
+
 }
 
-/* ascii strict */
-pre {
-  margin:0;
-  white-space:pre;
-  line-height:1;
-  letter-spacing:0;
-  text-transform:none;
-  font-family:Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-variant-ligatures:none;
-}
-
-/* text */
-#title,#thoughts { margin-top:1rem; }
-#thoughts {
-  font-style:italic;
-  font-family:"Franklin Gothic Medium","Arial Narrow",Arial,sans-serif;
-}
-
-/* default navigation */
 #navigate {
-  margin-top:1.5rem;
-  display:flex;
-  justify-content:center;
-  gap:20px;
+    display: flex;
+    text-align: center;
 }
 
-/* arrow navigation (inverted-T) */
-#navigate.arrows {
-  display:grid !important;
-  grid-template-columns:repeat(3,auto);
-  grid-template-rows:repeat(2,auto);
-  gap:14px;
-  justify-content:center;
-  margin-top:1.5rem;
+#title {
+    text-align: center;
 }
-#navigate.arrows .A:nth-child(1){grid-column:2;grid-row:1;} /* ↑ */
-#navigate.arrows .A:nth-child(2){grid-column:2;grid-row:2;} /* ↓ */
-#navigate.arrows .A:nth-child(3){grid-column:3;grid-row:2;} /* → */
-#navigate.arrows .A:nth-child(4){grid-column:1;grid-row:2;} /* ← */
 
-/* buttons */
+#thoughts {
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
 .A {
-  display:inline-grid;
-  place-items:center;
-  min-width:40px;
-  min-height:40px;
-  background:transparent;
-  border:1px solid var(--yellow);
-  color:var(--yellow);
-  text-decoration:none;
-  transition:.2s;
+    background-color: transparent;
+    border-style:solid;
+    color: var(--yellow-color);
+    border-width: .5px;
+    border-color: var(--yellow-color);
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-.A:hover { background:var(--yellow); color:#000; text-decoration:none; }
-.A:link,.A:visited { text-decoration:none; }
+.A:hover {
+    color:black;
+    text-decoration: none;
+    background-color: var(--yellow-color);
+}
 
-/* mobile */
-@media(max-width:800px){
-  pre { font-size:.9rem; }
+.A:link {
+    text-decoration: none;
+  }
+
+.A:visited {
+    text-decoration: none;
 }
+
+

@@ -1,46 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>The Lighthouse</title>
+<style>
+pre {
+  margin:0;
+  white-space:pre;
+  font:14px/1 Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-variant-ligatures:none;
+}
 
+/* star twinkle */
+.star { animation:f 2.2s infinite; }
+@keyframes f {
+  0%,100% { opacity:1 }
+  20% { opacity:.6 }
+  40% { opacity:.3 }
+  65% { opacity:.9 }
+  80% { opacity:.5 }
+}
+
+/* water sway */
+.sway { display:inline-block; animation:s 3.1s ease-in-out infinite alternate; }
+.s2 { animation-duration:2.9s; }
+.s3 { animation-duration:4.6s; }
+@keyframes s {
+  from { transform:translateX(-0.8rem); }
+  to   { transform:translateX(0.8rem); }
+}
+
+/* boat drift: slide in once, then gentle sway forever */
+.drift {
+  display: inline-block;
+  animation:
+    driftIn 14s ease-in-out forwards, /* big drifting journey */
+    driftSway 3s ease-in-out 14s infinite alternate; /* gentle sway after arrival */
+}
+
+@keyframes driftIn {
+  0%   { transform: translateX(-17rem); }
+  25%  { transform: translateX(-9rem); }
+  45%  { transform: translateX(-11rem); }
+  70%  { transform: translateX(-2rem); }
+  90%  { transform: translateX(-4rem); }
+  100% { transform: translateX(1rem); } /* final rest point */
+}
+
+@keyframes driftSway {
+  from { transform: translateX(3rem); }
+  to   { transform: translateX(1rem); }
+}
+
+@media(max-width:800px){ pre { font-size:.7rem; } }
+</style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-        :
-     .  !  .                 
-      . : .                   
-  -  -  O  -  -      |\       
-      . : .         /| \        
-     .  !  .       / |  \      
-        :         / _|   \      
-                 /-' |===O=
-               _/____|__((___      
-~ ~   ~~  ~ ~  "\_________-'/ ~ ~   ~~ ~  ~   ~~
- ~    ~   ~~ ~    ~     ~  ~~   ~  ~ ~  ~   ~~
-  ~ ~    ~     ~  ~     ~   ~   ~~ ~ ~  ~  ~
-    </pre>
-    <span id="title"> First, follow this light </span>
-    <div id="navigate">
-        <a class="A" href="A_ocean_9.html">and then?</a>
-        </a>  
+
+<pre class="star">
+                         :
+                      .  !  .
+                       . : .
+                   -  -  O  -  -
+                       . : .
+                      .  !  .
+                         :
+</pre>
+
+<pre class="drift">
+      |\
+     /| \
+    / |  \
+   / _|   \
+  /-' |===O=
+_/____|__((___
+"\_________-'/ 
+</pre>
+
+<pre>
+<span class="sway">~ ~  ~     ~  ~~   ~~  ~ ~  ~ ~   ~~ ~  ~   ~ ~~   ~~  ~ ~</span>
+<span class="sway s2"> ~    ~   ~~ ~    ~     ~  ~ ~     ~  ~~ ~   ~  ~ ~  ~   ~~</span>
+<span class="sway s3">  ~ ~    ~    ~     ~  ~~  ~  ~     ~   ~   ~~ ~ ~  ~  ~</span>
+</pre>
+
+<span id="title">follow the shimmer — it knows the way to me.</span>
+
+<div id="navigate">
+  <a class="A" href="A_ocean_9.html">[follow]</a>
+</div>
+
     </div>
+  </main>
 
-
-
-
-    </div>
-    </main>
-    </html>
+  
 </body>
+</html>

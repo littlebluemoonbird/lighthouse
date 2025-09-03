@@ -1,23 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .65rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    /* --- Local, component-scoped styles --- */
+    #lighthouse { text-align:center; }
 
+    .dragon-wrap{
+      display:inline-block;
+      perspective: 900px;            /* gives the “pop” some depth */
+      perspective-origin: 50% 40%;
+    }
+
+    .dragon{
+      display:inline-block;
+      white-space:pre;
+      margin:0;
+      font: 14px/1.05 Menlo, Monaco, Consolas, "Courier New", monospace;
+      letter-spacing: 0;
+      transform-style: preserve-3d;
+      /* on-load pop */
+      animation: pop-in 600ms cubic-bezier(.2,.8,.2,1) both,
+                 breathe 4.2s ease-in-out 700ms infinite;
+      /* fake “depth” glow */
+      text-shadow:
+        0 0 0 rgba(0,0,0,0.0),
+        0 0 10px rgba(255,255,255,0.04),
+        0 6px 18px rgba(0,0,0,0.45);
+      will-change: transform, text-shadow;
+    }
+
+    /* subtle reactive tilt toward the cursor */
+    .dragon-wrap:hover .dragon{
+      transition: transform 220ms ease, text-shadow 220ms ease;
+      transform: translateZ(22px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+      text-shadow:
+        0 0 0 rgba(0,0,0,0),
+        0 0 14px rgba(255,255,255,0.06),
+        0 10px 26px rgba(0,0,0,0.55);
+    }
+
+    /* tap-to-lean on touch devices */
+    .poke { transform: translateZ(26px) rotateX(2deg) rotateY(2deg) scale(1.025) !important; }
+
+    /* “hmm?” pulse so it feels alive */
+    .aside {
+      display:block;
+      margin-top:.25rem;
+      font-size:.9rem;
+      opacity:.85;
+      animation: hmm 2.6s ease-in-out infinite;
+    }
+
+    /* Button row */
+    #navigate { margin-top: .75rem; display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
+
+    /* Animations */
+    @keyframes pop-in{
+      0%   { transform: translateZ(-60px) scale(.94) rotateX(6deg); opacity:0; }
+      60%  { transform: translateZ(28px)  scale(1.06) rotateX(-2deg); opacity:1; }
+      100% { transform: translateZ(0)     scale(1.00) rotateX(0deg); }
+    }
+    @keyframes breathe{
+      0%   { transform: translateZ(0)    scale(1.000) }
+      50%  { transform: translateZ(12px) scale(1.015) }
+      100% { transform: translateZ(0)    scale(1.000) }
+    }
+    @keyframes hmm{
+      0%,100% { opacity:.85; transform: translateY(0) }
+      50%     { opacity:1;   transform: translateY(-1px) }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .dragon, .aside { animation: none !important; }
+      .dragon-wrap:hover .dragon { transition: none; transform: none; }
+    }
+
+    /* Mobile sizing */
+    @media (max-width:800px){
+      .dragon{ font-size:.65rem; line-height:1.05; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+
+      <div class="dragon-wrap" id="dragonWrap">
+<pre class="dragon" id="dragon">
                       ,-,-      
                      / / |      
    ,-'             _/ / /       
@@ -27,24 +103,50 @@
   ,--_,--'                 |    
  / ""                      L-'\ 
  \,--^---v--v-._        /   \ | 
-   \_________________,-'      |     hmm?
+         \_________________,-'      |     hmm?
                     \           
                      \          
                    \         
                                 
+</pre>
+        <span class="aside">..a dragon!</span>
+      </div>
 
-
-</pre>  
-    <span id="thoughts">..a dragon!</span>
-    <div id="navigate">
-        <a class="A" href="E_livingroom_dragon_b.html"> [scream] </a>  
-        <a class="A" href="E_livingroom_dragon_b.html"> [run away] </a>  
+      <div id="navigate">
+        <a class="A" href="E_livingroom_dragon_b.html">[scream]</a>
+        <a class="A" href="E_livingroom_dragon_b.html">[run away]</a>
+      </div>
 
     </div>
-    </div>
-    </main>
+  </main>
+
+  <script>
+    // Small helper so tapping the dragon on mobile “leans” it briefly.
+    (function(){
+      const wrap = document.getElementById('dragonWrap');
+      const dragon = document.getElementById('dragon');
+
+      let t;
+      wrap.addEventListener('pointerdown', () => {
+        dragon.classList.add('poke');
+        clearTimeout(t);
+        t = setTimeout(()=>dragon.classList.remove('poke'), 260);
+      });
+
+      // Optional: slight tilt based on mouse position inside the wrap
+      wrap.addEventListener('mousemove', (e)=>{
+        const r = wrap.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+        const dy = (e.clientY - (r.top  + r.height/2)) / (r.height/2);
+        dragon.style.transform =
+          `translateZ(${14 - Math.abs(dx)*2}px) rotateX(${dy*-4}deg) rotateY(${dx*4}deg) scale(1.015)`;
+      });
+      wrap.addEventListener('mouseleave', ()=>{
+        dragon.style.transform = '';
+      });
+    })();
+  </script>
 </body>
 </html>
-
 
 artwork by Wny

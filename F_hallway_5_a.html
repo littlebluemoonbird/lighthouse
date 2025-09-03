@@ -40,13 +40,15 @@
 |;____________/%%%%%%%%%%%%%%%%%\____________;|
     </pre>
     <br>
-<span id="thoughts">where should i go?</span>
+<span id="thoughts">A warmth drifts in from somewhere ahead. Strange.</span>
 <br>
-<div id="navigate">
+<div id="navigate" class="arrows">
+        <a class="A" href="G_door_9_a.html">⇠</a>   
     <a class="A" href="F_hallway_4_a.html">⇡</a>  
+        <a class="A" href="F_hallway_6_a.html">⇢</a> 
     <a class="A" href="G_door_7_a_a.html">⇣</a>
-    <a class="A" href="F_hallway_6_a.html">⇢</a> 
-    <a class="A" href="G_door_9_a.html">⇠</a>   
+
+
 </div>
 
 
@@ -54,5 +56,20 @@
 
     </div>
     </main>
+    <script>
+  document.addEventListener("keydown", function (e) {
+    const links = {
+      ArrowLeft: "G_door_6_a.html",  // ⇠
+      ArrowUp: "G_door_6_a.html",    // ⇡
+      ArrowRight: "G_door_6_a.html", // ⇢
+      ArrowDown: "D_hallway_1_c.html" // ⇣
+    };
+
+    const url = links[e.key];
+    if (url) {
+      window.location.href = url;
+    }
+  });
+</script>
 </body>
 </html>

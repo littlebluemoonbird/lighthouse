@@ -1,66 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .flicker {
-      animation: flicker 1.4s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      15% { opacity: 0.85; }
-      30% { opacity: 0.4; }
-      45% { opacity: 0.9; }
-      60% { opacity: 0.6; }
-      75% { opacity: 1; }
-    }
-
-    @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .55rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
   <title>The Lighthouse</title>
+  <style>
+    .flicker { animation: flicker 1.6s infinite; }
+    @keyframes flicker {
+      0%,100%{opacity:1}
+      15%{opacity:.85}
+      30%{opacity:.4}
+      50%{opacity:.9}
+      70%{opacity:.55}
+      85%{opacity:.95}
+    }
+
+    #title{display:block;margin-top:1rem;font-size:1rem;opacity:.95}
+    #voice{display:block;margin-top:.75rem;min-height:1.2em}
+    .pulse{animation:pulse 2.6s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.9}50%{opacity:.55}}
+
+    @media(max-width:800px){ pre{font-size:.6rem} }
+  </style>
 </head>
 <body>
   <main>
     <div id="lighthouse">
       <div class="flicker">
         <pre> 
-  .           .-='-. _db_      .--==-,      .
-       .     (_  (  _IIII_   _(    )  `.
-               (    |" " |-.(  ` ,_  `  )
-           .    '-._HHHHHH  `)---' `'--'    .
- .                  |.   |--`                    
-                    |    |   .   
-   .      _H___,=====;___|           
-      n_/____/____/``\__\
-      /__|:: :|. .|:::|::|               
-  _%&|__&%_"_|_"_|_ H|__|__        
-     `";;;;`";;;;'";;'"';;;;``;;-.
-  .  ' `";;'  `;;;  `;'   `;  .`' `\     
-  . '  .  `' .  `';.    '   .   .  |^-`^~_^^~``-
+               .                .                                 .
+           *                 *                                   *
+       .                 .                 .                 .
+  *                  *                  *       *          *
+          .                 .                 .                 .
+    .                .                .                .
+             +               +               +               +
+       g"y----____                              .                .
+       HmH--__    ~~~~----____              *                 *
+      ,%%%.   `~~--`__        '~~~~----____                .
+      JMMML         ~~`--__                '~~~~----____
+      |%%%|       .        `~~--__                      '~~~~----____
+     ,MMMMM. *                   ` *~--__                            ~~~~-
+     |%%%%%|         .                   `~~--__           
+     AMMMMMA   .                .               `~~--__
+  ___MMM^MMM            +                              `~~--__
+              `\AwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAw^v^v^v^v^v^v^v^
         </pre>
       </div>
 
-      <span id="title">
-something pulses through the fog. not strong. but steady.
-        <br><br>
-        a voice drifts through the mist —  
-        <br>“it’s faint, i know. but the light still remembers.”
-      </span>
+      <span id="title" class="pulse">a faint light breaks the mist.</span>
+      <span id="voice"></span>
 
-      <div id="navigate">
-        <a class="A" href="A_ocean_3.html">…who are you?</a>  
+      <div id="navigate" style="margin-top:1rem">
+        <a class="A" href="A_ocean_3.html">h..hello?</a>
       </div>
-
-      <!-- ascii art by jgs -->
     </div>
   </main>
+
+  <script>
+    const line = 'softly, a voice: “let the light carry you..”';
+    const tgt = document.getElementById('voice');
+    let i = 0;
+    function type(){
+      if(i < line.length){
+        tgt.textContent += line.charAt(i++);
+        setTimeout(type, 30 + Math.random()*120);
+      } else {
+        setInterval(()=>{ tgt.style.opacity = (Math.random()>.7)?'1':'0.85'; }, 1800);
+      }
+    }
+    setTimeout(type, 800);
+  </script>
 </body>
 </html>

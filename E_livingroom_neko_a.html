@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+  <style>
+    #thoughts {
+      text-align: center;
+      width: 90%;
+      margin: 2em auto;
+      font-style: italic;
+    }
 
+    .line {
+      display: block;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .line:nth-child(1) { animation-delay: 0s; }
+    .line:nth-child(2) { animation-delay: 1.6s; }
+    .line:nth-child(3) { animation-delay: 3.2s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
 
-
-   .       ∧,,   
-      ヾ '. ､`フ    nyang
-      (,''´ヽ､､ﾂﾞ       nyang
-     (ヽｖ'   `''ﾞつ
-     ,ゝ  ⌒`y''''
-     () (´＾ヽこつ
-      ) )
-     (ノ    
-     
 
         ~nyang nyang~
 
-  |\      _,,,,--,,_
-  /,`.-'`'    -,  \-;,
- |,4-  ) ),,__ ,\ (  ;;
-'---''(.'--'  `-'`.)`'
+  |\      _,,,,--,,_ Seems like Neko
+  /,`.-'`'    -,  \-;,  wants to show you
+ |,4-  ) ),,__ ,\ (  ;; the rest of 
+'---''(.'--'  `-'`.)` the lighthouse....
 
 
-~nyang nyang~
+                    ~nyang nyang~
+      </pre>
 
-    </pre>
-    <span id="title"> oh, look who's here! <br> Seems like Neko wants to show you <br> the rest of the lighthouse....</span>
-    <div id="navigate">
-        <a class="A" href="F_hallway_1_a.html">[follow neko]</a>  
 
-           
+      <div id="thoughts">
+        <span class="line">As Dragon drifted away, he whispered</span>
+        <span class="line">— snow... —</span>
+        <span class="line">like a memory that hadn’t finished forming...</span>
+      </div>
+
+      <div id="navigate">
+        <a class="A" href="F_hallway_1_a.html">[follow neko]</a>
+      </div>
+
+      <!-- Art work by AU -->
     </div>
-
-
-<!-- Art work by AU -->
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>
