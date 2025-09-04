@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .75rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .75rem;
+      }
+    }
 
+    pre {
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre;
+      line-height: 1.05;
+      background: transparent;
+      mix-blend-mode: normal;
+    }
 
+    .line {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      background: transparent;
+    }
+
+    .line-1  { animation-delay: 0s; }
+    .line-2  { animation-delay: 0.6s; }
+    .line-3  { animation-delay: 1.2s; }
+    .line-4  { animation-delay: 1.8s; }
+    .line-5  { animation-delay: 2.4s; }
+    .line-6  { animation-delay: 3.0s; }
+    .line-7  { animation-delay: 3.6s; }
+    .line-8  { animation-delay: 4.2s; }
+
+    #navigate {
+      opacity: 0;
+      animation: fadeInNav 1s ease forwards;
+      animation-delay: 5.2s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInNav {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre> 
 
                 /|         |\
               _/ |         | \_
@@ -36,26 +77,23 @@
                 ///_| |_| |\\
                 |//|||| |\/\|
                  / \/|||/||
-    I am          /|/\| \/
-    Dragon,          \/  |
-    the caretaker 
-     of this lighthouse... 
-      I tend the fire that..
-      keeps this place warm..
-        You’re welcome here..
-          May I offer you.. 
-             a warm drink?
+
+        <span class="line line-1">i am</span>         
+        <span class="line line-2">dragon,</span>          
+        <span class="line line-3">the caretaker</span> 
+        <span class="line line-4">of this lighthouse...</span> 
+        <span class="line line-5">i tend the fire that..</span>
+        <span class="line line-6">keeps this place warm..</span>
+        <span class="line line-7">you’re welcome here..</span>
+        <span class="line line-8">may i offer you.. a warm tea?</span>
 </pre>  
-    <span id="thoughts"></span>
-    <div id="navigate">
-      <a class="A" href="E_livingroom_dragon_d_b.html"> T..Tea.. would be lovely.</a>  
 
+      <span id="thoughts"></span>
 
+      <div id="navigate">
+        <a class="A" href="E_livingroom_dragon_d_b.html">T..Tea.. would be lovely.</a>
+      </div>
     </div>
-    </div>
-    </main>
+  </main>
 </body>
 </html>
-
-
-artwork by Wny

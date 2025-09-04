@@ -6,29 +6,42 @@
   <link rel="stylesheet" href="style.css">
   <title>The Lighthouse</title>
   <style>
-    /* Flicker red/white effect */
     .ship-flicker {
       animation: shipFlicker 2s infinite;
       white-space: pre;
       display: inline-block;
     }
+
     @keyframes shipFlicker {
       0%, 100% { color: #fff; }
-      20% { color: #f4ffd2; }   /* red */
-      40% { color: #fff; }      /* white */
-      60% { color: #ffdc7d; }   /* stronger red */
-      80% { color: #e6e6e6; }   /* softer white */
+      20% { color: #f4ffd2; }
+      40% { color: #fff; }
+      60% { color: #ffdc7d; }
+      80% { color: #e6e6e6; }
     }
 
-    @media (max-width:800px){
-      pre { font-size:.65rem; }
+    .cat-sway {
+      display: inline-block;
+      animation: sway 6s ease-in-out infinite;
+    }
+
+    @keyframes sway {
+      0%   { transform: translateX(-8); }
+      25%  { transform: translateX(8px); }
+      50%  { transform: translateX(-8px); }
+      75%  { transform: translateX(8px); }
+      100% { transform: translateX(-8); }
+    }
+
+    @media (max-width: 800px) {
+      pre { font-size: .65rem; }
     }
   </style>
 </head>
 <body>
   <main>
     <div id="lighthouse">
-      
+
 <pre class="ship-flicker">
 ,_____=====_____________`;;;;;;;;*;;;;;;;'_______________=====_____.
 |~~|  __________________________________________________________|~~|
@@ -52,6 +65,7 @@
         /_______________________________________________\      
 </pre>
 
+<div class="cat-sway">
 <pre>
                        /\____/\    __
                      .'  """"  `,-'  `--.__
@@ -63,18 +77,19 @@
              `-ssssssssssssssssss ~~~~~~~~~~~~ ssss.-'
                   `---.sssssssssssssssssssss.---'
 </pre>  
+</div>
 
-    <span id="thoughts">
-      A fireplace..<br><br>
-      This place is so warm..<br><br>
-      neko seems to enjoy the warmth..<br><br>
-      I wonder if there's something I can drink..
-    </span>
+<span id="thoughts">
+  A fireplace..<br><br>
+  This place is so warm..<br><br>
+  neko seems to enjoy the warmth..<br><br>
+  I wonder if there's something I can drink..
+</span>
 
-    <div id="navigate">
-      <a class="A" href="E_livingroom_dragon_a.html"> [look around] </a>
-    </div>
-    
+<div id="navigate">
+  <a class="A" href="E_livingroom_dragon_a.html"> [look around] </a>
+</div>
+
     </div>
   </main>
 </body>

@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    .fade-line {
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+    .fade-delayed {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
      ______
   ,-' ;  ! `-.
  / :  !  :  . \
@@ -21,20 +32,20 @@
 |"    (##)  _  |
 |  :  ;`'  (_) ( 
 |  :  :  .     |
-)_ !  ,  ;  ;  |   ^~^ 
-|| .  .  :  :  |  ('Y') )
-|" .  |  :  .  |  /   \/
-|.___ ;----.___| (\|||/)
-    </pre>
-<span id="thoughts">a cat appeared..! like it was waiting?</span>
-    <div id="navigate">
+)_ !  ,  ;  ;  |   <span class="fade-line" style="animation-delay:0.2s">^~^</span>
+|| .  .  :  :  |  <span class="fade-line" style="animation-delay:0.6s">('Y') )</span>
+|" .  |  :  .  |  <span class="fade-line" style="animation-delay:1s">/   \/</span>
+|.___ ;----.___| <span class="fade-line" style="animation-delay:1.4s">(\|||/)</span>
+      </pre>
+
+      <span id="thoughts" class="fade-delayed" style="animation-delay:2s">
+        a cat appeared..! like it was waiting?
+      </span>
+
+      <div id="navigate" class="fade-delayed" style="animation-delay:3s">
         <a class="A" href="B_entrance_3.html">[say hi]</a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

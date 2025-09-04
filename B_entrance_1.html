@@ -1,40 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+  <style>
+    /* center the ASCII without touching your global styles */
+    .ascii-center{
+      width:100%;display:flex;justify-content:center;align-items:center;
+    }
+    .ascii-center pre{
+      margin:0;padding:0;white-space:pre;width:max-content;position:relative;
+      line-height: .24rem; /* keeps rows tight */
+    }
+    .line{
+      display:block;margin:0;padding:0;line-height:1;opacity:0;
+      transform:translateY(-0.3rem);
+      animation:doorDrop .22s forwards;
+    }
+    @keyframes doorDrop{
+      to{opacity:1;transform:translateY(0)}
+    }
 
+    /* chained reveals */
+    .fade-in{opacity:0;animation:fadeIn .6s forwards}
+    @keyframes fadeIn{to{opacity:1}}
+
+    /* gentle blink ONLY on the button wrapper */
+    .blink{animation:blink 1.2s ease-in-out infinite}
+    @keyframes blink{
+      0%,100%{opacity:1;filter:none}
+      50%{opacity:.55}
+    }
+
+    /* small delays so it feels chained */
+    #thoughts{animation-delay:1.5s}   /* appears after lines finish */
+    #navigate{animation-delay:2.1s}   /* then button appears… */
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-     ______
-  ,-' ;  ! `-.
- / :  !  :  . \
-|_ ;   __:  ;  |
-)| .  :)(.  !  |
-|"    (##)  _  |
-|  :  ;`'  (_) (
-|  :  :  .     |
-)_ !  ,  ;  ;  |
-|| .  .  :  :  |
-|" .  |  :  .  |
-|.___ ;----.___|
-    </pre>
-    <span id="thoughts">This must be the door to the lighthouse.. but it's locked..</span>
-    <div id="navigate">
-        <a class="A" href="B_entrance_2.html">[knock, gently]</a>  
+
+      <div class="ascii-center">
+        <pre>
+<span class="line" style="animation-delay:0.05s">     ______</span>
+<span class="line" style="animation-delay:0.15s">  ,-' ;  ! `-.</span>
+<span class="line" style="animation-delay:0.25s"> / :  !  :  . \</span>
+<span class="line" style="animation-delay:0.35s">|_ ;   __:  ;  |</span>
+<span class="line" style="animation-delay:0.45s">)| .  :)(.  !  |</span>
+<span class="line" style="animation-delay:0.55s">|"    (##)  _  |</span>
+<span class="line" style="animation-delay:0.65s">|  :  ;`'  (_) (</span>
+<span class="line" style="animation-delay:0.75s">|  :  :  .     |</span>
+<span class="line" style="animation-delay:0.85s">)_ !  ,  ;  ;  |</span>
+<span class="line" style="animation-delay:0.95s">|| .  .  :  :  |</span>
+<span class="line" style="animation-delay:1.05s">|" .  |  :  .  |</span>
+<span class="line" style="animation-delay:1.15s">|.___ ;----.___|</span>
+        </pre>
+      </div>
+
+      <!-- Thought fades in after the door finishes -->
+      <span id="thoughts" class="fade-in">
+        This must be the door to the lighthouse.. but it's locked..
+      </span>
+
+      <!-- Button appears next, then softly blinks to invite click -->
+      <div id="navigate" class="fade-in blink">
+        <a class="A" href="B_entrance_2.html">[knock, gently]</a>
+      </div>
+
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

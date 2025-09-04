@@ -1,35 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    pre {
+      animation: popBam 250ms ease-out both;
+      transform-origin: center center;
+      display: inline-block;
+    }
 
+    @keyframes popBam {
+      0%   { transform: scale(0.2) rotate(2deg); opacity: 0; filter: brightness(4); }
+      40%  { transform: scale(1.05) rotate(-2deg); opacity: 1; }
+      60%  { transform: scale(0.95); }
+      80%  { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    #navigate {
+      margin-top: 1.5rem;
+    }
+
+    #navigate .A {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.1rem;
+      display: inline-block;
+      border: 0.5px solid var(--yellow-color);
+      padding: 0.4rem 1rem;
+      color: var(--yellow-color);
+      background-color: transparent;
+      text-decoration: none;
+      overflow: hidden;
+      white-space: nowrap;
+      border-radius: 2px;
+    }
+
+    #navigate .A::after {
+      content: '.....!!???!?!!!?!!!';
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+      animation: typePunct .4s steps(8) forwards;
+    }
+
+    @keyframes typePunct {
+      from { width: 0ch; }
+      to   { width: 20ch; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre>
   _       _              
  / ) / / / ` )_) | | | | 
 (_/ (_/ (_. ( (  o o o o 
+      </pre>
 
+      <span id="thoughts"></span>
 
-</pre>
-    <br>
-    <span id="thoughts"></span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="G_door_6_c.html">...?!!!!!!!!</a>  
+      <div id="navigate">
+        <a class="A" href="G_door_6_c.html"></a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

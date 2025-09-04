@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    .line {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-fill-mode: forwards;
+      background-color: transparent;
+      padding: 0;
+      display: inline;
+      white-space: pre;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
+    .line-1  { animation-delay: 0s; }
+    .line-2  { animation-delay: 0.6s; }
+
+    #navigate {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.4s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
                       ,-,-      
                      / / |      
    ,-'             _/ / /       
   (-_          _,-' `Z_/        
    "#:      ,-'_,-.    \  _     
     #'    _(_-'_ ^\     \" | 
-  ,--_,--'                 |     I am glad...
- / ""                      L-'\    to hear that..
+  ,--_,--'                 |     <span class="line line-1">I am glad...</span>
+ / ""                      L-'\    <span class="line line-2">to hear that..</span>
  \,--^---v--v-._.'        /   \ |  
    \_________________,-'      |     
                     \            
                      \         
                    \     
+      </pre>
 
+      <div id="navigate">
+        <a class="A" href="E_livingroom_neko_a.html">Um.. could I ask you....</a>  
+      </div>
 
-    </pre>
-    <div id="navigate">
-        <a class="A" href="E_livingroom_neko_a.html"> Um.. could I ask you....</a>  
+      <!-- Art work by AU -->
     </div>
-
-
-<!-- Art work by AU -->
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

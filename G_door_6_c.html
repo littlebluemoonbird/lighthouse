@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    #lighthouse pre {
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre;
+      line-height: 1.1;
+      background: transparent;
+      font-size: 1.2rem;
+      transform: scale(0.2) skewX(10deg);
+      opacity: 0;
+      animation: boingPop 600ms ease-out forwards;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes boingPop {
+      0% {
+        transform: scale(0.2) skewX(10deg);
+        opacity: 0;
+      }
+      30% {
+        transform: scale(1.15) skewX(0deg);
+        opacity: 1;
+      }
+      60% {
+        transform: scale(0.95);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    #navigate {
+      opacity: 0;
+      animation: navFadeIn 1s ease-in forwards;
+      animation-delay: .5s;
+    }
+
+    @keyframes navFadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-
+      <pre> 
   _  _
  (.\( ) 
  (\ O /     you stepped
    /_\        on me!!!
     L    
+      </pre>
 
-</pre>
-    <br>
-    <span id="thoughts"></span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="G_door_6_d_a_a.html"> I'm sorry. I didn't see you</a>  
-        <a class="A" href="G_door_6_d_b_a.html">what the hell are you?</a>  
+      <span id="thoughts"></span>
+
+      <div id="navigate">
+        <a class="A" href="G_door_6_d_a_a.html">I'm sorry..<br><br>I didn't see you</a>  
+        <a class="A" href="G_door_6_d_b_a.html"> what<br> the <br> hell!</a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

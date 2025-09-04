@@ -1,51 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css" />
+<style>
+  .line {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-fill-mode: forwards;
+    background-color: transparent;
+    padding: 0;
+    display: inline;
+    white-space: pre;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
+  .line-1  { animation-delay: 0s; }
+  .line-2  { animation-delay: 0.6s; }
+  .line-3  { animation-delay: 1.2s; }
+  .line-4  { animation-delay: 1.8s; }
+  .line-5  { animation-delay: 2.4s; }
+  .line-6  { animation-delay: 3.0s; }
+  .line-7  { animation-delay: 3.6s; }
+  .line-8  { animation-delay: 4.2s; }
+  .line-9  { animation-delay: 4.8s; }
+  .line-10 { animation-delay: 5.4s; }
+  .line-11 { animation-delay: 6.0s; }
+  .line-12 { animation-delay: 6.6s; }
+  .line-13 { animation-delay: 7.2s; }
 
+  #navigate {
+    opacity: 0;
+    animation: fadeInNav 1s ease forwards;
+    animation-delay: 8.2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInNav {
+    to { opacity: 1; }
+  }
+</style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre>
                       ,-,-      
                      / / |      
-   ,-'             _/ / /    oh...
-  (-_          _,-' `Z_/      oh hello there..   
-   "#:      ,-'_,-.    \  _      a dear guest 
-    #'    _(_-'_ ^\     \" |      of the lighthouse..
-  ,--_,--'                 |       sorry to scare you..
- / ""                      L-'\     I must've missed the
- \,--^---v--v-._.'        /   \ |   the gate's sound..
-   \_________________,-'      |     this lighthouse...
-                    \              is quite big you see..
-                     \            but anyways..
-                      \         you seem tired..  
-                                 are you warm? 
-                                  do you need anything?
-                            
+   ,-'             _/ / /    <span class="line line-1">oh...</span>
+  (-_          _,-' `Z_/      <span class="line line-2">oh hello there..</span>   
+   "#:      ,-'_,-.    \  _      <span class="line line-3">a dear guest</span> 
+    #'    _(_-'_ ^\     \" |      <span class="line line-4">of the lighthouse..</span>
+  ,--_,--'                 |       <span class="line line-5">sorry to scare you..</span>
+ / ""                      L-'\     <span class="line line-6">i must've missed the</span>
+ \,--^---v--v-._.'        /   \ |   <span class="line line-7">the gate's sound..</span>
+   \_________________,-'      |     <span class="line line-8">this lighthouse...</span>
+                    \              <span class="line line-9">is quite big you see..</span>
+                     \            <span class="line line-10">but anyways..</span>
+                      \         <span class="line line-11">you seem tired..</span>  
+                                 <span class="line line-12">are you warm?</span> 
+                                  <span class="line line-13">do you need anything?</span>
+</pre>
 
-
-</pre>  
-    <span id="thoughts">a.. friendly dragon?</span>
-    <div id="navigate">
-        <a class="A" href="E_livingroom_dragon_c.html"> wh..who are you?</a>  
-
+      <div id="navigate">
+        <a class="A" href="E_livingroom_dragon_c.html">wh..who are you?</a>
+      </div>
     </div>
-    </div>
-    </main>
+  </main>
 </body>
 </html>
-
-
-artwork by Wny

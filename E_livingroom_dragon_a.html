@@ -8,12 +8,11 @@
   <title>The Lighthouse</title>
 
   <style>
-    /* --- Local, component-scoped styles --- */
     #lighthouse { text-align:center; }
 
     .dragon-wrap{
       display:inline-block;
-      perspective: 900px;            /* gives the “pop” some depth */
+      perspective: 1200px;
       perspective-origin: 50% 40%;
     }
 
@@ -24,65 +23,58 @@
       font: 14px/1.05 Menlo, Monaco, Consolas, "Courier New", monospace;
       letter-spacing: 0;
       transform-style: preserve-3d;
-      /* on-load pop */
-      animation: pop-in 600ms cubic-bezier(.2,.8,.2,1) both,
-                 breathe 4.2s ease-in-out 700ms infinite;
-      /* fake “depth” glow */
+      animation: pop-in 1s cubic-bezier(.2,.8,.2,1) both,
+                 breathe 4.8s ease-in-out 1.1s infinite;
       text-shadow:
         0 0 0 rgba(0,0,0,0.0),
-        0 0 10px rgba(255,255,255,0.04),
-        0 6px 18px rgba(0,0,0,0.45);
+        0 0 14px rgba(255,255,255,0.08),
+        0 18px 32px rgba(0,0,0,0.65);
       will-change: transform, text-shadow;
     }
 
-    /* subtle reactive tilt toward the cursor */
     .dragon-wrap:hover .dragon{
-      transition: transform 220ms ease, text-shadow 220ms ease;
-      transform: translateZ(22px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+      transition: transform 280ms ease, text-shadow 280ms ease;
+      transform: translateZ(70px) rotateX(4deg) rotateY(-4deg) scale(1.25);
       text-shadow:
-        0 0 0 rgba(0,0,0,0),
-        0 0 14px rgba(255,255,255,0.06),
-        0 10px 26px rgba(0,0,0,0.55);
+        0 0 20px rgba(255,255,200,0.2),
+        0 22px 40px rgba(0,0,0,0.7);
     }
 
-    /* tap-to-lean on touch devices */
-    .poke { transform: translateZ(26px) rotateX(2deg) rotateY(2deg) scale(1.025) !important; }
+    .poke { 
+      transform: translateZ(90px) rotateX(3deg) rotateY(3deg) scale(1.3) !important; 
+    }
 
-    /* “hmm?” pulse so it feels alive */
     .aside {
       display:block;
       margin-top:.25rem;
-      font-size:.9rem;
-      opacity:.85;
+      font-size:1rem;
+      opacity:.9;
       animation: hmm 2.6s ease-in-out infinite;
     }
 
-    /* Button row */
     #navigate { margin-top: .75rem; display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; }
 
-    /* Animations */
+    /* BIGGER pop */
     @keyframes pop-in{
-      0%   { transform: translateZ(-60px) scale(.94) rotateX(6deg); opacity:0; }
-      60%  { transform: translateZ(28px)  scale(1.06) rotateX(-2deg); opacity:1; }
-      100% { transform: translateZ(0)     scale(1.00) rotateX(0deg); }
+      0%   { transform: translateZ(-100px) scale(.7) rotateX(10deg); opacity:0; }
+      60%  { transform: translateZ(80px)  scale(1.35) rotateX(-4deg); opacity:1; }
+      100% { transform: translateZ(0)     scale(1.15) rotateX(0deg); }
     }
     @keyframes breathe{
-      0%   { transform: translateZ(0)    scale(1.000) }
-      50%  { transform: translateZ(12px) scale(1.015) }
-      100% { transform: translateZ(0)    scale(1.000) }
+      0%   { transform: translateZ(0)    scale(1.15) }
+      50%  { transform: translateZ(30px) scale(1.25) }
+      100% { transform: translateZ(0)    scale(1.15) }
     }
     @keyframes hmm{
       0%,100% { opacity:.85; transform: translateY(0) }
-      50%     { opacity:1;   transform: translateY(-1px) }
+      50%     { opacity:1;   transform: translateY(-2px) }
     }
 
-    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce){
       .dragon, .aside { animation: none !important; }
       .dragon-wrap:hover .dragon { transition: none; transform: none; }
     }
 
-    /* Mobile sizing */
     @media (max-width:800px){
       .dragon{ font-size:.65rem; line-height:1.05; }
     }
@@ -121,25 +113,21 @@
   </main>
 
   <script>
-    // Small helper so tapping the dragon on mobile “leans” it briefly.
     (function(){
       const wrap = document.getElementById('dragonWrap');
       const dragon = document.getElementById('dragon');
-
       let t;
       wrap.addEventListener('pointerdown', () => {
         dragon.classList.add('poke');
         clearTimeout(t);
-        t = setTimeout(()=>dragon.classList.remove('poke'), 260);
+        t = setTimeout(()=>dragon.classList.remove('poke'), 400);
       });
-
-      // Optional: slight tilt based on mouse position inside the wrap
       wrap.addEventListener('mousemove', (e)=>{
         const r = wrap.getBoundingClientRect();
         const dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
         const dy = (e.clientY - (r.top  + r.height/2)) / (r.height/2);
         dragon.style.transform =
-          `translateZ(${14 - Math.abs(dx)*2}px) rotateX(${dy*-4}deg) rotateY(${dx*4}deg) scale(1.015)`;
+          `translateZ(${50 - Math.abs(dx)*6}px) rotateX(${dy*-6}deg) rotateY(${dx*6}deg) scale(1.2)`;
       });
       wrap.addEventListener('mouseleave', ()=>{
         dragon.style.transform = '';
@@ -148,5 +136,3 @@
   </script>
 </body>
 </html>
-
-artwork by Wny
