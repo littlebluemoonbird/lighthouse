@@ -6,13 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>The Lighthouse</title>
+  <style>
+    pre {
+      margin: 0;
+      font-family: "Courier New", monospace;
+      white-space: pre;
+    }
+
+    .sniff {
+      display: inline-block;
+      opacity: 0;
+      animation: sniffUp 3s ease-in-out infinite;
+    }
+    .sniff:nth-child(2) { animation-delay: 1s; }
+    .sniff:nth-child(3) { animation-delay: 2s; }
+
+    @keyframes sniffUp {
+      0%   { opacity: 0; transform: translateY(0); }
+      20%  { opacity: 1; transform: translateY(-4px); }
+      50%  { opacity: 0.6; transform: translateY(-8px); }
+      100% { opacity: 0; transform: translateY(-12px); }
+    }
+  </style>
 </head>
 <body>
   <main>
     <div id="lighthouse">
       <pre> 
                  W      
-                WWW     sniff..
+                WWW     <span class="sniff">sniff..</span>
                 WWW    
                WWWWW      
           W    WWWWW     W  
@@ -21,14 +43,14 @@
           WWW   WWW  WWW     
             WWW WWW WWW      
               WWWWWWW        
-  sniff..        |      
+  <span class="sniff">sniff..</span>        |      
                  |           
                  |
       </pre>
-      <span id="thoughts">Neko is sniffing....<br> the catnip!!</span>
+      <span id="thoughts">Neko is sniffing....<br> the catnip!</span>
       <br>
       <div id="navigate">
-        <a class="A" href="G_door_8_e_2.html">[offer her catnip]</a>  
+        <a class="A" href="G_door_8_e_2.html"> [ offer her the catnip ] </a>  
       </div>
     </div>
   </main>

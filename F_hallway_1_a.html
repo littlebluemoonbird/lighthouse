@@ -5,70 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .9rem;
-        }
-      }</style>
     <title>The Lighthouse</title>
-    
+    <style>
+      @media only screen and (max-width: 800px) {
+        pre { font-size: .9rem; }
+      }
 
+      /* jitter effect */
+      .jitter {
+        display: inline-block;
+        animation: jitter 0.18s infinite;
+      }
+      @keyframes jitter {
+        0%   { transform: translate(0, 0); }
+        25%  { transform: translate(1px, -1px); }
+        50%  { transform: translate(-1px, 1px); }
+        75%  { transform: translate(1px, 1px); }
+        100% { transform: translate(0, 0); }
+      }
+    </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="jitter"> 
  _____________________________________________
 |.'',                                     ,''.|
 |.'.'',                                 ,''.'.|
 |.'.'.'',                             ,''.'.'.|
-|.'.'.'.'',           🌟            ,''.'.'.'.|
-|.'.'.'.'.|                         |.'.'.'.'.|
-|.'.'.'.'.|===;                 ;===|.'.'.'.'.|
-|.'.'.'.'.|:::|',             ,'|:::|.'.'.'.'.|
-|.'.'.'.'.|---|'.|, _______ ,|.'|---|.'.'.'.'.|
-|.'.'.'.'.|:::|'.|'|???????|'|.'|:::|.'.'.'.'.|
-|,',',',',|---|',|'|???????|'|,'|---|,',',',',|
-|.'.'.'.'.|:::|'.|'|???????|'|.'|:::|.'.'.'.'.|
-|.'.'.'.'.|---|','   /%%%\   ','|---|.'.'.'.'.|
-|.'.'.'.'.|===:'    /%%%%%\    ':===|.'.'.'.'.|
-|.'.'.'.'.|%%%%%%%%%%%%%%%%%%%%%%%%%|.'.'.'.'.|
+|.'.'.'.'',                         ,''.'.'.'.|
+|.'.'.'.'.'.          🌟           ,'.'.'.'.'.|
+|.'.'.'.'.','.                   ,'.'.'.'.'.'.|
+|.'.'.'.'.','.'.               .'.'.'.'.'.'.'.|
+|.'.'.'.'.','.'''., _______  ,'.'.'.'.'.'.'.'.|
+|.'.'.'.'.','.''..'|???????|','.'.'.'.'.'.'.'.|
+|.'.'.'.'.','.'',.'|???????|','.'.'.'.',',',',|
+|.'.'.'.'.','.''..'|???????|','.'.'.'.'.'.'.'.|
+|.'.'.'.'.','.','    /%%%\    '.','.'.'.'.'.'.|
+|.'.'.'.'.','.'     /%%%%%\     ','.'.'.'.'.'.|
+|.'.'.'.'.','      /%%%%%%%\      ','.'.'.'.'.|
 |.'.'.'.','       /%%%%%%%%%\       ','.'.'.'.|
 |.'.'.','        /%%%%%%%%%%%\        ','.'.'.|
 |.'.','         /%%%%%%%%%%%%%\         ','.'.|
 |.','          /%%%%%%%%%%%%%%%\          ','.|
 |;____________/%%%%%%%%%%%%%%%%%\____________;|
-    </pre>
-    <br>
-<span id="thoughts">where should i go?</span>
-<br>
-<div id="navigate" class="arrows">
-    <a class="A" href="G_door_6_a.html">⇠</a>   
-    <a class="A" href="G_door_6_a.html">⇡</a>  
-    <a class="A" href="G_door_6_a.html">⇢</a> 
-    <a class="A" href="D_hallway_1_c.html">⇣</a>
-
-</div>
-
-
-
-
+      </pre>
+      <br>
+      <span id="thoughts">!!! I hear a distant cry...</span>
+      <br>
+      <div id="navigate" class="arrows">
+        <a class="A" href="G_door_6_a.html">⇡</a>  
+        <a class="A" href="D_hallway_1_c.html">⇣</a>
+      </div>
     </div>
-    </main>
-    <script>
-  document.addEventListener("keydown", function (e) {
-    const links = {
-      ArrowLeft: "G_door_6_a.html",  // ⇠
-      ArrowUp: "G_door_6_a.html",    // ⇡
-      ArrowRight: "G_door_6_a.html", // ⇢
-      ArrowDown: "D_hallway_1_c.html" // ⇣
-    };
+  </main>
 
-    const url = links[e.key];
-    if (url) {
-      window.location.href = url;
-    }
-  });
-</script>
+  <script>
+    document.addEventListener("keydown", function (e) {
+      const links = {
+        ArrowLeft: "G_door_6_a.html",  // ⇠
+        ArrowUp: "G_door_6_a.html",    // ⇡
+        ArrowRight: "G_door_6_a.html", // ⇢
+        ArrowDown: "D_hallway_1_c.html" // ⇣
+      };
+      const url = links[e.key];
+      if (url) window.location.href = url;
+    });
+  </script>
 </body>
 </html>

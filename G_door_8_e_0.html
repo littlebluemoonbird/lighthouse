@@ -6,6 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>The Lighthouse</title>
+  <style>
+    pre {
+      margin: 0;
+      font-family: "Courier New", monospace;
+      white-space: pre;
+    }
+
+    /* animate the nose block */
+    .sniff-nose {
+      display: inline-block;
+      animation: sniffNose 1s ease-in-out infinite;
+    }
+    @keyframes sniffNose {
+      0%,100% { transform: translateY(0); }
+      40% { transform: translateY(-1px); }
+      60% { transform: translateY(1px); }
+    }
+
+    /* animate the "sniff.." text */
+    .sniff-text {
+      opacity: 0;
+      animation: sniffText 3s ease-in-out infinite;
+    }
+    @keyframes sniffText {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+  </style>
 </head>
 <body>
   <main>
@@ -15,18 +45,18 @@
         //
        ||              |\_/|
         \\  .-""""-._.' - -(
-         \\/          \ =_T/=
-          \    \       /`"`    sniff..
-           \   | /    |   sniff...
-           /  / -\   /        sniff..
+         \\/          \ <span class="sniff-nose">=_T/=</span>
+          \    \       /`"`    <span class="sniff-text">sniff..</span>
+           \   | /    |   <span class="sniff-text" style="animation-delay:1s">sniff...</span>
+           /  / -\   /        <span class="sniff-text" style="animation-delay:2s">sniff..</span>
            `\ \\  | ||    
              \_)) |_))
       </pre>
       <span id="thoughts">Neko’s nose twitches. She’s sniffing the air...</span>
       <br>
       <div id="navigate">
-        <a class="A" href="G_door_8_e_1.html">[stay with her]</a>  
-        <a class="A" href="F_hallway_8_b.html">[step back quietly]</a>  
+        <a class="A" href="G_door_8_e_1.html"> [ stay with Neko ] </a>  
+        <a class="A" href="F_hallway_8_b.html"> [ step back quietly ] </a>  
       </div>
     </div>
   </main>

@@ -7,10 +7,25 @@
   <link rel="stylesheet" href="style.css">
   <title>The Lighthouse</title>
   <style>
-    @media only screen and (max-width: 800px) {
-      pre { font-size: .4rem; }
-    }
+  pre { font-size: 1rem; } /* default desktop size */
 
+  @media (max-width: 1200px) {
+    pre { font-size: .8rem; }
+  }
+
+  @media (max-width: 900px) {
+    pre { font-size: .6rem; }
+  }
+
+  @media (max-width: 600px) {
+    pre { font-size: .45rem; }
+  }
+
+  @media (max-width: 400px) {
+    pre { font-size: .35rem; }
+  }
+
+    
     .moonflicker {
       color: #ffe066; /* moonlight yellow */
       animation: moonflicker 2.5s infinite;
@@ -67,10 +82,10 @@
       a bright moonlight illuminates the night.<br>
       That reminds me of the fairytale <br>
       about the rabbit that lives on the moon....
-    </span>
+    </span><br>
 
     <div id="navigate">
-      <a class="A" href="G_door_3_c.html">[wave hello]</a>  
+      <a class="A" href="G_door_3_c.html"> [ wave hello ] </a>  
       <a class="A" href="F_hallway_3_a.html">⇣</a>  
     </div>
     </div>

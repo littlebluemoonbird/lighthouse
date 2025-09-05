@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    pre {
+      display: inline-block;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
         _..._
       .'     '.      _
      /    .-""-\   _/ \
@@ -29,17 +39,16 @@
          /-._/-._/
          \   `\  \
           `-._/._/
-    </pre>
-    <span id="thoughts"> an astronaut! </span>
-    <br>
-    <div id="navigate">
-      <a class="A" href="G_door_10_b.html">where are we headed?</a>  
-      <a class="A" href="F_hallway_6_a.html">count me out</a>  
-  </div>
+      </pre>
+      <span id="thoughts"> an astronaut! </span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_10_b.html">where are we headed?</a>  
+        <a class="A" href="F_hallway_6_a.html">count me out</a>  
+      </div>
 
-<!-- work by jgs -->
-
+      <!-- work by jgs -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

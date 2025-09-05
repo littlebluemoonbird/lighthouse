@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 1500px) {
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media only screen and (max-width: 1500px) {
       pre {
         font-size: .6rem;
       }
-    }</style>
-    <title>The Lighthouse</title>
-    
+    }
 
+    @keyframes melt {
+      0% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+        filter: blur(0px);
+      }
+      30% {
+        transform: translateY(0.5ch) scaleY(1.02);
+        opacity: 0.9;
+      }
+      60% {
+        transform: translateY(1ch) scaleY(1.05);
+        opacity: 0.6;
+        filter: blur(0.4px);
+      }
+      100% {
+        transform: translateY(2.5ch) scaleY(0.95);
+        opacity: 0.1;
+        filter: blur(1.2px);
+      }
+    }
+
+    .melt {
+      display: inline-block;
+      animation: melt 8s ease-in-out forwards;
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="melt"> 
       
 
                   _.--"""-,    awh.. is that right..
@@ -42,18 +70,81 @@
          `.                           .'
            '-._                   _.-'
                `"  '  - - -  ' "``
-    <br>
-    </pre>
 
-    <span id="thoughts"></span>
-    <div id="navigate">
-      <a class="A" href="G_door_1_b_27_b.html">could you show me the way up?</a>  
-        <a class="A" href="G_door_1_b_9.html">what if I make you another snowperson? </a>  
+
+
+      </pre>
+
+      <span id="thoughts">snowman is melting...</span><br>
+      <div id="navigate">
+        <a class="A" href="G_door_1_b_27_b.html">could you show me the way up?</a>  
+        <a class="A" href="G_door_1_b_9.html">I'l make you another snowperson. </a>  
+      </div>
+
+      <!-- work by jgs -->
     </div>
+  </main>
 
-<!-- work by jgs -->
+  <script>
+  const snowEmojis = ["*", "·", "✧", "⁕", "✦"];
 
-    </div>
-    </main>
+  const snowStyle = document.createElement('style');
+  snowStyle.innerHTML = `
+    .snowflake {
+      position: fixed;
+      top: -2rem;
+      pointer-events: none;
+      user-select: none;
+      color: white;
+      opacity: 0.8;
+      animation: snowFall 10s linear forwards;
+      font-family: serif;
+      z-index: 9999;
+    }
+
+    @keyframes snowFall {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+      70% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(100vh) translateX(var(--drift));
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(snowStyle);
+
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.textContent = snowEmojis[Math.floor(Math.random() * snowEmojis.length)];
+
+    const size = Math.random() * 1.5 + 1.2;
+    const left = Math.random() * window.innerWidth;
+    const drift = Math.random() * 30 - 15;
+    const duration = Math.random() * 4 + 6;
+
+    snowflake.style.left = `${left}px`;
+    snowflake.style.fontSize = `${size}rem`;
+    snowflake.style.setProperty("--drift", `${drift}px`);
+    snowflake.style.animationDuration = `${duration}s`;
+    snowflake.style.opacity = `${Math.random() * 0.3 + 0.7}`;
+
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, duration * 1000);
+  }
+
+  setInterval(() => {
+    if (document.hidden) return;
+    createSnowflake();
+  }, 250);
+</script>
 </body>
 </html>

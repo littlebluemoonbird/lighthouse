@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .8rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
-
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>The Lighthouse</title>
+  <style>
+    @media (max-width:800px){ pre{font-size:.8rem;} }
+    .glow{display:inline-block;animation:breatheGlow 4s ease-in-out infinite}
+    @keyframes breatheGlow{
+      0%,100%{opacity:.75;text-shadow:0 0 2px #fff1b3,0 0 6px #ffd36b,0 0 12px #ffc107}
+      50%{opacity:1;text-shadow:0 0 6px #fff3c4,0 0 14px #ffd36b,0 0 24px #ffc107}
+    }
+    .star{
+      position:fixed;top:-2rem;pointer-events:none;user-select:none;
+      color:#ffd36b;opacity:.9;z-index:9999;font-family:serif;
+      animation:fall linear forwards,spin linear forwards
+    }
+    @keyframes fall{
+      0%{transform:translateY(0) translateX(0);opacity:1}
+      80%{opacity:.9}
+      100%{transform:translateY(100vh) translateX(var(--drift));opacity:0}
+    }
+    @keyframes spin{to{transform:rotate(var(--rot))}}
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-
-
-
+<pre>
+<span class="glow">
              *     ,MMM8&&&.            *
                   MMMM88&&&&&    .
                  MMMM88&&&&&&&
@@ -28,6 +38,7 @@
                  MMM88&&&&&&&&
                  'MMM88&&&&&&'
                    'MMM8&&&'      *    _
+</span>
           |\___/|                     
           )     (     
          =\     /=   
@@ -36,25 +47,56 @@
           |     |        
          /       \        
          \       /       
-  aac_/\_/\_   _/_/\_/\_/\_((_|\((_//\_/\_/\_
+  _/\_/\_/\_   _/_/\_/\_/\_((_|\((_//\_/\_/\_
   |  |  |  |( (  |  |  |  |  |  |  |  |  |  |
   |  |  |  | ) ) |  |  |  |  |  |  |  |  |  |
   |  |  |  |(_(  |  |  |  |  |  |  |  |  |  |    
   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-
-        </pre>
-<span id="thoughts">Neko is quietly watching the moon... <br>It feels still here.</span>
-        <br>
-        <div id="navigate">
-  <a class="A" href="G_door_8_a_d.html">[sit beside Neko]</a>   
-          <a class="A" href="F_hallway_8_b.html">I watched the moon enough today..</a>  
+  
+</pre>
+      <span id="thoughts">Neko is quietly watching the moon... <br>It feels still here.</span><br>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_8_a_d.html"> [ sit beside Neko ] </a>
+        <a class="A" href="F_hallway_8_b.html"> [ leave Neko alone ]</a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
+
+<style>
+  .star {
+    position: fixed;
+    top: -1rem;
+    pointer-events: none;
+    user-select: none;
+    color: #ffd36b;
+    opacity: .85;
+    z-index: 9999;
+    font-family: serif;
+    animation: fall var(--dur) linear forwards;
+  }
+  @keyframes fall {
+    from { transform: translateY(0); opacity: 1; }
+    to   { transform: translateY(100vh); opacity: 0; }
+  }
+</style>
+<script>
+  const STAR_SET = ["★","☆","✦","✧","✩","✪","✫","✬","✭","✮","✯"];
+  function dropStar(){
+    const el = document.createElement("div");
+    el.className = "star";
+    el.textContent = STAR_SET[Math.floor(Math.random()*STAR_SET.length)];
+    const size = (Math.random()*0.5 + 0.4).toFixed(2);   // 0.4–0.9rem
+    const left = Math.random()*window.innerWidth;
+    const dur = (Math.random()*4 + 4).toFixed(1) + "s";  // 4–8s
+    el.style.left = left + "px";
+    el.style.fontSize = size + "rem";
+    el.style.setProperty("--dur", dur);
+    document.body.appendChild(el);
+    setTimeout(()=> el.remove(), parseFloat(dur)*1000);
+  }
+  setInterval(()=> { if (!document.hidden) dropStar(); }, 280);
+</script>
 </body>
 </html>

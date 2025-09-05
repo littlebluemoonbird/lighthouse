@@ -1,35 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+  <style>
+    pre {
+      font-family: "Courier New", monospace;
+      white-space: pre;
+      margin: 0;
+    }
 
+    /* walking line = exactly 25 chars (_____ + 20 _) */
+    .walk-line {
+      display: inline-block;
+      position: relative;
+      width: 25ch;
+      height: 1em;
+    }
+    .ground {
+      position: absolute;
+      inset: 0;
+      text-align: left;
+    }
+
+    .walker {
+      position: absolute;
+      top: 0;
+      right: -2ch; /* start just off-screen right */
+      transform: translateY(-0.2em); /* lift emoji slightly */
+      animation: walk 16s linear infinite;
+    }
+
+    @keyframes walk {
+      0%   { right: -2ch; opacity: 0; }
+      6%   { opacity: 1; }
+      94%  { right: 100%; opacity: 1; }
+      100% { right: 100%; opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .walker { animation: none; right: 0; opacity: 1; }
+    }
+
+    #title { display: block; margin-top: 1rem; }
+    #navigate { margin-top: 1rem; }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre> 
             . . *
             * * . * . * . *
             . * . * . .
             . . *
             * * . * . * *
             . * . 💭 * . .
-_____🚶🏻‍♂️____________________
- 
-        </pre>
-        <span id="title">  is there anything that you wish to leave behind? </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="mailto: unieugeniaso@gmail.com">yes</a>  
-          <a class="A" href="x_5.html">not really</a>  
-          <a class="A" href="F_hallway_5_a.html">I am ready to return</a>  
+<span class="walk-line">
+  <span class="ground">_________________________</span>
+  <span class="walker">🚶🏻‍♂️</span>
+</span>
+</pre>
+
+      <span id="title">is there anything that you wish to leave behind?</span>
+      <br/>
+      <div id="navigate">
+        <a class="A" href="mailto:unieugeniaso@gmail.com">yes</a>
+        <a class="A" href="F_hallway_5_a.html">no</a>
       </div>
     </div>
-    </main>
+  </main>
 </body>
 </html>

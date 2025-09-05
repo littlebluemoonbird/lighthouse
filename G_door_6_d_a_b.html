@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    .float-circle {
+      display: inline-block;
+      animation: circleFloat 10s ease-in-out infinite;
+    }
+
+    @keyframes circleFloat {
+      0%   { transform: translate(0, 0); }
+      20%  { transform: translate(20px, -10px); }
+      40%  { transform: translate(10px, -25px); }
+      60%  { transform: translate(-20px, -10px); }
+      80%  { transform: translate(-10px, 15px); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="float-circle"> 
 
    (\{\
    { { \,~,
@@ -26,17 +40,13 @@
 
 
 </pre>
-    <br>
-    <span id="thoughts"></span>
-    <br>
-    <div id="navigate">
+      <br>
+      <span id="thoughts"></span>
+      <br>
+      <div id="navigate">
         <a class="A" href="G_door_6_d_c_a.html">what were you looking for?</a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

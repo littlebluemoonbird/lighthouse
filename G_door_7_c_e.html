@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .7rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .7rem; }
+    }
 
+    pre {
+      margin: 0;
+      white-space: pre;
+      font-family: "Courier New", monospace;
+    }
+
+    .reveal {
+      animation: reveal 4s ease-out both;
+    }
+
+    @keyframes reveal {
+      from { clip-path: inset(0 0 100% 0); }
+      to   { clip-path: inset(0 0 0 0); }
+    }
+
+    #navigate {
+      opacity: 0;
+      animation: navIn 1.5s ease forwards;
+      animation-delay: 4.2s; /* after reveal finishes */
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    @keyframes navIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre class="reveal"> 
 
 
 
@@ -60,15 +85,13 @@ _____      _____     .    .        (..--^.  '   .
 .   '     *           _   .               | /     . 
 .    _   .   .    .         _   .   .     '______ _    .
 
-        </pre>
-        <span id="title"></span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_c_f.html">so what is the desert?</a>  
-      </div>
-<!-- itz/jgs/ccm -->
+</pre>
 
+      <div id="navigate">
+        <a class="A" href="G_door_7_c_f.html">so what is the desert?</a>  
+      </div>
+      <!-- itz/jgs/ccm -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

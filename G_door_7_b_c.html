@@ -1,126 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>
-      main {height:auto;}
-    </style>
-    <script>
-        function toBottom()
-    {
-        window.scrollTo(0, document.body.scrollHeight);
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+
+  <style>
+    #ascii-container {
+      font-family: monospace;
+      white-space: pre;
+      line-height: 1.2;
     }
-    window.onload=toBottom;
-    </script>
 
-    <title>The Lighthouse</title>
-    
+    .ascii-line {
+      visibility: hidden;
+    }
 
+    #navigate {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+  </style>
 </head>
+
 <body>
-    <main>
-
-
-      
+  <main>
     <div id="lighthouse">
-      <span id="title">   <br>  </span>
-      <br>
+
+      <span id="title"><br></span>
+
       <div id="navigate">
         <a class="A" href="G_door_7_b_d.html">T..That's the oracle?</a>  
+      </div>
+
+      <pre id="ascii-container">
+<span class="ascii-line">                ＿＿＿_</span>
+<span class="ascii-line">              ／      ＼</span>
+<span class="ascii-line">            ／  ─    ─ ＼</span>
+<span class="ascii-line">          ／   （●）  （●）＼</span>
+<span class="ascii-line">          |     （__人__） |</span>
+<span class="ascii-line">          ＼             ／</span>
+<span class="ascii-line">          ／           ＼</span>
+<span class="ascii-line">          /              \</span>
+<span class="ascii-line">          | |            | |</span>
+<span class="ascii-line">          |  |            | |</span>
+<span class="ascii-line">          | |            |. |</span>
+<span class="ascii-line">          | |              |  |</span>
+<span class="ascii-line">          | |               |  |</span>
+<span class="ascii-line"></span>
+<span class="ascii-line">🐬 Would you like to tell her something? 🐬</span>
+<span class="ascii-line"></span>
+<span class="ascii-line"></span>
+<span class="ascii-line"></span>
+<span class="ascii-line"></span>
+<span class="ascii-line">        __|\</span>
+<span class="ascii-line">     .-'    '-.</span>
+<span class="ascii-line">   / .--, _ a L</span>
+<span class="ascii-line"> .J (  '-' "'--'</span>
+<span class="ascii-line">'-'-.)                        </span>
+<span class="ascii-line"></span>
+<span class="ascii-line">              The oracle is here!</span>
+<span class="ascii-line"></span>
+<span class="ascii-line"></span>
+<span class="ascii-line"></span>
+<span class="ascii-line"></span>
+<span class="ascii-line">                                    __</span>
+<span class="ascii-line">                               ,.-'e ''-'7</span>
+<span class="ascii-line">                                '--.    (</span>
+<span class="ascii-line">                                    ),   \</span>
+<span class="ascii-line">                                    ` )  :</span>
+<span class="ascii-line">                                ,__.'_.'</span>
+<span class="ascii-line">                                '-, (</span>
+<span class="ascii-line">                                  '--'</span>
+      </pre>
+      <!-- work by jgs and Shanaka Dias -->
     </div>
+  </main>
 
-    <pre> 
-                ＿＿＿_
-              ／      ＼
-            ／  ─    ─ ＼
-          ／   （●）  （●）＼
-          |     （__人__） |
-          ＼             ／
-          ／           ＼
-          /              \
-          | |            | |
-          |  |            | |
-          | |            |. |
-          | |              |  |
-          | |               |  |
+  <script>
+    const lines = Array.from(document.querySelectorAll('.ascii-line')).reverse();
+    let delay = 0;
+    const interval = 30; // ms between lines
 
-
-
-
-
-
-
-🐬 Would you like to tell her something? 🐬
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        __|\
-     .-'    '-.
-   / .--, _ a L
- .J (  '-' "'--'
-'-'-.)                        
-            
-
-
-
-
-
-
-
-
-
-
-
-
-  
-              The oracle is here!      
-            
-          
-
-
-
-
-
-
-
-
-
-                                    __
-                               ,.-'e ''-'7
-                                '--.    (
-                                    ),   \
-                                    ` )  :
-                                ,__.'_.'
-                                '-, (
-                                  '--'
-
-
-        </pre>
-
-<!-- work by jgs and Shanaka Dias -->
-
-
-    </div>
-    </main>
+    lines.forEach((line, i) => {
+      setTimeout(() => {
+        line.style.visibility = 'visible';
+        if (i === lines.length - 1) {
+          document.getElementById('navigate').style.opacity = 1;
+        }
+      }, delay);
+      delay += interval;
+    });
+  </script>
 </body>
 </html>

@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .9rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .9rem; }
+    }
 
+    /* Animate the ASCII "body" */
+    #lighthouse pre {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      display: inline-block;
+      transform-origin: center;
+      opacity: 0;
+      animation: boingIn 700ms ease-out forwards,
+                 idleFloat 4s ease-in-out infinite;
+      animation-delay: 0s, 0.7s; /* boing first, then float loop */
+    }
+
+    @keyframes boingIn {
+      0%   { transform: scale(0.4) rotate(-4deg); opacity: 0; }
+      40%  { transform: scale(1.15) rotate(2deg); opacity: 1; }
+      70%  { transform: scale(0.95) rotate(-1deg); }
+      100% { transform: scale(1) rotate(0); opacity: 1; }
+    }
+
+    @keyframes idleFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%      { transform: translateY(-6px) scale(1.02); }
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre> 
 
                  __
                .'/\'.
@@ -51,18 +74,15 @@
           `---..____..---'   ;:`
    ;:'      ;:'.:;     ;;"
  
-        </pre>
-        <span id="thoughts"> I hear screaming! What should I do? </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_9_b.html">[help them]</a>  
-          <a class="A" href="F_hallway_5_a.html">[run away]</a>  
+</pre>
+      <span id="thoughts"> I hear screaming! What should I do? </span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_9_b.html">[help them]</a>  
+        <a class="A" href="F_hallway_5_a.html">[run away]</a>  
       </div>
-
       <!-- Art by lgbeard -->
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

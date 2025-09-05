@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    /* gentle sway side to side */
+    .sway {
+      display: inline-block;
+      animation: sway 6s ease-in-out infinite;
+    }
 
+    @keyframes sway {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(10px); }
+      50%  { transform: translateX(0); }
+      75%  { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
+
+    @media (max-width: 800px){
+      pre{font-size:.55rem;}
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <div class="sway">
+<pre> 
 
   Yes. The desert was once the ocean.. 
 
@@ -25,17 +43,15 @@
 ◍ ︵︵‿ ︵‿︵‿︵‿︵︵‿︵‿︵‿︵︵‿︵‿︵‿︵ ◍
 
    ◍           .˚ ̥ 𓆞          ◍
-        </pre>
-        <span id="title"> </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_c_b.html">what happened?</a>  
+</pre>
       </div>
-
-<!-- work by jgs -->
-
-
+      <span id="title"> </span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_7_c_b.html">what happened?</a>  
+      </div>
+      <!-- work by jgs -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .65rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    .floating-glow {
+      display: inline-block;
+      animation: float 4s ease-in-out infinite, glow 2.5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-1vh); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0%   { filter: drop-shadow(0 0 0.25em #eee8f7); opacity: 0.85; }
+      50%  { filter: drop-shadow(0 0 0.6em #fff6ff); opacity: 1; }
+      100% { filter: drop-shadow(0 0 0.25em #eee8f7); opacity: 0.85; }
+    }
+
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: 0.65rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="floating-glow"> 
                       /|      __
 *             +      / |   ,-~ /             +
      .              Y :|  //  /                .         *
@@ -35,17 +54,17 @@
                ]\      _\    /"\
               (" ~----( ~   Y.  )
           ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        </pre>
-        <span id="thoughts"> </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_m.html">thanks moon rabbit!</a>  
+      </pre>
+
+      <span id="thoughts"></span>
+      <br>
+
+      <div id="navigate">
+        <a class="A" href="F_hallway_6_a.html">thanks moon rabbit!</a>
       </div>
 
       <!-- Art by lgbeard -->
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

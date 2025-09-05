@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+
+  <style>
+    @media only screen and (max-width: 800px) {
       pre {
         font-size: .6rem;
       }
-    }</style>
-    <title>The Lighthouse</title>
-    
+    }
 
+    .ascii-container {
+      white-space: pre;
+      overflow: hidden;
+      width: 0;
+      animation: type-reveal 2s steps(80, end) forwards;
+      font-family: monospace;
+    }
+
+    @keyframes type-reveal {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    #navigate {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2.2s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+
+      <div class="ascii-container">
+<pre>
     .    _    +     .  ______   .             .             .         
  (      /|\      .    |      \      .   welcome to                    .
      . |||||     _    | |   | | ||           the desert.        .    .
@@ -34,17 +61,19 @@ __||||_|||||____| |_|_____________\________.--'!   '--.______dolphin__
 _   ___|||||__  _ \\--//          _   .     *             | /     . 
      _ `---'    .)=\oo|=(.  .   .    .    _   .   .    .  '______ _   .
 _  ^      .  -    . \.|
- 
-        </pre>
-        <span id="thoughts"> <br></span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_a_b.html">the who?</a>  
-          <a class="A" href="F_hallway_5_a.html">oh no</a>  
+</pre>
+      </div>
+
+      <span id="thoughts"><br></span>
+      <br>
+
+      <div id="navigate">
+        <a class="A" href="G_door_7_a_b.html">the who?</a>
+        <a class="A" href="F_hallway_5_a.html">good bye!</a>
       </div>
 
       <!-- Artwork by mrf -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

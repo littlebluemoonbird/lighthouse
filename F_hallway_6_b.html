@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .9rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    .rumble {
+      display: inline-block;
+      animation: rumble 0.2s infinite;
+    }
+
+    @keyframes rumble {
+      0%   { transform: translate(0px, 0px); }
+      25%  { transform: translate(-1px, 1px); }
+      50%  { transform: translate(1px, -1px); }
+      75%  { transform: translate(-1px, -1px); }
+      100% { transform: translate(1px, 1px); }
+    }
+
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .9rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="rumble"> 
  _____________________________________________
 |.'',                                     ,''.|
 |.'.'',                                 ,''.'.|
@@ -38,38 +53,35 @@
 |.'.','         /%%%%%%%%%%%%%\         ','.'.|
 |.','          /%%%%%%%%%%%%%%%\          ','.|
 |;____________/%%%%%%%%%%%%%%%%%\____________;|
-    </pre>
-    <br>
-<span id="thoughts">?!! I heard a loud rumbling. Which way now?!</span>
-<br>
-<div id="navigate" class="arrows">
+      </pre>
+
+      <br>
+      <span id="thoughts">?!! I heard a loud rumbling. Which way now?!</span>
+      <br>
+
+      <div id="navigate" class="arrows">
         <a class="A" href="G_door_6_e.html">⇠</a> 
-    <a class="A" href="G_door_6_e.html">⇡</a> 
+        <a class="A" href="G_door_6_e.html">⇡</a> 
         <a class="A" href="G_door_6_e.html">⇢</a>  
-    <a class="A" href="G_door_6_e.html">⇣</a>
-
-  
-</div>
-
-
-
-
+        <a class="A" href="G_door_6_e.html">⇣</a>
+      </div>
     </div>
-    </main>
-    <script>
-  document.addEventListener("keydown", function (e) {
-    const links = {
-      ArrowLeft: "G_door_6_a.html",  // ⇠
-      ArrowUp: "G_door_6_a.html",    // ⇡
-      ArrowRight: "G_door_6_a.html", // ⇢
-      ArrowDown: "D_hallway_1_c.html" // ⇣
-    };
+  </main>
 
-    const url = links[e.key];
-    if (url) {
-      window.location.href = url;
-    }
-  });
-</script>
+  <script>
+    document.addEventListener("keydown", function (e) {
+      const links = {
+        ArrowLeft: "G_door_6_a.html",  // ⇠
+        ArrowUp: "G_door_6_a.html",    // ⇡
+        ArrowRight: "G_door_6_a.html", // ⇢
+        ArrowDown: "D_hallway_1_c.html" // ⇣
+      };
+
+      const url = links[e.key];
+      if (url) {
+        window.location.href = url;
+      }
+    });
+  </script>
 </body>
 </html>

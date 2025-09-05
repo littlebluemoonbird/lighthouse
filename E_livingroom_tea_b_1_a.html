@@ -7,10 +7,34 @@
   <link rel="stylesheet" href="style.css" />
   <title>The Lighthouse</title>
   <style>
-    @media only screen and (max-width: 800px) {
-      pre {
-        font-size: 0.65rem;
-      }
+    pre {
+      opacity: 0;
+      animation:
+        fadeIn 1.5s ease-in forwards 0.5s,
+        breathe 2s ease-in-out infinite 3s;
+    }
+
+    #thoughts {
+      opacity: 0;
+      animation: fadeIn .7s ease-in forwards;
+      animation-delay: 1.2s;
+      margin-top: 1.5rem;
+    }
+
+    #navigate {
+      opacity: 0;
+      animation: fadeIn .9s ease-in forwards;
+      animation-delay: 2.1s;
+      margin-top: 1.5rem;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.015); opacity: 0.92; }
     }
   </style>
 </head>
@@ -18,9 +42,7 @@
   <main>
     <div id="lighthouse">
       <pre> 
-                       \ | /
-                      -- * --
-                       / | \
+
 
 
         /')    ./')             ('\.    ('\
@@ -32,11 +54,11 @@
       </pre>
 
       <div id="thoughts">
-my hands..are.... so... warm...
+        my hands... are... so warm now..
       </div>
 
       <div id="navigate">
-        <a class="A" href="E_livingroom_tea_c_1.html">... Thank you!</a>
+        <a class="A" href="E_livingroom_tea_c_1.html">... Thank you, Dragon.</a>
       </div>
     </div>
   </main>

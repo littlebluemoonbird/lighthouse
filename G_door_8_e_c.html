@@ -1,18 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .9rem;
+      }
+    }
 
+    #lighthouse {
+      position: relative;
+    }
+
+    #lighthouse pre {
+      position: relative;
+      z-index: 1;
+      animation: gentlePulse 4s ease-in-out infinite;
+    }
+
+    #lighthouse pre::before {
+      content: '°   . ● . ★ ° . *   .           .    °   . ● . ★ ° . *      °  . °☆   . * ● , .       ★';
+      white-space: pre-wrap;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 230, 250, 0) 0%,
+        rgba(255, 200, 255, 0.12) 30%,
+        rgba(200, 245, 255, 0.15) 50%,
+        rgba(180, 255, 255, 0.1) 70%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      mix-blend-mode: screen;
+      animation: floatSparkle 8s ease-in-out infinite, fadeIn 2.2s ease-in forwards;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    #thoughts {
+      display: inline-block;
+      opacity: 0;
+      animation: fadeIn 3.2s ease-in forwards;
+      animation-delay: 1.2s;
+    }
+
+    #navigate {
+      opacity: 0;
+      animation: fadeIn 2.4s ease-in forwards;
+      animation-delay: 2.2s;
+    }
+
+    @keyframes gentlePulse {
+      0%, 100% {
+        opacity: 0.96;
+        filter: drop-shadow(0 0 1px #ffe3ff);
+      }
+      50% {
+        opacity: 1;
+        filter: drop-shadow(0 0 2px #ffffff);
+      }
+    }
+
+    @keyframes floatSparkle {
+      0% {
+        transform: translateY(-10%);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(10%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10%);
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
                           ,
    ,-.       _,---._ __  / \
   /  )    .-'       `./ /   \
@@ -25,18 +106,13 @@
   |  | (   |     fun    | /
   )  |  \  `.___________|/
   `--'   `--'
-        </pre>
-<span id="thoughts">Neko rummages through her box of fun… something clinks inside.</span>
-<br>
-<div id="navigate">
-  <a class="A" href="G_door_8_f.html">[stay and see what she finds]</a>  
-</div>
+      </pre>
+      <span id="thoughts">something clinks inside of Neko's 'BOX OF FUN'</span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_8_f.html"> [ patiently wait ] </a>  
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

@@ -5,6 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <style>    .wand {
+      color: #ffd95e;
+      text-shadow: 0 2px 4px rgba(255, 217, 94, 0.6),
+                   0 4px 6px rgba(255, 217, 94, 0.4),
+                   0 6px 10px rgba(255, 217, 94, 0.25);
+      animation: wandFlicker 1.8s infinite;
+    }
+    @keyframes wandFlicker {
+      0%, 100% {
+        opacity: 1;
+        text-shadow: 0 2px 4px rgba(255, 217, 94, 0.8),
+                     0 4px 8px rgba(255, 217, 94, 0.6),
+                     0 6px 12px rgba(255, 217, 94, 0.4);
+      }
+      40% {
+        opacity: 0.7;
+        text-shadow: 0 2px 2px rgba(255, 217, 94, 0.4),
+                     0 3px 6px rgba(255, 217, 94, 0.25);
+      }
+      70% {
+        opacity: 0.9;
+        text-shadow: 0 3px 4px rgba(255, 217, 94, 0.7),
+                     0 6px 10px rgba(255, 217, 94, 0.5);
+      }
+    }
+    pre { font-size: .8rem; line-height: 1.2; }
+
+    #thoughts { display:block; margin-top:1rem; }
+
+    .A:hover { background:#ffd95e; color:#000; }
+  </style>
     <title>The Lighthouse</title>
     
 
@@ -15,22 +46,27 @@
     <pre> 
 
 
-   (\{\             
-   { { \ ,~,       
-  { {   \)))       yes..!
-   { {  (((      my wand...!
-    {/{/; ,\   my magic wand!
-       (( '    
-        \` \          
-        (/  \  
-        `)  `\          
+            
+    <span class="wand">*</span>
+   <span class="wand">\* / *</span>
+ <span class="wand">*--.:. *</span>
+   <span class="wand">* :\ -</span>
+     <span class="wand">|</span> \                 yes!!
+        \                 my
+         \               magic
+          \             w a n d !  
+           \
+            \
+             \
+              \
+               \
+      </pre>
 
-</pre>
     <br>
     <span id="thoughts"></span>
     <br>
     <div id="navigate">
-        <a class="A" href="G_door_6_d_c_c.html">tell me more</a>  
+        <a class="A" href="G_door_6_d_c_c.html">tell me more..?</a>  
     </div>
 
 
@@ -40,3 +76,4 @@
     </main>
 </body>
 </html>
+

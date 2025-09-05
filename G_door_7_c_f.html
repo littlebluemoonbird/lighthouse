@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .8rem;
+      }
+    }
+
+    .desert-scene {
+      animation: fadeGlow 6s ease-in-out infinite alternate;
+      color: #ffeecf;
+      text-shadow: 0 0 2px #ffeecf, 0 0 6px #ffc78e;
+    }
+
+    @keyframes fadeGlow {
+      0% {
+        opacity: 0.2;
+        text-shadow: 0 0 2px #ffeecf, 0 0 4px #ffc78e;
+      }
+      50% {
+        opacity: 1;
+        text-shadow: 0 0 6px #fff3d6, 0 0 10px #ffdcaa;
+      }
+      100% {
+        opacity: 0.2;
+        text-shadow: 0 0 1px #ffeecf, 0 0 2px #ffc78e;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="desert-scene"> 
  ,    .  .   . 。  .     .  ,   .
 • .  。 .  .   .      .  .     .
   .  ඞ   .,    .  .   . 。       .
@@ -37,17 +65,13 @@
  • .  。 .  .   .      .  .      .
   .  ඞ   .,    .  .   . 。
 ,    .  .   . 。  .     .  ,   .
-        </pre>
-        <span id="title">   </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_c_g.html">everything!?</a>  
+      </pre>
+      <span id="title"></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_7_c_g.html">everything!?</a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

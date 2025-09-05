@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .8rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .6rem;
+      }
+    }
+
+    .ship-float {
+      display: inline-block;
+      animation: floatShip 3.2s ease-in-out infinite alternate;
+      opacity: 0.9; /* slight transparency */
+      position: relative;
+      top: -18.5ch; /* pull up so it overlays the stars */
+    }
+
+    @keyframes floatShip {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(33ch);
+      }
+    }
+
+    #lighthouse {
+      position: relative;
+    }
+
+    pre {
+      position: relative;
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre>
                       .   *        .       .
        *      -0-
           .                .  *       - )-
@@ -30,22 +57,23 @@
    *             *              -O-          .
          .             *         |     ,
                 .           o
-        .---.
-  =   _/__~0_\_     .  *            o       '
- = = (_________)             .
+*          
+                    .  *            o       '
+       .  *                  .
                  .                        *
-       *               - ) -       *
-        </pre>
-        <span id="thoughts"> is that a UFO?!  </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_d_b.html">[wave hello]</a>  
+*      *               - ) -       *
+<span class="ship-float">
+         .---.
+   =   _/__👽_\_    
+  = = (_________)
+</span>
+      </pre>
+      <span id="thoughts">...a UFO!</span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_10_e.html">[ wave hello ]</a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

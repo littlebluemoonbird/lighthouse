@@ -1,18 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
 
+    #lighthouse pre {
+      white-space: pre;
+      animation: floatText 4s ease-in-out infinite alternate;
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    #thoughts {
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeIn .5s ease-in forwards;
+      animation-delay: 1s;
+      text-align: center;
+    }
+
+    #navigate {
+      margin-top: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in forwards;
+      animation-delay: 1.5s;
+      text-align: center;
+    }
+
+    .A {
+      color: #ffd95e;
+      border: 1px solid #ffd95e;
+      padding: 4px 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .A:hover {
+      background: #ffd95e;
+      color: #000;
+    }
+
+    @keyframes floatText {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-6px);
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-        <pre>
+      <pre>
 
 ~ny aong~
 
@@ -20,19 +89,13 @@
 
                 ~ny aong~
 
-          
-                    </pre>
+      </pre>
 
-    <span id="thoughts">I hear Neko!</span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="H_room_c.html">[find Neko]</a>  
+      <span id="thoughts">I hear Neko!</span>
+      <div id="navigate">
+        <a class="A" href="H_room_c.html"> [ find Neko ] </a>
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @media only screen and (max-width: 800px) {
       div {
-        font-size: .85rem;
+        font-size: 0.85rem;
       }
-    }</style>
-    <title>The Lighthouse</title>
-    
+    }
 
+    .jitter {
+      display: inline-block;
+      animation: jitter 0.12s ease-in-out infinite alternate;
+    }
+
+    @keyframes jitter {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(-0.2ch); }
+      50%  { transform: translateX(0.2ch); }
+      75%  { transform: translateX(-0.1ch); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="jitter"> 
 
                  __
                .'/\'.
@@ -50,19 +63,18 @@
 ;:'   '-._    '._) '._)   _.-'
            `---..____..---'   ;:`
    ;:'      ;:'.:;     ;;"
- 
-        </pre>
-        <span id="thoughts"> huh? something just flew by me! </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_9_c.html">[look around]</a>  
-          <a class="A" href="F_hallway_5.html">[run away]</a>  
+      </pre>
+
+      <span id="thoughts"> huh? something just flew by me! </span>
+      <br>
+
+      <div id="navigate">
+        <a class="A" href="G_door_9_c.html">[look around]</a>  
+        <a class="A" href="F_hallway_5_a.html">[run away]</a>  
       </div>
 
       <!-- Art by lgbeard -->
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

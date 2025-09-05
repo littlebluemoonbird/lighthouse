@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .5rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .5rem;
+      }
+    }
+
+    .fade-blur-in {
+      opacity: 0;
+      filter: blur(8px);
+      white-space: pre;
+      display: inline-block;
+      animation: fadeBlurIn 2.8s ease-out forwards;
+    }
+
+    @keyframes fadeBlurIn {
+      0% {
+        opacity: 0;
+        filter: blur(8px);
+      }
+      100% {
+        opacity: 1;
+        filter: blur(0);
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="fade-blur-in"> 
                       .   *        .       .
        *      -0-
           .                .  *       - )-
@@ -35,17 +56,14 @@
        .  *                  .
                  .                        *
 *      *               - ) -       *
-        </pre>
-        <span id="thoughts"> i mean, <br>there has to be life beyond earth. <br> like an alien or something.. <br> ho..hold on... what's that?!  </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_d_a.html">[look closer]</a>  
+      </pre>
+
+      <span id="thoughts">i mean, <br>there has to be life beyond earth. <br>like an alien or something.. <br>ho..hold on... what's that?!</span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_10_d_a.html"> [ look closer ] </a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

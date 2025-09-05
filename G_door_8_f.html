@@ -5,13 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Lighthouse</title>
   <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    pre {
+      line-height: 1.2;
+      white-space: pre;
+      text-align: left;
+    }
+
     .wand {
       color: #ffd95e;
-      text-shadow: 0 2px 4px rgba(255, 217, 94, 0.6),
-                   0 4px 6px rgba(255, 217, 94, 0.4),
-                   0 6px 10px rgba(255, 217, 94, 0.25);
+      text-shadow:
+        0 2px 4px rgba(255, 217, 94, 0.6),
+        0 4px 6px rgba(255, 217, 94, 0.4),
+        0 6px 10px rgba(255, 217, 94, 0.25);
       animation: wandFlicker 1.8s infinite;
     }
+
     @keyframes wandFlicker {
       0%, 100% {
         opacity: 1;
@@ -30,36 +50,52 @@
                      0 6px 10px rgba(255, 217, 94, 0.5);
       }
     }
-    pre { font-size: .8rem; line-height: 1.2; }
-body {
-  background:#000;
-  color:#fff;
-  font-family: monospace;
-  height:100vh;            /* full height */
-  margin:0;
-  display:flex;            /* enable flexbox */
-  align-items:center;      /* vertical center */
-  justify-content:center;  /* horizontal center */
-}
-    #thoughts { display:block; margin-top:1rem; }
-    #navigate { margin-top:1rem; }
-    .A {
-      color:#ffd95e; border:1px solid #ffd95e; padding:4px 8px;
-      text-decoration:none; font-size:.9rem;
+
+    #thoughts {
+      display: block;
+
+      align-items: center;
+
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      animation-delay: 1.2s;
     }
-    .A:hover { background:#ffd95e; color:#000; }
+
+    #navigate {
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in forwards;
+      animation-delay: 1.4s;
+    }
+
+    .A {
+      color: #ffd95e;
+      border: 1px solid #ffd95e;
+      padding: 4px 8px;
+      text-decoration: none;
+
+    }
+
+    .A:hover {
+      background: #ffd95e;
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
   <main>
     <div id="lighthouse">
-      <pre>
-    <span class="wand">*</span>
-   <span class="wand">\* / *</span>
- <span class="wand">*--.:. *</span>
-   <span class="wand">* :\ -</span>
-     <span class="wand">|</span> \        ny
-        \        -ong
+<pre><span class="wand">    *        </span>
+<span class="wand">   \* / *     </span>
+<span class="wand"> *--.:. *     </span>
+<span class="wand">   * :\ -     </span>
+     | \   nya
+        \   -ong
          \
           \
            \
@@ -67,14 +103,13 @@ body {
              \
               \
                \
-      </pre>
-      <span id="thoughts">Oh! Is that... the pixy's wand?</span>
+
+      <span id="thoughts">     Is that the pixy's wand?</span>
+</pre>
       <div id="navigate">
-        <a class="A" href="F_hallway_6_b.html">[take it and thank Neko]</a>
+        <a class="A" href="F_hallway_6_b.html"> [ take it and thank Neko ] </a>
       </div>
     </div>
   </main>
 </body>
 </html>
-
-

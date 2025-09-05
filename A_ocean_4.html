@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
   <title>The Lighthouse</title>
   <style>
-    .flicker {
-      animation: flicker 1.6s infinite;
-    }
-    .wave {
-      display: inline-block;
-      animation: wave 3s ease-in-out infinite alternate;
-    }
-
+    /* Flicker + wave */
+    .flicker { animation: flicker 1.6s infinite; }
     @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      15% { opacity: 0.85; }
-      30% { opacity: 0.4; }
-      45% { opacity: 0.9; }
-      60% { opacity: 0.6; }
-      75% { opacity: 1; }
+      0%,100%{opacity:1}
+      15%{opacity:.85}
+      30%{opacity:.4}
+      45%{opacity:.9}
+      60%{opacity:.6}
+      75%{opacity:1}
     }
+    .wave { display:inline-block; animation: wave 3s ease-in-out infinite alternate; }
+    @keyframes wave { from{transform:translateX(-0.7rem)} to{transform:translateX(0.7rem)} }
 
-    @keyframes wave {
-      from { transform: translateX(-0.7rem); }
-      to   { transform: translateX(0.7rem); }
-    }
+    /* Mobile ASCII scale */
+    @media only screen and (max-width: 800px) { pre { font-size:.55rem } }
 
-    @media only screen and (max-width: 800px) {
-      pre { font-size: .55rem; }
-    }
+    /* Voice + fade */
+    #voice { display:block; margin-top:.75rem; min-height:1.2em; }
+    @keyframes fadeOut { from{opacity:1} to{opacity:0} }
+    .fade-out { animation: fadeOut 3s ease forwards; }
+
+    /* Delayed nav reveal */
+    #navigate { margin-top:1rem; opacity:0; transition:opacity 2s ease; }
+    #navigate.show { opacity:1; }
+
+    
   </style>
 </head>
 <body>
@@ -59,17 +60,17 @@
                  :.--------.:         
                 :     __     :         
                 :    |  |    :         
-                :    |  |    :            </pre>
+                :    |  |    :
+      </pre>
+
       <pre class="wave">
  ##  ##     ### ## ##     ## ##       ##  ## ##
 # #### ######### ############ ##########\,,)\/\
 ###############################################
       </pre>
 
-      <span id="title"> I.. I am... the..<pre class="flicker">light..</pre>
-        you found me. or... maybe i’ve always been here.. 
-</span>
-      </span>
+      <span id="title">i̷̇̄’̶aṁ̴̄.... <span class="flicker">x̴͙̤̓Ϟ̇͞𐑂ⲯ̇̇͡Ϟ̇ ̴̙͑͂</span></span>
+      <span id="voice"></span>
 
       <div id="navigate">
         <a class="A" href="A_ocean_5.html">why me?</a>
@@ -78,5 +79,27 @@
       <!-- ascii by Jope -->
     </div>
   </main>
+
+  <script>
+    const line = 'you f̷o̶u̷n̶d̷ m̷e.. or... m̷a̶y̷b̶e i’̷v̶e a̷l̶w̷a̶y̷s̶ b̷e̶e̷n h̷e̶r̷e..';
+    const tgt  = document.getElementById('voice');
+    const nav  = document.getElementById('navigate');
+    let i = 0;
+
+    function type(){
+      if(i < line.length){
+        tgt.textContent += line.charAt(i++);
+        setTimeout(type, 30 + Math.random()*100);
+      } else {
+        // pause, fade, reveal nav shortly after fade begins
+        setTimeout(()=>{
+          tgt.classList.add('fade-out');
+          setTimeout(()=> nav.classList.add('show'), 600);
+        }, 500);
+      }
+    }
+
+    setTimeout(type, 700);
+  </script>
 </body>
 </html>

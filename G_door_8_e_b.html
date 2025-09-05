@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
-
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>The Lighthouse</title>
+  <style>
+    pre { 
+      margin: 0; 
+      white-space: pre; 
+      font-family: "Courier New", monospace; 
+    }
+    .paw {
+      opacity: 0;
+      display: inline-block;
+      animation: appear .4s ease-out forwards;
+    }
+    .r { margin-left: 10ch; }
+    .l { margin-left: 3ch; }
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(4px) scale(0.9); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+  </style>
 </head>
 <body>
-    <main>
-    <div id="lighthouse">
-    <pre> 
-        
- .　　　　　　 ｡｡
-　　　　　　ﾟ●゜
-　
-　　　 ｡｡
-　　　ﾟ●゜
-　
-　　　　　 ｡｡
-　　　　　ﾟ●゜
-　
-　ﾟ●゜
-　
-　　　　　 ｡｡
-　　　　　ﾟ●゜
-　　　　
-　
-　　ﾟ●
+  <main><div id="lighthouse">
+<pre>
+<span class="paw l" style="animation-delay:0s">🐾</span>
+<span class="paw r" style="animation-delay:.3s">🐾</span>
 
-        </pre>
-<span id="thoughts">Neko walks off without a sound... her tiny prints dotting the floor.</span>
-        <br>
-        <div id="navigate">
-            <a class="A" href="G_door_8_e_c.html">[follow neko's footprints]</a>  
-      </div>
+<span class="paw l" style="animation-delay:.6s">🐾</span>
+<span class="paw r" style="animation-delay:.9s">🐾</span>
 
+<span class="paw l" style="animation-delay:1.2s">🐾</span>
+<span class="paw r" style="animation-delay:1.5s">🐾</span>
 
+<span class="paw l" style="animation-delay:1.8s">🐾</span>
+<span class="paw r" style="animation-delay:2.1s">🐾</span>
 
+</pre>
+
+<span id="thoughts">Neko walks off without a sound... her tiny prints dotting the floor.</span><br><br><br>
+
+<div id="navigate">
+  <a class="A" href="G_door_8_e_c.html"> [ follow neko's footprints ] </a>  
+</div>
 
     </div>
-    </main>
+  </main>
 </body>
 </html>

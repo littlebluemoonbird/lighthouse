@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .65rem;
-        }
-      }
-      #lighthouse pre {
-  font-size: 0.6rem; /* or adjust */
-}
-      </style>
-    <title>The Lighthouse</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .65rem; }
+    }
+    #lighthouse pre { font-size: 0.6rem; }
+
+    /* fog overlay */
+    .fog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
+      opacity: 0.4;
+      animation: drift 60s linear infinite;
+      pointer-events: none;
+      z-index: 999;
+    }
+    .fog.fog2 {
+      animation: drift2 80s linear infinite;
+      opacity: 0.25;
+    }
+    @keyframes drift {
+      from { transform: translateX(0) translateY(0); }
+      to   { transform: translateX(-50%) translateY(-20%); }
+    }
+    @keyframes drift2 {
+      from { transform: translateX(0) translateY(0); }
+      to   { transform: translateX(40%) translateY(20%); }
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
                           _
                      ____( )_____
      ___            |            |     ____
@@ -34,17 +57,19 @@
                \                      /____/          |---------|
                 \____________________/               / \ _____ / \
                  |__________________|                \___________/
-    </pre>
-    <span id="title"> Tea always knows how to soothe..</span>
-    <div id="navigate">
-        <a class="A" href="E_livingroom_tea_b_1.html">...Sip</a></a>  
+      </pre>
+
+      <span id="title"> Tea always knows how to soothe..</span><br>
+      <div id="navigate">
+        <a class="A" href="E_livingroom_tea_b_1.html"> [ sip ] </a>
+      </div>
+
+      <!-- tea pot and teacup by Vicky Wilks -->
     </div>
+  </main>
 
-
-
-
-<!-- tea pot and teacup by Vicky Wilks -->
-    </div>
-    </main>
+  <!-- fog layers -->
+  <div class="fog"></div>
+  <div class="fog fog2"></div>
 </body>
 </html>

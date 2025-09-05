@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>The Lighthouse</title>
-  <style>
-    .flicker {
-      animation: flicker 1.6s infinite;
-    }
-    @keyframes flicker {
-      0%,100% { opacity: 1; }
-      20% { opacity: 0.8; }
-      40% { opacity: 0.3; }
-      55% { opacity: 0.9; }
-      70% { opacity: 0.5; }
-      85% { opacity: 0.95; }
-    }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="style.css"/>
+<title>The Lighthouse</title>
+<style>
+  .flicker{animation:flicker 1.6s infinite}
+  @keyframes flicker{0%,100%{opacity:1}20%{opacity:.8}40%{opacity:.3}55%{opacity:.9}70%{opacity:.5}85%{opacity:.95}}
+  @media (max-width:800px){pre{font-size:.8rem}}
 
-    @media only screen and (max-width: 800px) {
-      pre { font-size: .8rem; }
-    }
-  </style>
+  .stack{position:relative;display:inline-block;font-family:'Courier New',Courier,monospace;white-space:pre;line-height:1.6}
+  .clean{opacity:0;animation:fadeIn 700ms ease forwards 250ms}
+  .corrupt{position:absolute;inset:0;pointer-events:none}
+
+  /* diagonal, longer, linear fade of marks */
+  .corrupt{
+    -webkit-mask-image:linear-gradient(135deg,#000 35%,transparent 65%);
+            mask-image:linear-gradient(135deg,#000 35%,transparent 65%);
+    -webkit-mask-size:200% 200%;
+            mask-size:200% 200%;
+    -webkit-mask-position:0% 0%;
+            mask-position:0% 0%;
+    animation:marksHold .3s ease .25s forwards,
+             marksWipe 3.2s linear .55s forwards,
+             marksGone .2s ease 3.9s forwards;
+  }
+  
+  @keyframes fadeIn{to{opacity:1}}
+  @keyframes marksHold{from{opacity:0}to{opacity:1}}
+  @keyframes marksWipe{to{-webkit-mask-position:120% 120%;mask-position:120% 120%}}
+  @keyframes marksGone{to{opacity:0}}
+  #navigate{margin-top:1rem}
+  #navigate a{margin-right:1rem;text-decoration:none}
+</style>
 </head>
 <body>
-  <main>
-    <div id="lighthouse">
+<main>
+  <div id="lighthouse">
 <pre> 
-        +             <span class="flicker">/</span>
+                    <span class="flicker">/</span>
         <span class="flicker">\</span>           |           <span class="flicker">/</span>
           <span class="flicker">\</span>         |         <span class="flicker">/</span>
             <span class="flicker">\</span>      / \      <span class="flicker">/</span>
               <span class="flicker">\</span>  /_____\  <span class="flicker">/</span>
               <span class="flicker">/</span>  |__|__|  <span class="flicker">\</span>
             <span class="flicker">/</span>  |;|     |;|  <span class="flicker">\</span>
-          <span class="flicker">/</span>    \\.    .  /    <span class="flicker">\</span>
-        <span class="flicker">/</span>       ||:  .   |       <span class="flicker">\</span>
-                   ||:     |         <span class="flicker">\</span>
-                   ||:.     |           <span class="flicker">\</span>
-                   ||:      .|
-                  ||:      , |         <span class="flicker">/` \</span>
-                  ||:         |          
-                 ||:   _    . |        
-               ||_| .        |__|   
-             __|_|           |___         
-           -~                  ~---___,
-        `~----,____                     
+          <span class="flicker">/</span>    \\.    . /    <span class="flicker">\</span>
+        <span class="flicker">/</span>       ||:  .  |       <span class="flicker">\</span>
+                ||:     |         <span class="flicker">\</span>
+                ||:.    |           <span class="flicker">\</span>
+                ||:    .|
+               ||:    , |         <span class="flicker">/` \</span>
+              ||:       |          
+              ||:  _  . |        
+          ||_| .        |__|   
+       __|_|              |___         
+    -~                         ~---___,
+  `~----,____                     
 </pre>
+<br>
 
-      <span id="title">
-        you see, the beacon is..<br> both a warning and a welcome. <br>
-        and right now...<br><br> it seems that we are both trying to hold the light.
-      </span>
-
-      <div id="navigate">
-        <a class="A" href="A_ocean_6_a.html">what’s happening to you?</a>
-                <a class="A" href="A_ocean_6_b.html">i don't understand</a>
-      </div>
+    <!-- PERFECT OVERLAY: same string in both layers -->
+    <pre class="stack">
+<span class="clean">    the beacon warns.   <br>and it calls.   <br>      maybe we’re both trying   <br>to hold onto the same light.   </span>
+<span class="corrupt" aria-hidden="true">    ṫ̷ḣ̶ė̷ ̶̇ḃ̴ė̶ȧ̷ċ̶ȯ̴ṅ̶ ̷̇ẇ̴ȧ̶ṙ̷ṅ̶ṡ̷.   <br>ȧ̷ṅ̶ḋ̷ ̶̇i̴̇ṫ̶ ̷̇ċ̴ȧ̶l̷̇l̶̇ṡ̷.   <br>      ṁ̷ȧ̶ẏ̷ḃ̶ė̷ ̶̇ẇ̴ė̶’̷ṙ̶ė̷ ̶̇ḃ̴ȯ̶ṫ̷ḣ̶ ̷̇ṫ̴ṙ̶ẏ̷i̶̇ṅ̷ġ̷   <br>ṫ̷ȯ̶ ̷̇ḣ̴ȯ̶l̷̇ḋ̶ ̷̇ȯ̴ṅ̶ṫ̷ȯ̶ ̷̇ṫ̴ḣ̶ė̷ ̶̇ṡ̴ȧ̶ṁ̷ė̷ ̶̇l̴̇i̶̇ġ̷ḣ̴ṫ̶.   </span></pre>
+    <div id="navigate">
+      <a class="A" href="A_ocean_6_a.html">what’s happening to you?</a>
+      <a class="A" href="A_ocean_6_b.html">i don't understand</a>
     </div>
-  </main>
+  </div>
+</main>
 </body>
 </html>

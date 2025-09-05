@@ -1,44 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+
+  <style>
+    @media only screen and (max-width: 800px) {
       pre {
         font-size: .9rem;
       }
-    }</style>
-    <title>The Lighthouse</title>
-  
+    }
+
+    .flicker {
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      20% { opacity: 0.65; }
+      40% { opacity: 0.4; }
+      60% { opacity: 0.85; }
+      80% { opacity: 0.6; }
+    }
+
+    .sway {
+      display: inline-block;
+      animation: sway 4s ease-in-out infinite;
+    }
+
+    @keyframes sway {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-0.6rem); }
+      100% { transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-
-
-
-
-                                .    ..|
-                              .        |
-                                ゜。：  。゜
+      <pre class="flicker">
+                                 .  ..|
+                              .       |
+                                 ゜。： 。゜
                               - ── ==  ☆ == ── -
                                   :   。   ゜
                                     ..|    . 
                                       |     .
+      </pre>
 
-
-                            
+      <pre>
    Yes.
        The oracle is what 
            protects this lighthouse
                         and the desert.
+      </pre>
 
-
-
-
+      <pre class="sway">
                               __
                           _.-~  )
                 _..--~~~~,'   ,-/     _
@@ -53,18 +73,16 @@
   . . . ./  - .          )
  .  . . |  _____..---.._/ ____ 
 ~~~~----~~~~             
+      </pre>
 
-        </pre>
-        <span id="title">  </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_b_b.html">how do i meet the oracle?</a>  
+      <span id="title"></span><br>
+
+      <div id="navigate">
+        <a class="A" href="G_door_7_b_b.html">how do i meet the oracle?</a>
       </div>
 
-<!-- work by jgs -->
-
-
+      <!-- ascii by jgs -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

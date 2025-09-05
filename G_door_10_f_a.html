@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: 0.6rem;
+      }
+    }
+
+    .saturn {
+      display: inline-block;
+      animation: saturnZoom 4s ease-in-out infinite;
+      font-size: 2rem;
+      opacity: 1;
+    }
+
+    @keyframes saturnZoom {
+      0% {
+        transform: scale(0.1);
+        opacity: 1;
+      }
+      70% {
+        transform: scale(6);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(0.1);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre>
 
 
 
 
 
-
-
-🪐
-
+<span class="saturn">🪐</span>
 
 
 
 
 
+      </pre>
 
-        
-        </pre>
-        <span id="thoughts"> Saturn looks tiny... we've come so far!  </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_g.html">[find the astronaut]</a>  
+      <span id="thoughts">Could Saturn one day be our home..?</span>
+      <br>
+
+      <div id="navigate">
+        <a class="A" href="G_door_10_g.html"> [ return to the astronaut ] </a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

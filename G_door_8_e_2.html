@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
   <title>The Lighthouse</title>
+  <style>
+    pre{margin:0;white-space:pre;font-family:"Courier New",monospace}
+    .breath{display:inline-block;animation:breathe 4s ease-in-out infinite}
+    @keyframes breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+    .nya{display:inline-block;opacity:0;animation:fadeNya 6s ease-in-out infinite}
+    .n2{animation-delay:2s}.n3{animation-delay:4s}
+    @keyframes fadeNya{0%{opacity:0}20%{opacity:1}60%{opacity:0}100%{opacity:0}}
+  </style>
 </head>
 <body>
   <main>
     <div id="lighthouse">
-      <pre> 
-n..ny...   
-                n...nya...
+<pre>
+<span class="nya n1">n..ny...</span>
+                <span class="nya n2">n...nya...</span>
+<span class="breath">
     _                ___       _.--.
     \`.|\..----...-'`   `-._.-'_.-'`
     /  ' `         ,       __.--'
     )/' _/     \   `-_,   /
-    `-'" `"\_  ,_.-;_.-\_ ',    ny...nyaoong..
+    `-'" `"\_  ,_.-;_.-\_ ',
         _.-'_./   {_.'   ; /
        {_.-``-'         {_/
-
-        ..nyao...
-      </pre>
+</span>
+        <span class="nya n3">..nyao...</span><br>
+</pre>
       <span id="thoughts">Neko curls up slowly…<br>her breathing soft, almost purring.</span>
       <br>
       <div id="navigate">
-        <a class="A" href="G_door_8_e_a.html">[gently rub her head]</a>  
+        <a class="A" href="G_door_8_e_b.html"> [ gently rub her head ] </a>
       </div>
     </div>
   </main>

@@ -21,28 +21,90 @@
         W                             
        WWW   I can't tell you exactly..
        WWW        but I have a feeling...
-      WWWWW         this might really..
-W     WWWWW     W     come in handy.. 
-WWW   WWWWW   WWW      for you....!
- WWW  WWWWW  WWW      
-  WWW  WWW  WWW     
-   WWW WWW WWW      
-     WWWWWWW        
-        |      
+      WWWWW        this might really..
+W     WWWWW     W    come in handy.. 
+WWW   WWWWW   WWW     for you....!
+ WWW  WWWWW  WWW     a cat once
+  WWW  WWW  WWW     stopped by
+   WWW WWW WWW    and left this
+     WWWWWWW    with his foot    
+        |      print...
         |           
         |
 
     </pre>
 
-    <span id="thoughts">catnip?.. Neko might like this.. </span>
+    <span id="thoughts">catnip? Hmm. Neko might like this.. </span><br>
     <div id="navigate">
 
-        <a class="A" href="G_door_1_b_27_a.html">sure.<br> Thanks..! </a>  
+        <a class="A" href="G_door_1_b_27_a.html">Thanks..! </a>  
     </div>
 
 <!-- work by jgs -->
 
     </div>
     </main>
+
+  <script>
+  const snowEmojis = ["*", "·", "✧", "⁕", "✦"];
+
+  const snowStyle = document.createElement('style');
+  snowStyle.innerHTML = `
+    .snowflake {
+      position: fixed;
+      top: -2rem;
+      pointer-events: none;
+      user-select: none;
+      color: white;
+      opacity: 0.8;
+      animation: snowFall 10s linear forwards;
+      font-family: serif;
+      z-index: 9999;
+    }
+
+    @keyframes snowFall {
+      0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+      }
+      70% {
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(100vh) translateX(var(--drift));
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(snowStyle);
+
+  function createSnowflake() {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snowflake");
+    snowflake.textContent = snowEmojis[Math.floor(Math.random() * snowEmojis.length)];
+
+    const size = Math.random() * 1.5 + 1.2;
+    const left = Math.random() * window.innerWidth;
+    const drift = Math.random() * 30 - 15;
+    const duration = Math.random() * 4 + 6;
+
+    snowflake.style.left = `${left}px`;
+    snowflake.style.fontSize = `${size}rem`;
+    snowflake.style.setProperty("--drift", `${drift}px`);
+    snowflake.style.animationDuration = `${duration}s`;
+    snowflake.style.opacity = `${Math.random() * 0.3 + 0.7}`;
+
+    document.body.appendChild(snowflake);
+
+    setTimeout(() => {
+      snowflake.remove();
+    }, duration * 1000);
+  }
+
+  setInterval(() => {
+    if (document.hidden) return;
+    createSnowflake();
+  }, 250);
+</script>
 </body>
 </html>

@@ -1,234 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .75rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-	</head>
-	<body>
-		<div id="lighthouse">
-<pre>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    :root{
+      /* adjust size knobs */
+      --stage-w:  min(580px, 95vw);
+      --stage-h:  240px;       /* slightly bigger */
+      --ascii-fz: .56rem;      /* bump font size */
+      --frame-ms: 1600;        /* ms per frame */
+    }
 
+    body{
+      background:#000; color:#fff; font-family:"Courier New", monospace;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; height:100vh; margin:0; padding:1rem;
+      overflow:hidden;
+    }
+
+    /* title with username */
+    #title{display:flex;flex-direction:column;gap:.35rem;margin-bottom:.5rem}
+    #title .line{opacity:0;transform:translateY(.35rem);animation:revealUp .5s ease forwards}
+    #line1{animation-delay:.6s}
+    #line2{animation-delay:1.6s}
+    #line3{animation-delay:2.4s}
+    .glow{color:#ffd95e;text-shadow:0 0 5px #ffe9aa,0 0 10px #ffd95e}
+
+#navigate {
+  margin:.6rem 0 1rem;
+  opacity:0;
+  visibility:hidden;
+  animation: fadeInNav 1.8s ease forwards;
+  animation-delay:1s; /* wait after the last line */
+}
+@keyframes fadeInNav {
+  to { opacity:1; visibility:visible; }
+}
+
+
+    /* ASCII container */
+    .ascii-frame{
+      width:var(--stage-w);
+      height:var(--stage-h);
+      display:grid; place-items:center;
+      padding:0;
+      overflow:visible;
+      /* invisible “border” just for containment */
+      border:1px solid transparent;
+    }
+
+    .ascii-canvas{
+      position:relative;
+      width:100%; height:100%;
+      display:grid; place-items:center;
+    }
+
+    .ascii{
+      position:absolute; inset:0;
+      display:grid; place-items:center;
+      opacity:0; transition:opacity .35s ease;
+    }
+    .ascii.show{opacity:1}
+
+    .ascii pre{
+      margin:0; padding:0;
+      white-space:pre;
+      font-family:ui-monospace, Menlo, Monaco, Consolas, "Courier New", monospace;
+      font-size:var(--ascii-fz);
+      line-height:1;
+      letter-spacing:0;
+      font-variant-ligatures:none;
+      font-feature-settings:"liga" 0,"calt" 0;
+      background:transparent;
+      color:inherit;
+    }
+
+    @keyframes revealUp{to{opacity:1;transform:translateY(0)}}
+
+    @media (max-width:800px){
+      :root{--ascii-fz:.52rem;--stage-h:210px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- title -->
+<div id="title">
+  <span id="line1" class="line">so, <span class="glow" id="user-name">...</span></span>
+  <span id="line2" class="line">you crossed the fog...</span>
+  <span id="line3" class="line">and met all who dwell here.. and brought them joy..</span>
   
-                       I see..
-                  you've made many..
-                      friends..
-                   along the way..
+</div>
 
-
-
-
-           
-                      />    フ
-                     |  ●  ●l
-                     /` ミ_Yノ
-                     /      |
-                     /  ヽ   ﾉ
-                     │  | | |
-                   ／￣|   | | |
-                   | (￣ヽ__ヽ_)__)
-                   ＼二つ
-		
-
-
-
-
-
-
-
-                   
-
-           .==-.                   .-==.
-           \()8`-._   `.   .'   _.-'8()/
-           (88"   ::.   \./  .::   "88)  
-             \_.'`-::::.(#).::::-'`._/  
-               `._... .q(_)p. ..._.'     
-                 ""-..-'|=|`-..-""
-                 .""' .'|=|`. `"".
-               ,':8(o)./|=|\.(o)8:`.
-              (O :8 ::/ \_/ \:: 8: O)
-               \O `::/       \::' O/
-                ""--'         `--""   
-
-          
-
-
-
-
-
-
-
-     
-                      .--._.--.
-                     (  ^   ^  )
-                     /   . .   \
-                    .`._______.'.
-                   /(           )\
-                 _/  \  \   /  /  \_
-              .~   `  \  \ /  /  '   ~.
-             {    -.   \  V  /   .-    }
-           _ _`.    \  |  |  |  /    .'_ _
-           >_       _} |  |  | {_       _
-            /. - ~ ,_-'  .^.  `-_, ~ - .\
-                    '-'|/   \|`-`           
-
-
-
-
-
-
-
-
-                              
-                       .-"""-.       
-                      /=      \      
-                     |- /~~~\  |     
-                     |=( ^.^ ) |       
-                     \__\_=_/__/
-                      {_______}       
-                     /` *       `\       
-                    /= .     [] .=\   
-                   /  /|ooo     |` \   
-                  (   )\_______/    )  
-                   \``\/       \'' /   
-                   `-| ==    \_|-'    
-                     /         |     
-                    |=   >\  __/     
-                     \   \ |- --|     
-                      \ __| \___/     
-                      _{__} _{__}    
-                      (    )(    ) 
-          
-
-
-
-
-
-
-
-
-
-                         /|      __
-   *             +      / |   ,-~ /             +
-        .              Y :|  //  /                .
-            .          | jj /( .^     *
-                  *    >-"~"-v"              .        
-   *                  /       Y
-      .     .        j^  ^    |     .            +
-                    ( ~T~     j                     +     
-         +           >._-' _./         +
-                  /| ;-"~ _  l               +
-     .           / l/ ,-"~    \      
-                 \//\/      .- \          +
-          +       Y        /    Y               +
-                  l       I     !
-                  ]\      _\    /"\
-                 (" ~----( ~   Y.  )
-   
-
-
-
-
-
-
-
-          .             .         .           * 
-  .   .  .    _'    '     *      ,-.       .        
-  .     .   .    _   .   .      /  (               . 
-_____            _____     _.--'!   '--._______________
-_________                ,'              ''..     _____  
-_   .     *             |!                   \_________
-.   .    .  _   .   . _.'  ^      ___       ! \.      .
-.   '     *          (_.-^.___..-'  ''''--.   )   .    
-.       __________              '       _.'  /____    .
-.   .  .    _'       *      _____   .-''    |      .
-_____      _____     .    .        (..--^.  '   .    
-.   '     *           _   .               | /     . 
-.    _   .   .    .         _   .   .     '______ _    .
-
-
-
-
-
-
-
-         
-                     _.--"""-,   
-                   .'         `\  
-                  /             \ 
-                  |  /.-.--.-.--.)
-                  .\|(_._.__._.__)
-                 (   )   ^ _ ^   
-        \  /_     `-|     (_)     |       _\  /
-        \\/       /`|             |`\       \//
-      '-.\\ \/   |  \   \     /   /  |   \/ //.-'
-        __\\|    \   '.  '._.'  .'   /    |//__
-           \\   .-'.   `'-----'`   .'-.   //
-            \\.'    '-._        .-'\   './/
-            /`          `'''''')    )    `\
-           /                  (    (      ,\
-          ;                O  /\    '-..-'/ ;
-          |                  (  '.       /  |
-          |                O  )   `;---'`   |
-          ;                  /__.-'         ;_
-      .-''-\               O `             /  '---'-.
-            `.                           .'
-              '-._                   _.-'
-                  `"  '  - - -  ' "``
-
-
-
-
-
-
-
-
-
-
-                   .--.   _,
-               .--;    \ /(_
-               /    '.   |   '-._    . ' .
-             |       \  \    ,-.)  -= * =-
-               \ /\_   '. \((` ^(    '/. '
-               )\ /     \ )\  _/   _/
-               /  \\    .-'   '--. /_\
-             |    \\_.' ,        \/||
-             \     \_.-';,_) _)'\ \||
-               '.       /`\   (   '._/
-                 `\   .;  |  . '.
-                   ).'  )/|      \
-                   `      |  \|   |
-                           \  |   |
-                            '.|   |
-                               \  '\__
-                                `-._  '. _
-                                   \`;-.` `._
-                                    \ \ `'-._\
-                                     \ |
-                                      \ )
-                                       \_\
-
-</pre>
-
-<br>
-<br>
-<span id="title"></span>
 <div id="navigate">
-<a class="A" href="z_moongirl_5_c.html">...i did.</a>  
+  <a class="A" href="z_moongirl_5_a.html">but what about you? is the light safe now?</a>
 </div>
 
+  <!-- ascii carousel -->
+  <div class="ascii-frame">
+    <div class="ascii-canvas">
 
-</div>
-</main>
+      <div class="ascii">
+<pre>
+        />    フ
+       |  ●  ●l
+       /` ミ_Yノ
+       /      |
+       /  ヽ   ﾉ
+       │  | | |
+     ／￣|   | | |
+     | (￣ヽ__ヽ_)__)
+     ＼二つ
+</pre>
+      </div>
+
+      <div class="ascii">
+<pre>
+ .==-.                   .-==.
+ \()8`-._   `.   .'   _.-'8()/
+ (88"   ::.   \./  .::   "88)  
+   \_.'`-::::.(#).::::-'`._/  
+     `._... .q(_)p. ..._.'     
+       ""-..-'|=|`-..-""
+       .""' .'|=|`. `"".
+     ,':8(o)./|=|\.(o)8:`.
+    (O :8 ::/ \_/ \:: 8: O)
+     \O `::/       \::' O/
+      ""--'         `--"" 
+</pre>
+      </div>
+
+      <div class="ascii">
+<pre>
+      .--._.--.
+     (  ^   ^  )
+     /   . .   \
+    .`._______.'.
+   /(           )\
+ _/  \  \   /  /  \_
+.~   `  \  \ /  /  '   ~.
+{    -.   \  V  /   .-    }
+_ _`.    \  |  |  |  /    .'_ _
+>_       _} |  |  | {_       _
+ /. - ~ ,_-'  .^.  `-_, ~ - .\
+         '-'|/   \|`-`
+</pre>
+      </div>
+
+      <div class="ascii">
+<pre>
+           .-"""-.       
+          /=      \      
+         |- /~~~\  |     
+         |=( ^.^ ) |       
+         \__\_=_/__/
+          {_______}       
+         /` *       `\       
+        /= .     [] .=\   
+       /  /|ooo     |` \   
+      (   )\_______/    )  
+       \``\/       \'' /   
+       `-| ==    \_|-'    
+         /         |     
+        |=   >\  __/     
+         \   \ |- --|     
+          \ __| \___/     
+          _{__} _{__}    
+          (    )(    ) 
+</pre>
+      </div>
+
+      <div class="ascii">
+<pre>
+       /|      __
+*      / |   ,-~ /             
+ .    Y :|  //  /                
+      | jj /( .^     
+  *   >-"~"-v"                 
+      /       Y
+     j^  ^    |    
+    ( ~T~     j                    
+     >._-' _./         
+  /| ;-"~ _  l             
+ / l/ ,-"~    \      
+ \//\/      .- \          
+  Y        /    Y               
+  l       I     !
+  ]\      _\    /"\
+ (" ~----( ~   Y.  )
+</pre>
+      </div>
+
+      <div class="ascii">
+<pre>
+         _.--"""-,   
+       .'         `\  
+      /             \ 
+      |  /.-.--.-.--.)
+      .\|(_._.__._.__)
+     (   )   ^ _ ^   
+\  /_     `-|     (_)     |       _\  /
+\\       /`|             |`\       \//
+'-.\\ \/   |  \   \     /   /  |   \/ //.-'
+  __\\|    \   '.  '._.'  .'   /    |//__
+     \\   .-'.   `'-----'`   .'-.   //
+      \\.'    '-._        .-'\   './/
+      /`          `'''''')    )    `\
+     /                  (    (      ,\
+    ;                O  /\    '-..-'/ ;
+    |                  (  '.       /  |
+    |                O  )   `;---'`   |
+    ;                  /__.-'         ;_
+.-''-\               O `             /  '---'-.
+      `.                           .'
+        '-._                   _.-'
+            `"  '  - - -  ' "``      
+</pre>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const frames = Array.from(document.querySelectorAll('.ascii'));
+    let idx = 0;
+    function show(i){
+      frames.forEach(f => f.classList.remove('show'));
+      frames[i].classList.add('show');
+    }
+    show(idx);
+    const PER = parseInt(getComputedStyle(document.documentElement)
+      .getPropertyValue('--frame-ms')) || 1600;
+    setInterval(()=>{
+      idx = (idx + 1) % frames.length;
+      show(idx);
+    }, PER);
+
+    // restore name
+    const name = localStorage.getItem("lighthouseUserName") || "you";
+    document.getElementById("user-name").textContent = name;
+  </script>
 </body>
-</html>
-
-	</body>
 </html>

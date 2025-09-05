@@ -1,27 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .8rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
-    <style> main{
-      height: auto;
-  }</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .8rem; }
+    }
 
+    #lighthouse pre {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      white-space: pre;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1;
+    }
 
+    /* shimmer glisten */
+    .glisten {
+      display: inline-block;
+      background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.8) 40%,
+        rgba(255,255,255,0) 60%
+      );
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre> 
 
                     🩸
 
@@ -205,7 +227,7 @@
 
 
                            🩸
-
+<span class="glisten">
                            __
                     ___  _// \
                   _/   \/__|_ \
@@ -229,19 +251,16 @@
 | ---/| | |  \ /|  /    -(!!
 | -/| |  /     \|/        !!
 |/____ /                  !!)-
-                              !!</pre>
+</span>
+</pre>
 
-        <span id="thoughts">a flower grew out !</span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="F_hallway_5_a.html"> :) </a>  
+      <span id="thoughts">a flower rose from where the blood had fallen.</span><br>
+      <div id="navigate">
+        <a class="A" href="F_hallway_5_a.html"> :) </a>
       </div>
 
-
       <!-- vk! -->
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

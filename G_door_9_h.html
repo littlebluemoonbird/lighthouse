@@ -1,52 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>The Lighthouse</title>
+  <style>
+    @media (max-width:800px){ pre{font-size:.7rem} }
 
-    
-    <title>The Lighthouse</title>
-    
+    .grow pre {
+      margin:0;
+      white-space:pre;
+      font-family:"Courier New", monospace;
+    }
+    .line {
+      opacity:0;
+      display:block;
+    }
+    .line.show {
+      opacity:1;
+      transition:opacity .5s ease;
+    }
 
+    #thoughts, #navigate {
+      margin-top:1rem;
+      text-align:center;
+      display:block;
+    }
+  </style>
 </head>
 <body>
-    <main>
-    <div id="lighthouse">
-    <pre> 
-        __   __
-       /  \./  \/\_
-   __{^\_ _}_   )  }/^\
-  /  /\_/^\._}_/  //  /
- (  (__{(@)}\__}.//_/__A____A_______A________A________A_____A___
-  \__/{/(_)\_}  )\\ \\---v-----V-----V---Y-----v----Y------v----
-    (   (__)_)_/  )\ \\
-     \__/     \__/\/\/
-        \__,--'
+  <main>
+    <div id="lighthouse" class="grow">
+<pre>
+<span class="line">        __   __</span>
+<span class="line">       /  \./  \/\_</span>
+<span class="line">   __{^\_ _}_   )  }/^\</span>
+<span class="line">  /  /\_/^\._}_/  //  /</span>
+<span class="line"> (  (__{(@)}\__}.//_/__A____A_______A________A________A_____A___</span>
+<span class="line">  \__/{/(_)\_}  )\\ \\---v-----V-----V---Y-----v----Y------v----</span>
+<span class="line">    (   (__)_)_/  )\ \\</span>
+<span class="line">     \__/     \__/\/\/</span>
+<span class="line">        \__,--'</span>
+</pre>
 
-        </pre>
-<span id="thoughts">
-hmm...<br>
-some flowers grow thorns.<br>
-not out of anger,<br>
-but to stay intact.<br>
-there’s a kind of kindness in that.
-</span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_9_i_a.html">keep the flower</a> 
+      <span id="thoughts">
+        hmm...<br>
+        some flowers grow thorns.<br>
+        not out of anger,<br>
+        but to stay intact.<br>
+        there’s a kind of kindness in that.
+      </span>
+
+      <div id="navigate">
+        <a class="A" href="G_door_9_i_a.html"> [ keep ]</a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
+
+  <script>
+    const lines = document.querySelectorAll('.line');
+    lines.forEach((line, i) => {
+      setTimeout(() => line.classList.add('show'), i * 500); // half a sec per line
+    });
+  </script>
 </body>
 </html>

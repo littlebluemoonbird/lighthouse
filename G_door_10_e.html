@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .55rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .55rem;
+      }
+    }
+
+    @keyframes swirl {
+      0%   { transform: rotate(0deg) scale(1); }
+      25%  { transform: rotate(1deg) scale(1.01); }
+      50%  { transform: rotate(0deg) scale(1); }
+      75%  { transform: rotate(-1deg) scale(1.01); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+
+    .swirl {
+      display: inline-block;
+      animation: swirl 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <div class="swirl">
+        <pre> 
  .      .      .      .      .      .      .      .      .      .      .
 .                               .       .       .       .       .       .
    .        .        .        .        .        .        .        .        .
@@ -45,19 +62,17 @@
   .        .        .    """"""""     .        .        .        .        .
  .       .       .       .       .       .       .       .       .
      .      .      .      .      .      .      .      .      .      .      .
-
         </pre>
-        <span id="thoughts">I wonder what they think about...</span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_f.html">[find earth]</a>
-          <a class="A" href="G_door_10_f_a.html">[find saturn]</a>  
       </div>
 
+      <span id="thoughts">I wonder what they think about...</span>
+      <br>
 
-
-
+      <div id="navigate">
+        <a class="A" href="G_door_10_f.html"> [ find earth ] </a>
+        <a class="A" href="G_door_10_f_a.html"> [ find saturn ] </a>  
+      </div>
     </div>
-    </main>
+  </main>
 </body>
 </html>

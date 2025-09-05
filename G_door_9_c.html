@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      div {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #lighthouse pre {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      white-space: pre;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1;
+      display: inline-block;
+      animation: flutter 1.6s ease-in-out infinite;
+    }
+
+    @keyframes flutter {
+      0%   { transform: translate(0, 0); }
+      10%  { transform: translate(-3px, -6px); }
+      20%  { transform: translate(3px, -10px); }
+      30%  { transform: translate(-2px, -4px); }
+      40%  { transform: translate(2px, -12px); }
+      50%  { transform: translate(0, -8px); }
+      60%  { transform: translate(-3px, -14px); }
+      70%  { transform: translate(3px, -10px); }
+      80%  { transform: translate(-1px, -6px); }
+      90%  { transform: translate(2px, -4px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @media only screen and (max-width: 800px) {
+      #lighthouse pre {
         font-size: .9rem;
       }
-    }</style>
-    <title>The Lighthouse</title>
-    
-
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre>      
-                    *fluttter*
+<pre>      
+                    *flutter*
                        🦋 oh hi there!  
                            it's you! you!
                                just! saved! 
 .==-.                   .-==.    my! life!
 \()8`-._   `.   .'   _.-'8()/   i thought
-(88"   ::.   \./  .::   "88)   I'd never
+(88"   ::.   \./  .::   "88)   i'd never
   \_.'`-::::.(#).::::-'`._/   see the
     `._... .q(_)p. ..._.'   light of   
       ""-..-'|=|`-..-""    day.. 
@@ -34,18 +58,18 @@
     \O `::/       \::' O/   hahahaha!
      ""--'         `--""   *flutter*
                          *flutter*
- 
-        </pre>
-        <span id="thoughts"> </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_9_d.html">what were you doing inside the well?</a>  
+
+                         
+</pre>
+
+      <span id="thoughts"></span>
+
+      <div id="navigate">
+        <a class="A" href="G_door_9_d.html">what were you doing inside the well?</a>  
       </div>
 
       <!-- Art by hjw -->
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

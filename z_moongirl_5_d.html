@@ -1,24 +1,87 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: 0.7rem;
+      }
+    }
+
+    .glisten {
+      color: #ffeebb;
+      text-shadow:
+        0 0 2px #fff5cc,
+        0 0 4px #ffe29a,
+        0 0 6px #ffd866;
+      animation: glowAndFade 5s ease-in-out forwards;
+    }
+
+    @keyframes glowAndFade {
+      0% {
+        opacity: 1;
+        filter: brightness(1.2);
+        text-shadow:
+          0 0 6px #fff9cc,
+          0 0 8px #ffe9a0,
+          0 0 10px #ffd94d;
+      }
+      60% {
+        opacity: 0.7;
+        text-shadow:
+          0 0 4px #fff5cc,
+          0 0 6px #ffe29a,
+          0 0 8px #ffd866;
+      }
+      100% {
+        opacity: 0;
+        text-shadow: none;
+      }
+    }
+
+    #thoughts {
+      text-align: center;
+      font-style: italic;
+      margin-top: 2em;
+      opacity: 0;
+      animation: fadeInThenFlicker 7s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeInThenFlicker {
+      0%   { opacity: 0; }
+      20%  { opacity: 0.4; }
+      40%  { opacity: 0.6; }
+      60%  { opacity: 0.45; }
+      80%  { opacity: 0.7; }
+      100% { opacity: 0.6; }
+    }
+
+    #navigate {
+      text-align: center;
+      opacity: 0;
+      animation: fadeInNav 2s ease forwards;
+      animation-delay: 2.7s;
+    }
+
+    @keyframes fadeInNav {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="glisten">
+
+        
                .                .                                 .
            *                 *                                   *
        .                 .                 .                 .
@@ -36,22 +99,18 @@
      AMMMMMA   .                .           ~~--__
   ___MMM^MMM            +                         ~~--__
               `\AwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAwAw^v^v^v^v^v^v^v^
+      </pre>
+      <span id="thoughts">
+        the lighthouse disappeared into the dark...<br><br>
+        I'm drifting again in the waters..<br><br>
+        but something is stil warm..<br><br>
+      </span>
+      <br><br>
 
-</pre>
-
-<span id="title">Our stories are different, <br>but our origins are the same.. <br>How we all came here.. <br> buffeted by the storms of life..
-</span>
-<br><br>
-<div id="navigate">
-<br>
-<a class="A" href="z_moongirl_5_e.html">...</a>  
-</div>
-
-
-</div>
-</main>
+      <div id="navigate">
+        <a class="A" href="z_moongirl_5_e.html">[ reach for it ]</a>
+      </div>
+    </div>
+  </main>
 </body>
-</html>
-
-	</body>
 </html>

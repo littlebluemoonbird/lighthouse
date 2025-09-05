@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #lighthouse pre {
+      margin: 0;
+      padding: 0;
+      white-space: pre;
+      background: transparent;
+    }
 
+    .line {
+      opacity: 0;
+      transform: translateY(0.5rem);
+      animation: riseIn 0.4s forwards;
+    }
+
+    @keyframes riseIn {
+      from { opacity: 0; transform: translateY(0.5rem); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
-
-         .-.  
-        (  |.-.
-       .-\/__ )     
-      (__/ \
-         \_/
-     
-        
-         .-.            .-.
-        (  |.-.      .-.|  ) 
-       .-'/__ )     ( __\ '-.
-      (__/ \           / \___)
-         \_/           \_/        
-    
-    
-         
-            .-.
-            \  |.-.
-             \_|_/
-             ` 
+<pre>
 
 
-     .-._
-     \   `.
-      \__/
-      `
 
-            
-  
+<span class="line" style="animation-delay:0.3s">         .-.            .-.</span>
+<span class="line" style="animation-delay:0.4s">        (  |.-.      .-.|  ) </span>
+<span class="line" style="animation-delay:0.5s">       .-'/__ )     ( __\ '-.</span>
+<span class="line" style="animation-delay:0.6s">      (__/ \           / \___)</span>
+<span class="line" style="animation-delay:0.7s">         \_/           \_/</span>
 
-        </pre>
-        <span id="thoughts"> the butterfly fluttered away into the well again... </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_9_h.html">examine the flower</a>  
-          <a class="A" href="F_hallway_5_a.html">throw away the flower </a>  
+<span class="line" style="animation-delay:0s">         .-.  </span>
+<span class="line" style="animation-delay:0.1s">        (  |.-.</span>
+<span class="line" style="animation-delay:0.2s">       .-\/__ )     </span>
+<span class="line" style="animation-delay:0.3s">      (__/ \</span>
+<span class="line" style="animation-delay:0.4s">         \_/</span>
+</pre><br>
+
+      <span id="thoughts">the butterfly fluttered away into the well again...</span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_9_h.html"> [ examine ]</a>
+        <a class="A" href="F_hallway_5_a.html"> [ trash ] </a>
       </div>
 
-
-<!-- artwork by s-v -->
-
+      <!-- artwork by s-v -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

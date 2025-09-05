@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .55rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
-    <style> main{height: auto;}</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .55rem; }
+    }
+
+    /* floating astronaut */
+    .floaty {
+      display: inline-block;
+      animation: floatyMove 5s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    @keyframes floatyMove {
+      0%   { transform: translateY(0) rotate(0deg); }
+      25%  { transform: translateY(-6px) rotate(-1deg); }
+      50%  { transform: translateY(0) rotate(1deg); }
+      75%  { transform: translateY(6px) rotate(-0.5deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="floaty"> 
                       
         .-"""-.       
        /=      \    Hi there!  
@@ -38,18 +51,16 @@
       \ __| \___/     
       _{__} _{__}    
      (    )(    )   
-        </pre>
-        <span id="title"></span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_g_a.html">thank you!</a>  
+      </pre>
 
+      <span id="title"></span>
+
+      <div id="navigate">
+        <a class="A" href="G_door_10_g_a.html">thank you!</a>
       </div>
 
-
-<!-- artwork by Jgs -->
-
+      <!-- artwork by Jgs -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

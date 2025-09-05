@@ -1,49 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .8rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-	</head>
-	<body>
-		<div id="lighthouse">
-        <br><br><br><pre>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Lighthouse</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+      text-align: center;
+    }
 
-.                            |
-     ╲                         /
-                               /
-     ╲          I am	        /
-    ╲        the keeper           /
-- -      of the lighthouse.. 	 - -
-   /        I am the one,        ╲
-  /         who found you,
-   /     and brought you here..   ╲
-    /   
-      |  
-    
-</pre>
+    pre {
+      white-space: pre-wrap;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
 
-<br>
-<br>
-<span id="title"></span>
-<br><br>
-<div id="navigate">
-<br>
-<a class="A" href="z_moongirl_4.html"> and I found you now!</a>  
-</div>
+    .line {
+      opacity: 0;
+      animation: fadeInLine 0.3s ease-in forwards;
+    }
+    .line2 { animation-delay: 1.1s; }
+    .line3 { animation-delay: 2.4s; }
+    .line4 { animation-delay: 4.9s; }
+    .line5 { animation-delay: 5.9s; }
 
+    .glimmer {
+      color: #ffecc7;
+      filter: blur(1px);
+      animation: shimmerIn 3s ease-out forwards, pulseGlow 4s ease-in-out infinite 8s;
+      animation-delay: 6.6s;
+      text-shadow:
+        0 0 1px #fff5cc,
+        0 0 3px #ffefbb,
+        0 0 6px #ffdd88;
+      display: inline-block;
+      position: relative;
+    }
 
-</div>
-</main>
+    .glimmer::before {
+      content: '✴';
+      position: absolute;
+      top: -0.5em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      opacity: 0.6;
+      animation: rotateRay 6s linear infinite;
+      color: #fff7cc;
+    }
+
+    @keyframes fadeInLine { to { opacity: 1; } }
+
+    @keyframes shimmerIn {
+      0% { opacity: 0; filter: blur(2px) brightness(0.7); transform: scale(1.01); }
+      30% { opacity: 0.5; filter: blur(1px); }
+      60% { opacity: 0.85; }
+      100% { opacity: 1; filter: none; }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { text-shadow: 0 0 4px #ffe9aa; }
+      
+    }
+
+    @keyframes rotateRay {
+      from { transform: translateX(-50%) rotate(0deg); }
+      to { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    #navigate {
+      opacity: 0;
+      animation: fadeInNav 1.5s ease-in forwards;
+      animation-delay: 7.2s; /* adjusted from 10.8s */
+      margin-top: 2rem;
+    }
+
+    @keyframes fadeInNav { to { opacity: 1; } }
+
+    input {
+      padding: 0.4rem 0.6rem;
+      font-family: inherit;
+      font-size: 1rem;
+      background: transparent;
+      color: #ffd95e;
+      border: none;
+      border-bottom: 1px solid #ffd95e;
+      outline: none;
+      width: 160px;
+      text-align: center;
+    }
+
+    button {
+      margin-left: 1rem;
+      background: transparent;
+      border: 1px solid #ffd95e;
+      color: #ffd95e;
+      padding: 6px 14px;
+      font-family: inherit;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ffd95e;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <pre>
+<span class="line line1">yes... it was me.</span>
+<span class="line line2">And you found the thread of light.. </span>
+<span class="line line3">that's what keeps the light from drifting away..</span><br><br> 
+<span class="line line4">my name is <span class="glimmer">x̴͙̤̓Ϟ̇͞𐑂ⲯ̇̇͡Ϟ̇ ̴̙͑͂</span></span>
+<span class="line line5">what is your name..?</span>
+  </pre>
+
+  <div id="navigate">
+    <input type="text" id="username" placeholder="your name..." />
+    <button onclick="submitName()"> ↩ </button>
+  </div>
+
+  <script>
+    function submitName() {
+      const name = document.getElementById("username").value.trim();
+      if (name) {
+        localStorage.setItem("lighthouseUserName", name);
+        window.location.href = "z_moongirl_4.html";
+      } else {
+        alert("Would you please tell me your name?");
+      }
+    }
+  </script>
 </body>
-</html>
-
-	</body>
 </html>

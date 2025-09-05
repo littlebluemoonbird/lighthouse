@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .65rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    .mermaid-float {
+      display: inline-block;
+      animation: float 5s ease-in-out infinite, shimmer 3.5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-0.8vh); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes shimmer {
+      0%   { filter: brightness(0.9); }
+      50%  { filter: brightness(1.15); }
+      100% { filter: brightness(0.9); }
+    }
+
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: 0.65rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-   <pre>
+      <pre class="mermaid-float">
 
 
                          sSSs
@@ -33,17 +52,16 @@
   -          -~ `"~. _ ._ `_, _  _.=` ~     -
    - _ ~- _-  _- ~-  _ -  _ ~ _ - - _ - _~ -~ -_
   _ -  -    _   -  _   -  _  -  _ -  - _  -  _
-</pre>
-        <span id="thoughts">a mermaid! she seems.. lost in thought..</span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="F_hallway_6_a.html">⇣</a>  
+
+      </pre>
+
+      <span id="thoughts">a mermaid..! she seems.. deep in thought..</span>
+      <br>
+
+      <div id="navigate">
+        <a class="A" href="F_hallway_6_a.html">⇣</a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

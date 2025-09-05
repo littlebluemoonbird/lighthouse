@@ -1,23 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .9rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    /* Local-only tweaks that won't fight your global style.css */
+    #lighthouse { position: relative; text-align: center; }
+    .ascii-wrap { position: relative; display: inline-block; }
+
+    /* Keep ASCII tight and centered; neutralize global padding on pre */
+    .ascii-wrap pre {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      line-height: 1.05;      /* slightly tight so it matches your look */
+      white-space: pre;        /* preserve spacing */
+    }
+
+    /* Line-by-line reveal */
+    .reveal-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: lineIn .38s ease-out forwards;
+    }
+    @keyframes lineIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Big snowfield behind the ASCII */
+    .snowfield {
+      pointer-events: none;
+      position: absolute;
+      inset: -5vh 0 0 0;       /* spill slightly above for entry */
+      overflow: hidden;
+      z-index: 0;
+    }
+    .flake {
+      position: absolute;
+      top: -10vh;
+      will-change: transform, opacity;
+      opacity: .9;
+      filter: drop-shadow(0 0 2px rgba(255,255,255,.25));
+      animation-name: fall, sway;
+      animation-iteration-count: infinite, infinite;
+      animation-timing-function: linear, ease-in-out;
+    }
+    @keyframes fall {
+      from { transform: translateY(-12vh) translateX(0); opacity: .95; }
+      to   { transform: translateY(110vh) translateX(0); opacity: .15; }
+    }
+    @keyframes sway {
+      0%   { transform: translateX(-1.2ch) }
+      50%  { transform: translateX( 1.2ch) }
+      100% { transform: translateX(-1.2ch) }
+    }
+
+    /* Thoughts + nav reveal after the ASCII finishes */
+    #thoughts, #navigate { opacity: 0; transition: opacity .8s ease; }
+    #thoughts.show { opacity: 1; }
+    #navigate.show { opacity: 1; transition-delay: .2s; }
+
+    /* Mobile: keep the ASCII size friendly */
+    @media (max-width: 800px){
+      .ascii-wrap pre { font-size: .9rem; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> ･ ｡
+      <div class="ascii-wrap">
+        <!-- snowfall lives behind the ASCII -->
+        <div class="snowfield" id="snowfield" aria-hidden="true"></div>
+
+        <pre id="snowAscii"> ･ ｡
 ❄∴
  ･ﾟ*｡･
  ❄･✧ *ﾟ☁️｡  
@@ -28,17 +90,89 @@
   * ｡･*.｡   ｡ *  *. ﾟ❄ ☁️
         *     ☁️ ❄ ✧*❄  ﾟ*･｡
                 ❄ °*. ﾟ  ☁️* ｡❄｡✧   *.
+            </pre>
+      </div>
 
-    </pre>
+      <span id="thoughts">
+the first time I saw snow, everything went quiet.. <br><br>
+      </span><br>
 
-    <span id="thoughts"> The first time I ever saw snow.. <br>I was awestruck </span>
-    <div id="navigate">
-        <a class="A" href="G_door_1_b_11.html">[grab shovel]</a>  
+      <div id="navigate">
+        <a class="A" href="G_door_1_b_11.html"> [ find a shovel ] </a>  
+      </div>
+
+      <!-- work by jgs -->
     </div>
+  </main>
 
-<!-- work by jgs -->
+  <script>
+    // --- 1) Reveal the ASCII line-by-line ---
+    (function revealLines(){
+      const pre = document.getElementById('snowAscii');
+      const raw = pre.textContent.replace(/\r/g,''); // normalize
+      const lines = raw.split('\n');
+      pre.innerHTML = lines.map((ln, i) => {
+        const esc = ln.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const delay = 120 + i * 80; // stagger per line
+        return `<span class="reveal-line" style="animation-delay:${delay}ms">${esc || '&nbsp;'}</span>`;
+      }).join('\n');
 
-    </div>
-    </main>
+      // After the last line finishes, show thoughts and nav
+      const spans = pre.querySelectorAll('.reveal-line');
+      if (spans.length){
+        spans[spans.length - 1].addEventListener('animationend', () => {
+          document.getElementById('thoughts').classList.add('show');
+          document.getElementById('navigate').classList.add('show');
+        }, { once: true });
+      }
+    })();
+
+    // --- 2) Fill the background with LOTS of snowflakes ---
+    (function makeSnow(){
+      const field = document.getElementById('snowfield');
+      const W = field.clientWidth || window.innerWidth;
+      const H = field.clientHeight || window.innerHeight;
+      const COUNT = 120; // more snow!
+
+      const glyphs = ['❄','✧','*','･','ﾟ','｡','✦','❅','•','·','☁️'];
+
+      for (let i = 0; i < COUNT; i++){
+        const flake = document.createElement('span');
+        const g = glyphs[Math.floor(Math.random()*glyphs.length)];
+        flake.className = 'flake';
+        flake.textContent = g;
+
+        // random size & position
+        const size = (Math.random()*0.9 + 0.6); // em-ish scale via font-size
+        const left = Math.random()*100;         // vw percentage
+        const delay = Math.random()*10;         // seconds
+        const fallDur = 8 + Math.random()*12;   // 8s - 20s
+        const swayDur = 3 + Math.random()*5;    // 3s - 8s
+
+        flake.style.left = `${left}vw`;
+        flake.style.fontSize = `${size}rem`;
+        flake.style.animationDuration = `${fallDur}s, ${swayDur}s`;
+        flake.style.animationDelay = `${delay}s, ${delay/2}s`;
+
+        field.appendChild(flake);
+      }
+
+      // handle resize to keep field covering content
+      const resize = () => {
+        field.style.height = document.getElementById('lighthouse').offsetHeight + 'px';
+      };
+      resize();
+      window.addEventListener('resize', resize);
+    })();
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .8rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: 0.8rem;
+      }
+    }
+
+    .bottle-glow {
+      color: #b3ecff;
+      text-shadow: 0 0 2px #aeeaff, 0 0 6px #6dd6ff;
+      animation: bottlePulse 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes bottlePulse {
+      0% {
+        text-shadow: 0 0 2px #aeeaff, 0 0 6px #6dd6ff;
+      }
+      100% {
+        text-shadow: 0 0 6px #ffffff, 0 0 12px #83eaff;
+      }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="bottle-glow"> 
                    YAao,
                     Y8888b,
                   ,oA8888888b,
@@ -33,18 +49,15 @@
 AY/'' `\Y8b         it                     ``Y8b
 Y'      `YP         still is..                ~~
          `'
-        </pre>
-        <span id="title">  <br> 
-      </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_c_d.html">but there's no water here</a>  
+      </pre>
+      <span id="title"><br></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_7_c_d.html">but there's no water here</a>
       </div>
 
-
-<!-- itz/jgs/ccm -->
-
+      <!-- itz/jgs/ccm -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

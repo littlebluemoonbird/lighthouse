@@ -1,18 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .8rem;
+      }
+    }
+
+    .sand-scene {
+      opacity: 0;
+      white-space: pre;
+      display: inline-block;
+      animation: revealDown 2.8s steps(40, end) 1 forwards,
+                 glow 5s ease-in-out infinite alternate 3s;
+      color: #fdf3dc;
+      text-shadow: 0 0 2px #f4e7c6;
+    }
+
+    @keyframes revealDown {
+      0% {
+        clip-path: inset(0% 0% 100% 0%);
+        opacity: 1;
+      }
+      100% {
+        clip-path: inset(0% 0% 0% 0%);
+        opacity: 1;
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 2px #f4e7c6;
+      }
+      100% {
+        text-shadow: 0 0 12px #ffe3a3, 0 0 20px #fff0cc;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="sand-scene">
 
 
               yes..
@@ -40,18 +77,15 @@
 . \/             .   \/     .
    __...--..__..__       .     \/
 \/  .   .    \/     \/    __..--..
- 
-        </pre>
-        <span id="title"></span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_c_h.html">with whatever I decide to leave...</a>  
+
+      </pre>
+
+      <span id="title"></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_7_c_h.html">with whatever I decide to leave...</a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

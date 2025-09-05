@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    #lighthouse pre {
+      display: inline-block;
+      margin: 0;
+      white-space: pre;
+      font-family: "Courier New", monospace;
+      animation: shakeAnger 0.4s infinite;
+    }
 
+    @keyframes shakeAnger {
+      0%   { transform: translate(0, 0) rotate(0deg); }
+      15%  { transform: translate(-3px, -2px) rotate(-1deg); }
+      30%  { transform: translate(3px, 2px) rotate(1deg); }
+      45%  { transform: translate(-2px, 1px) rotate(0deg); }
+      60%  { transform: translate(2px, -1px) rotate(1deg); }
+      75%  { transform: translate(-1px, 2px) rotate(-1deg); }
+      100% { transform: translate(0, 0) rotate(0deg); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre> 
 
   _  _
  (.\( )     Relax?! listen you!
@@ -22,17 +39,13 @@
 
 
 </pre>
-    <br>
-    <span id="thoughts"></span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="G_door_6_d_a_a.html">okay. I'm sorry. what's wrong?</a>  
+      <br>
+      <span id="thoughts"></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_6_d_a_a.html">I'm sorry..! but what's wrong?</a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

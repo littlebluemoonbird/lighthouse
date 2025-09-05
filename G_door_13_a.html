@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .6rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    /* keep your global fonts/sizes; just prevent global * padding from shifting ASCII */
+    #lighthouse pre{
+      padding:0;
+      background:transparent;
+      white-space:pre; /* keep columns exact */
+    }
+
+    /* ocean motion (uses ch so it respects your monospace width) */
+    .wave{display:inline-block;will-change:transform}
+    .w1{animation:swell 6s ease-in-out infinite alternate}
+    .w2{animation:swell 7.2s ease-in-out infinite alternate-reverse}
+    .w3{animation:swell 8.6s ease-in-out infinite alternate}
+
+    @keyframes swell{
+      from{transform:translateX(-0.6ch)}
+      to  {transform:translateX( 0.6ch)}
+    }
+
+    /* subtle sparkle on one layer (optional) */
+    .foam{animation:glint 3s ease-in-out infinite}
+    @keyframes glint{
+      0%,100%{opacity:1}
+      50%    {opacity:.9}
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-   <pre>              ,.  _~-.,               .
+<pre>
+              ,.  _~-.,               .
            ~'`_ \/,_. \_
           / ,"_>@`,__`~.)             |           .
           | |  @@@@'  ",! .           .          '
@@ -26,27 +47,23 @@
            .^^^   .          \                /          .
           .^^^       '  .     \       |      /       . '
 .,.,.     ^^^             ` .   .,+~'`^`'~+,.     , '
-&&&&&&,  ,^^^^.  . ._ ..__ _  .'             '. '_ __ ____ __ _ .. .  .
-%%%%%%%%%^^^^^^%%&&;_,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,
-&&&&&%%%%%%%%%%%%%%%%%%&&;,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=
-%%%%%&&&&&&&&&&&%%%%&&&_,.;^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,
-%%%%%%%%%&&&&&&&&&-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-==--^'~=-.,__,.-=~'
+<span class="wave w1 foam">&amp;&amp;&amp;&amp;&amp;&amp;,  ,^^^^.  . ._ ..__ _  .'             '. '_ __ ____ __ _ .. .  .</span>
+<span class="wave w2">%%%%%%%%%^^^^^^%%&&;_,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,</span>
+<span class="wave w1">&amp;&amp;&amp;&amp;&amp;%%%%%%%%%%%%%%%%%%&&;,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=</span>
+<span class="wave w3">%%%%%&&&&&&&&&&&%%%%&&&_,.;^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,</span>
+<span class="wave w2">%%%%%%%%%&&&&&&&&&-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-==--^'~=-.,__,.-=~'</span>
 ##mjy#####*"'
-_,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,.-=~'`^`'~=-.,__,.-=~'
+<span class="wave w3">_,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,.-=~'`^`'~=-.,__,.-=~'</span>
 
-~`'^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^
-
-        </pre>
-        <span id="thoughts">wow.. a beach...! I see something moving.. </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_13_b.html">[get closer]</a>  
+<span class="wave w2">~`'^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^`'~=-.,__,.-=~'`^</span>
+</pre>
+<br>
+      <span id="thoughts">wow.. a beach...! I see something moving.. </span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_13_b.html"> [ swim ] </a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

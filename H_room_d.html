@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Gate: strong glowing “breath” + entrance settle */
+    .gate {
+      margin: 0;
+      white-space: pre;
+      line-height: 1;
+      background: transparent;
+      animation:
+        settle 600ms cubic-bezier(.2,.9,.25,1) both,
+        breathe 4s ease-in-out infinite 600ms;
+      will-change: transform, text-shadow;
+    }
 
+    @keyframes settle {
+      0%   { opacity:0; transform: translateY(6px) scale(.985); }
+      60%  { opacity:1; transform: translateY(-1px) scale(1.006); }
+      100% { opacity:1; transform: translateY(0)    scale(1); }
+    }
+
+    @keyframes breathe {
+      0%,100% {
+        text-shadow:
+          0 0 8px rgba(255, 230, 120, 0.6),
+          0 0 18px rgba(255, 230, 150, 0.4),
+          0 0 32px rgba(255, 200, 80, 0.25);
+      }
+      50% {
+        text-shadow:
+          0 0 14px rgba(255, 245, 180, 0.95),
+          0 0 30px rgba(255, 230, 150, 0.85),
+          0 0 60px rgba(255, 210, 120, 0.65),
+          0 0 90px rgba(255, 200, 80, 0.4);
+      }
+    }
+
+    /* The little “~ voice” lines ripple outward */
+    .trail {
+      display: block;
+      background: transparent;
+      animation: whisper 2.2s ease-in-out infinite;
+      will-change: transform, opacity;
+    }
+    @keyframes whisper {
+      0%,100% { opacity:.55; transform: translateX(0); }
+      50%     { opacity:1;   transform: translateX(6px); }
+    }
+
+    /* Thoughts + nav appear after */
+    #thoughts { opacity:0; animation: fadeIn 900ms ease forwards 1.6s; }
+    #navigate { opacity:0; animation: fadeIn 900ms ease forwards 2.2s; }
+    @keyframes fadeIn { to { opacity:1; } }
+
+    /* mobile tweak */
+    @media (max-width: 800px){
+      .gate { line-height: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-        <pre>
+<pre class="gate">
 
             __,aaPPPPPPPPaa,__
          ,adP"""'          `""Yb,_
@@ -40,26 +89,29 @@ I,   `Y,   `Ya    """"     d'   ,P    d"    ,P
      `Yb,      ""YbaaaaaadP"     ,P'    ,P'
        `Yba,                   ,d'    ,dP'
           `"Yba,__       __,adP"     dP"
-              `"""""""""""""'   ,--~`
-                            ,--~` 
-                        ,--~`  
-                    ,--~`
-                ,--~`
-            ,--~`         you're here!
-        ,--~`
+              `"""""""""""""'      dP"
+                                dP"
+                              dP" 
+                            dP"    
+                         dP"    
+                      dP"  
+                   dP"  
+</pre>
+<pre class="gate">
+<span class="trail" style="animation-delay:.0s">   ,--~`</span>
+<span class="trail" style="animation-delay:.15s"> ,--~` </span>
+<span class="trail" style="animation-delay:.30s">,--~`  </span>
+<span class="trail" style="animation-delay:.45s">,--~`  </span>
+<span class="trail" style="animation-delay:.60s">,--~`        you found it..</span>
+<span class="trail" style="animation-delay:.75s">,--~`</span><br><br>
+</pre>
 
-                    </pre>
-
-    <span id="thoughts"> !!! </span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="z_moongirl_2.html">[follow the voice]</a>  
+      <span id="thoughts"></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="z_moongirl_2.html"> hello? </a>
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

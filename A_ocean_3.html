@@ -1,66 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .flicker {
-      animation: flicker 1.4s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      15% { opacity: 0.85; }
-      30% { opacity: 0.4; }
-      45% { opacity: 0.9; }
-      60% { opacity: 0.6; }
-      75% { opacity: 1; }
-    }
-
-    @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .55rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
   <title>The Lighthouse</title>
+  <style>
+    .flicker{animation:flicker 1.6s infinite}
+    @keyframes flicker{
+      0%,100%{opacity:1}15%{opacity:.85}30%{opacity:.4}50%{opacity:.9}70%{opacity:.55}85%{opacity:.95}
+    }
+    @media (max-width:800px){ pre{font-size:.55rem} }
+
+    /* Typewriter: exactly 11 characters -> 11ch */
+    #voice{
+      display:inline-block;margin-top:.75rem;min-height:1.2em;color:#ccc;
+      white-space:nowrap;overflow:hidden;border-right:.1em solid rgba(255,255,255,.4);
+      width:0ch;font-family:"Courier New",monospace;
+      animation:
+        typing 1.8s steps(11,end) forwards,   /* reveal exactly 11ch */
+        caret  .8s  step-end   infinite,      /* blink caret */
+        fadeOut 1.2s ease forwards 2.4s;      /* soften away after */
+    }
+    @keyframes typing{from{width:0ch}to{width:11ch}}
+    @keyframes caret{50%{border-color:transparent}}
+    @keyframes fadeOut{to{opacity:0}}
+
+    /* Nav appears after voice starts fading */
+    #navigate{margin-top:1rem;opacity:0;transition:opacity 1s ease; }
+    #navigate.show{opacity:1}
+  </style>
 </head>
 <body>
   <main>
     <div id="lighthouse">
       <div class="flicker">
-        <pre> 
+        <pre>
   .           .-='-. _db_      .--==-,      .
        .     (_  (  _IIII_   _(    )  `.
                (    |" " |-.(  ` ,_  `  )
            .    '-._HHHHHH  `)---' `'--'    .
- .                  |.   |--`                    
-                    |    |   .   
-   .      _H___,=====;___|           
+ .                  |.   |--`
+                    |    |   .
+   .      _H___,=====;___|
       n_/____/____/``\__\
-      /__|:: :|. .|:::|::|               
-  _%&|__&%_"_|_"_|_ H|__|__        
+      /__|:: :|. .|:::|::|
+  _%&|__&%_"_|_"_|_ H|__|__
      `";;;;`";;;;'";;'"';;;;``;;-.
-  .  ' `";;'  `;;;  `;'   `;  .`' `\     
+  .  ' `";;'  `;;;  `;'   `;  .`' `\
   . '  .  `' .  `';.    '   .   .  |^-`^~_^^~``-
         </pre>
       </div>
 
-      <span id="title">
-
-        i'm here.. 
-        <br><br>
-
-      </span>
+      <!-- 11 visible chars: i’m here... -->
+      <span id="voice">i̷̇’̷̇ṁ̷&nbsp;ḣ̶ė̴ṙ̷ė̶...</span>
 
       <div id="navigate">
         <a class="A" href="A_ocean_4.html">w..who are you?</a>
       </div>
-
-      <!-- artwork by Erwin Wessels -->
     </div>
   </main>
+
+  <script>
+    // reveal nav shortly after voice begins to fade
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('navigate').classList.add('show');
+      }, 2400); // match fadeOut start (2.4s)
+    });
+  </script>
 </body>
 </html>

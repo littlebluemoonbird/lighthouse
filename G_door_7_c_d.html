@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: 1rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: 1rem; }
+    }
 
+    .sway {
+      display: inline-block;
+      animation: sway 5s ease-in-out infinite;
+    }
+
+    @keyframes sway {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(10px); }
+      50%  { transform: translateX(0); }
+      75%  { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="sway"> 
         
      .-'"-...--.
   .'   .'     @ `..    the moon
@@ -30,18 +41,14 @@
     | /
     | |      
    (,-,)
-        </pre>
-        <span id="title"><br> 
-      </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_c_e.html">what about your family and friends?</a>  
+      </pre>
+      <span id="title"><br></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_7_c_e.html">what about your family and friends?</a>  
       </div>
-
-
-<!-- itz/jgs/ccm -->
-
+      <!-- itz/jgs/ccm -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

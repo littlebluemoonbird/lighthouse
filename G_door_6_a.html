@@ -1,18 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+  <style>
+    @keyframes jitter {
+      0%   { transform: translate(0, 0); }
+      25%  { transform: translate(-1px, 1px); }
+      50%  { transform: translate(1px, -1px); }
+      75%  { transform: translate(-1px, -1px); }
+      100% { transform: translate(1px, 1px); }
+    }
 
+    .jitter {
+      display: inline-block;
+      animation: jitter 0.15s infinite;
+    }
+
+    #thoughts {
+      text-align: center;
+      display: block;
+      margin: 1.5em auto;
+    }
+
+    #navigate {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    .A {
+      font-family: inherit;
+      font-size: 1.2rem;
+      padding: 0.3rem 0.8rem;
+      margin: 0 0.5rem;
+      color: #ffd95e;
+      border: 1px solid #ffd95e;
+      text-decoration: none;
+    }
+
+    .A:hover {
+      background: #ffd95e;
+      color: #000;
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="jitter"> 
  ______________
 |\ ___________ /|
 | |  _ _ _ _  | |
@@ -28,19 +66,16 @@
 | |           | |
 | |           | |
 | |           | |
-|_|___________|_| </pre>
-    <br>
-    <span id="thoughts"> That's a strange door... </span>
-    <br>
-    <div id="navigate">
+|_|___________|_| 
+      </pre>
+      <br>
+      <span id="thoughts">It sounds like someone is unraveling.…</span>
+      <br>
+      <div id="navigate">
         <a class="A" href="G_door_6_b.html">⇡</a>  
-        <a class="A" href="F_hallway_1_a.html"> ⇣</a>  
+        <a class="A" href="F_hallway_1_a.html">⇣</a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

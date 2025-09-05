@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    .grow {
+      display: inline-block;
+      transform: scale(0.92);
+      opacity: 0;
+      animation: slowGrow 4s ease-out forwards;
+    }
+
+    @keyframes slowGrow {
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-<body>
-    <main>
-    <div id="lighthouse">
-    <pre> 
 
+<body>
+  <main>
+    <div id="lighthouse">
+
+      <pre class="grow"> 
       ＿＿＿_
     ／      ＼
    ／  ─    ─ ＼
@@ -27,19 +42,18 @@
 | |            |. |
 | |              |  |
 | |               |  |
+      </pre>
 
-        </pre>
-        <span id="title"> 🐬  W..w..ould you like to tell her something? 🐬 </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="mailto: unieugeniaso@gmail.com"> Su..sure! </a> 
-          <a class="A" href="F_hallway_5_a.html">I am ready to return</a>   
+      <span id="title">🐬  W..w..ould you like to tell her something? 🐬</span>
+      <br />
+
+      <div id="navigate">
+        <a class="A" href="mailto:unieugeniaso@gmail.com">Sure!</a>
+        <a class="A" href="F_hallway_5_a.html">No thank you.</a>
       </div>
 
-<!-- work by jgs -->
-
-
+      <!-- work by jgs -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

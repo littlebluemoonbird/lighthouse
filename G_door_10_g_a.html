@@ -1,28 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style> 
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
+
+  <style>
+    body {
+      background: black;
+      color: white;
+    }
+
     pre {
       font-size: 8px;
+      animation: scene-thump 1s ease-out;
+      text-align: left;
     }
+
     @media only screen and (max-width: 800px) {
       pre {
-        font-size: .5rem;
+        font-size: 0.5rem;
       }
-    }</style>
-    <title>The Lighthouse</title>
-    
-    <style> main{height: auto;}</style>
+    }
 
+    .astro-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-top: -2em;
+    }
+
+    .astro {
+      font-size: 6vw;
+      animation:
+        astro-thump 0.8s ease-out forwards,
+        astro-float 3s ease-in-out infinite;
+      transform-origin: center bottom;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dust {
+      font-size: 2vw;
+      position: absolute;
+      bottom: -0.5em;
+      animation: dust-burst 0.6s ease-out;
+      opacity: 0.7;
+      color: #aaa;
+      z-index: 1;
+    }
+
+    /* Thump effect for pre */
+    @keyframes scene-thump {
+      0%   { transform: scale(0.95); opacity: 0; }
+      50%  { transform: scale(1.03); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    /* Astronaut drop then float */
+    @keyframes astro-thump {
+      0%   { transform: scale(0.1) translateY(-50vh); }
+      60%  { transform: scale(1.2) translateY(4px); }
+      80%  { transform: scale(0.9) translateY(-2px); }
+      100% { transform: scale(1) translateY(0); }
+    }
+
+    @keyframes astro-float {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-1vh); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes dust-burst {
+      0%   { opacity: 0; transform: scale(0.5) translateY(0); }
+      60%  { opacity: 1; transform: scale(1.1) translateY(-0.5em); }
+      100% { opacity: 0; transform: scale(1.4) translateY(-1em); }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre>                 
+      <pre>
                        |        |
                        |        |  //                 \\ | |
                        \        | //                 /_\\| |         _.-~
@@ -74,24 +137,22 @@ __..--~~.   . |     _.| \          \  / /  -     _. \ \      \   \ \ ::
 `.                    .'.'   .        .               .            .    .
 `.`.________________.'.'  .       .        .              .          .
   `.________________.'
-.     .          .          .         .        .          .      .
-  .       .           .          .        .        .         .
-       .      "      .      "                .         .
-               .                .       "         .               . .    " .
+      </pre>
 
-        </pre>
-        <span id="thoughts">we are on the moon!</span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_h_0.html">[hop off]</a> 
-          <a class="A" href="G_door_10_g_b.html">[stay on]</a> 
-          <a class="A" href="x_6.html">[throw a tantrum]</a>  
+      <div class="astro-wrapper">
+        <span class="astro">🧑‍🚀</span>
       </div>
 
+      <span id="thoughts">we are on the moon!</span>
+      <br>
 
-<!-- artwork by JRO -->
+      <div id="navigate">
+        <a class="A" href="G_door_10_h_0.html"> [ hop off ] </a>
+        <a class="A" href="G_door_10_g_b.html"> [ stay on ] </a>
+      </div>
 
+      <!-- artwork by JRO -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

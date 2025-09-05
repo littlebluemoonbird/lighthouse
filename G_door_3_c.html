@@ -5,19 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .4rem;
-        }
-      }</style>
     <title>The Lighthouse</title>
-    
+    <style>
+  pre { font-size: 1rem; } /* default desktop size */
 
+  @media (max-width: 1200px) {
+    pre { font-size: .8rem; }
+  }
+
+  @media (max-width: 900px) {
+    pre { font-size: .6rem; }
+  }
+
+  @media (max-width: 600px) {
+    pre { font-size: .45rem; }
+  }
+
+  @media (max-width: 400px) {
+    pre { font-size: .35rem; }
+  }
+
+      .glow {
+        color: #ffe066; /* soft moon yellow */
+        text-shadow: 
+          0 0 4px #ffe066,
+          0 0 8px #ffd43b,
+          0 0 12px #ffc107,
+          0 0 18px #ffec99;
+        animation: flicker 2.8s infinite ease-in-out;
+      }
+
+      @keyframes flicker {
+        0%, 100% { opacity: 1; text-shadow: 0 0 6px #ffe066, 0 0 14px #ffd43b; }
+        20% { opacity: .8; text-shadow: 0 0 3px #ffd43b, 0 0 10px #ffc107; }
+        40% { opacity: .6; text-shadow: 0 0 4px #ffc107; }
+        60% { opacity: .9; text-shadow: 0 0 5px #ffe066, 0 0 12px #ffd43b; }
+        80% { opacity: .7; text-shadow: 0 0 3px #ffec99, 0 0 8px #ffd43b; }
+      }
+    </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="glow"> 
 
                                    _______________________      |
                                   |  ________   ________  |     |
@@ -49,15 +79,13 @@
 ..........................  ......................
 :::::::::::::::::::::::::' .:::::::::::::::::::::'
 :::::::::::::::::::::::' .:::::::::::::::::::::::
-    </pre>
-    <span id="thoughts"> <br>.... ? ? ? <br><br></span>
-    <div id="navigate">
+      </pre>
+
+      <span id="thoughts"><br>.... ! ! ! <br><br></span>
+      <div id="navigate">
         <a class="A" href="F_hallway_3_a.html">⇣</a>  
+      </div>
     </div>
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

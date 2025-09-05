@@ -1,29 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      margin: 0;
+      animation: fadeInScene 3s ease forwards;
+    }
+    @keyframes fadeInScene {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    #thoughts {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typing 2.5s steps(20, end) .4s forwards;
+      opacity: 0;
+    }
+    @keyframes typing {
+      from { width: 0; opacity: 1; }
+      to   { width: 100%; opacity: 1; }
+    }
+    #navigate {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 3s;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-        <pre></pre>
 
-    <span id="thoughts"> where.. am I?</span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="H_room_b.html">[start walking]</a>  
+      <span id="thoughts">where.. am I? where.. where is the pixy?</span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="H_room_b.html"> [ start walking ] </a>
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

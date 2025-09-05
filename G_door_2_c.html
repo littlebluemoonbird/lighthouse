@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 1500px) {
-        pre {
-          font-size: .9rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 1500px) {
+      pre { font-size: .9rem; }
+    }
 
+    .flowers {
+      display: inline-block;
+      animation: sway 3.5s ease-in-out infinite;
+    }
+
+    @keyframes sway {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(10px); }
+      50%  { transform: translateX(0); }
+      75%  { transform: translateX(-10px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-        <marquee width="100%" direction="right" behavior="alternate" bordercolor="white">         
-        <pre>
-            
+      <div class="flowers">
+<pre>
                     _
                   _(_)_                          wWWWw   _
       @@@@       (_)@(_)   vVVVv     _     @@@@  (___) _(_)_
@@ -29,18 +39,18 @@
     \ |     \ |/       | / \ | /  \|/       |/    \|      \|/
     \\|//   \\|///  \\\|//\\\|/// \|///  \\\|//  \\|//  \\\|// 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        </pre>
-        </marquee>
-    <span id="thoughts">the flowers are dancing!</span> 
-    <div id="navigate">
-        <a class="A" href="G_door_2_d_a.html">[pluck a flower]</a>
-        <a class="A" href="F_hallway_2_a.html">[wave goodbye]</a> 
+
+</pre>
+      </div>
+
+      <span id="thoughts">the flowers are dancing too!</span><br>
+      <div id="navigate">
+        <a class="A" href="G_door_2_d_a.html"> [ pluck a flower ] </a>
+        <a class="A" href="F_hallway_2_a.html"> [ wave goodbye ] </a> 
+      </div>
+
+      <!-- Flower garden by Joan G. Stark -->
     </div>
-
-
-<!-- Flower garden by Joan G. Stark -->
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

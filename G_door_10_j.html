@@ -1,18 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    <style> main{height: auto;}</style>    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css" />
 
+  <style>
+    /* ------- Local, page-only layout fixes ------- */
+    main { height: auto; }
+
+    /* One narrow, centered column */
+    #lighthouse {
+      width: 100%;
+      max-width: 720px;          /* keep it neat on desktop */
+      margin: 0 auto;            /* center the column */
+      display: flex;
+      flex-direction: column;    /* single column */
+      align-items: center;       /* center all children */
+      justify-content: flex-start;
+      gap: 0.75rem;              /* space between blocks */
+      text-align: center;        /* center text blocks only */
+      padding: 0;                /* avoid global * padding bloat here */
+    }
+
+    /* ASCII wrapper stays centered; pre keeps monospace alignment */
+    .ascii-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0;                /* override global * padding */
+      background: transparent;
+      will-change: transform, opacity;
+      transform-origin: top center;
+      /* start with a subtle shake; JS will taper it */
+      animation: shake 1s infinite;
+    }
+
+    .ascii-wrap pre {
+      margin: 0;
+      padding: 0;                /* override global * padding */
+      background: transparent;
+      white-space: pre;
+      line-height: 1.05;         /* tight lines for ASCII */
+      text-align: left;          /* preserve ASCII columns */
+    }
+
+    /* Thoughts and nav also in the column, centered */
+    #thoughts { margin-top: 0.25rem; }
+    #navigate {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 0;                /* override global * padding */
+      width: 100%;
+    }
+
+    /* Continuous gentle jitter */
+    @keyframes shake {
+      0%,100% { transform: translateX(0) }
+      15%     { transform: translateX(-6px) rotate(-0.6deg) }
+      30%     { transform: translateX(6px)  rotate(0.6deg) }
+      45%     { transform: translateX(-4px) rotate(-0.4deg) }
+      60%     { transform: translateX(4px)  rotate(0.4deg) }
+      75%     { transform: translateX(-2px) rotate(-0.2deg) }
+      90%     { transform: translateX(2px)  rotate(0.2deg) }
+    }
+
+    /* Mobile: make ASCII a bit smaller for fit */
+    @media (max-width: 800px){
+      .ascii-wrap pre { line-height: 1.02; }
+      #lighthouse { max-width: 95vw; }
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+
+      <!-- ASCII block (centered) -->
+      <div class="ascii-wrap" id="asciiWrap">
+<pre id="magicText">
 
 
 
@@ -229,19 +299,44 @@
           　　　(･`💛 )
 
           　　 ( 💛　)
-
-        </pre>
-        <span id="thoughts"></span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_k.html">magic!</a>  
+</pre>
       </div>
 
+      <!-- Thoughts (centered) -->
+      <span id="thoughts"></span>
 
-      <!-- Art by lgbeard -->
-
+      <!-- Nav (centered, same column) -->
+      <div id="navigate">
+        <a class="A" href="G_door_10_k.html">magic!</a>
+      </div>
 
     </div>
-    </main>
+  </main>
+
+  <script>
+    // Start at the top of the page
+    window.scrollTo(0, 0);
+
+    // Taper the shake as the user scrolls down
+    const asciiWrap = document.getElementById('asciiWrap');
+
+    function updateShake() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const p = docHeight > 0 ? Math.min(Math.max(scrollTop / docHeight, 0), 1) : 0; // 0..1
+
+      // intensity: strong at top (1) → weaker at bottom (0.2)
+      const intensity = 1 - p * 0.8;
+
+      // adjust animation speed + subtle scaling + opacity
+      asciiWrap.style.animationDuration = `${1.2 / intensity}s`;
+      asciiWrap.style.transform = `scale(${1 + intensity * 0.03})`;
+      asciiWrap.style.opacity = String(0.85 + intensity * 0.15);
+    }
+
+    window.addEventListener('scroll', updateShake, { passive: true });
+    window.addEventListener('resize', updateShake);
+    document.addEventListener('DOMContentLoaded', updateShake);
+  </script>
 </body>
 </html>

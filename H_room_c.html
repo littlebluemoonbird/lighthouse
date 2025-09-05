@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>The Lighthouse</title>
+  <style>
+    pre {
+      margin: 0;
+      white-space: pre;
+      font-family: "Courier New", monospace;
+    }
 
+    .string, .ball {
+      display: inline-block;
+      animation: pulse 3.2s ease-in-out infinite;
+      color: #ffd95e;
+      text-shadow:
+        0 0 1px #fff5cc,
+        0 0 2px #ffd95e,
+        0 0 6px #ffc43d,
+        0 0 12px #ffdf80;
+    }
+
+    .meow {
+      display: inline-block;
+      opacity: 0.8;
+      animation: meow 2.6s ease-in-out infinite;
+    }
+
+    @keyframes meow {
+      0%, 100% { opacity: 0.35; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-2px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.035); }
+    }
+
+    @media (max-width: 800px) {
+      pre { font-size: 0.7rem; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-        <pre>
+<pre>
 
 
 
 
-                                                  ,--~`
+<span class="string">                                                  ,--~`
                                              ,--~`
                                          ,--~`
                                      ,--~`
                                 ,--~`
                             ,--~`
                         ,--~`
-                       ~`
-                   .-o=o-.
-               ,  /=o=o=o=\ .--.     ~ny-aong~
+                       ~`</span>
+<span class="ball">                   .-o=o-.
+               ,  /=o=o=o=\ .--.     <span class="meow">~ny-aong~</span>
               _|\|=o=O=o=O=|    \
           __.'  a`\=o=o=o=(`\   /
           '.   a 4/`|.-""'`\ \ ;'`)   .---.
             \   .'  /   .--'  |_.'   / .-._)
              `)  _.'   /     /`-.__.' /
               `'-.____;     /'-.___.-'
-                       `"""`
+                       `"""`</span><br>
 
-                    </pre>
+</pre>
 
-    <span id="thoughts">Neko is playing with a ball of yarn..</span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="H_room_d.html">[follow the yarn]</a>  
+<span id="thoughts">
+neko is pawing at… <br>
+something glowing on the floor. <br>
+it trails ahead into the dark.
+</span><br>
+
+<div id="navigate">
+  <a class="A" href="H_room_d.html"> [ follow it ] </a>
+</div>
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

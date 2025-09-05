@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
   <title>The Lighthouse</title>
   <style>
-    /* Stronger lighthouse flicker */
+    /* Lighthouse flicker */
     .flicker {
       animation: flicker 2s infinite;
       will-change: opacity;
     }
+
     @keyframes flicker {
       0%, 100% { opacity: 1; }
       10% { opacity: 0.65; }
@@ -26,15 +24,34 @@
       85% { opacity: 0.8; }
     }
 
+    /* Title fade-in (gentle thought) */
+    #title.fade-in {
+      display: block;
+      opacity: 0;
+      animation: fadeIn 3.5s ease forwards;
+      font-style: italic;
+      font-size: 1rem;
+      color: #ccc;
+      text-align: center;
+      margin-top: 1.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
     @media only screen and (max-width: 800px) {
       pre { font-size: .65rem; }
     }
   </style>
 </head>
+
 <body>
   <main>
     <div id="lighthouse">
-<pre> 
+
+      <pre> 
   .          <span class="flicker">✦</span>     ˚              *                        . 
         ✦                                   ,      
   .             .   ﾟ      .
@@ -50,15 +67,14 @@
     ﾟ     .               .      🌎           ,  
             * .      .                ✦             ˚         *
  .          .              .
-</pre>
+      </pre>
 
-      <span id="title">
-        sometimes the smallest thing can keep you moving..
-      </span>
+      <span id="title" class="fade-in">and sometimes  the  ṡ̷ṁ̶ȧ̷l̶̇l̷̇ė̶ṡ̷ṫ̶ things<br> will keep  ẏ̷ȯ̶u̷̇  moving..</span><br>
 
       <div id="navigate">
         <a class="A" href="A_ocean_10.html">what do you mean?</a>
       </div>
+
     </div>
   </main>
 </body>

@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    <style> main{height: auto;}</style>
-    <script>
-      function toBottom()
-  {
-      window.scrollTo(0, document.body.scrollHeight);
-  }
-  window.onload=toBottom;
-  </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    main { height: auto; }
 
+    /* swirl animation */
+    .swirl {
+      display: inline-block;
+      animation: swirl 5s ease-in-out infinite;
+    }
+
+    @keyframes swirl {
+      0%   { transform: rotate(0deg) translate(0,0); }
+      20%  { transform: rotate(1deg) translate(1px, -1px); }
+      40%  { transform: rotate(-1deg) translate(-1px, 1px); }
+      60%  { transform: rotate(1deg) translate(2px, 0); }
+      80%  { transform: rotate(-1deg) translate(-2px, -1px); }
+      100% { transform: rotate(0deg) translate(0,0); }
+    }
+  </style>
+  <script>
+    function toBottom() {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+    window.onload = toBottom;
+  </script>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-      <div id="navigate">
-        <a class="A" href="G_door_10_l.html" style="text-transform:uppercase";>I LOVE MOONCAKES ! </a>  </div>
-        <span id="thoughts">! ! !</span>
-    <pre>
+      <div id="navigate"><br>
+        <a class="A" href="G_door_10_l.html" style="text-transform:uppercase;">I LOVE MOONCAKES !</a>
+      </div><br>
+      <span id="thoughts"><br>! ! !</span>
+
+      <pre class="swirl"><br>
   ゜  🥮    ＊  ゜
   *  🥮 o ☆    ゜
   * . 🥮   + . *

@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .9rem;
+      }
+    }
 
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      30%      { transform: translateY(-8px); }
+      50%      { transform: translateY(4px); }
+      70%      { transform: translateY(-4px); }
+    }
+
+    #lighthouse pre {
+      display: inline-block;
+      animation: bounce 1.2s ease-in-out infinite;
+      white-space: pre-wrap;
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
    (\{\      yaaaaay!   
    { { \ ,~,     you did it!  
   { {   \)))  *   you found my
@@ -22,18 +41,14 @@
         \` \    I believed in             
         (/  \    you!!!!!!!!    
         `)  `\          
-</pre>
-    <br>
-    <span id="thoughts">  </span>
-    <br>
-    <div id="navigate">
+      </pre>
+      <br>
+      <span id="thoughts"></span>
+      <br>
+      <div id="navigate">
         <a class="A" href="G_door_6_f_b.html">Neko found them.. :) </a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

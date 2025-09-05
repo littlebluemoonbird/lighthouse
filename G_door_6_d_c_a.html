@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
 
+  <style>
+    .shake {
+      display: inline-block;
+      animation: shakeAnim 0.35s infinite;
+    }
+
+    @keyframes shakeAnim {
+      0%   { transform: translate(0, 0); }
+      20%  { transform: translate(-2px, 0); }
+      40%  { transform: translate(2px, 0); }
+      60%  { transform: translate(-1px, 0); }
+      80%  { transform: translate(1px, 0); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="shake"> 
 
 
    (\{\             
@@ -26,18 +40,14 @@
         `)  `\          
 
 </pre>
-    <br>
-    <span id="thoughts"></span>
-    <br>
-    <div id="navigate">
+      <br>
+      <span id="thoughts"></span>
+      <br>
+      <div id="navigate">
         <a class="A" href="G_door_6_d_c_b.html">wand?</a>  
         <a class="A" href="G_door_6_d_c_c.html">forest?</a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

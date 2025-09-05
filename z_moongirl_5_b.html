@@ -1,21 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .8rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-	</head>
-	<body>
-		<br><br><br>
-		<div id="lighthouse">
-		<span id="title"></span><pre>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    pre {
+      animation: glowUp 6s ease-in-out forwards, flicker 2s infinite;
+    }
+
+    @keyframes glowUp {
+      0%   { opacity: 0.0; text-shadow: none; }
+      30%  { opacity: 0.6; text-shadow: 0 0 6px #fff, 0 0 12px #ffd95e; }
+      60%  { opacity: 1; text-shadow: 0 0 10px #fff, 0 0 20px #ffd95e, 0 0 35px #ffd95e; }
+      100% { opacity: 1; text-shadow: 0 0 6px #fff, 0 0 12px #ffd95e; }
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      45% { opacity: 0.9; }
+      55% { opacity: 1; }
+      70% { opacity: 0.95; }
+      80% { opacity: 1; }
+    }
+
+    #title {
+      margin-top: 1rem;
+      display: block;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: .8s;
+    }
+
+    #navigate {
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 2.4s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .glow {
+      color:#ffd95e;
+      text-shadow:0 0 5px #ffe9aa,0 0 10px #ffd95e;
+    }
+  </style>
+</head>
+<body>
+  <br><br><br>
+  <div id="lighthouse">
+    <pre>
+
+
+
+
+
+
+
+
 
 
 
@@ -28,28 +74,22 @@
                     |    |   .   
    .      _H___,=====;___|           .
       n_/____/____/``\__\
-      /__|:: :|. .|:::|::|   .               .
-  _%&|__&%_"_|_"_|_ H|__|__        .
+      /__|:: :|. .|:::|::|   .               
+  _%&|__&%_"_|_"_|_ H|__|__        
      `";;;;`";;;;'";;'"';;;;``;;-.
-  .  ' `";;'  `;;;  `;'   `;  .`' `\     .
+  .  ' `";;'  `;;;  `;'   `;  .`' `\     
   . '  .  `' .  `';.    '   .   .  |^-`^~_^^~``-
+    </pre>
 
-
-
-</pre>
-
-<span id="title">this lighthouse.. <br><br>This lighthouse connects all of us. <br></span>
-<br>
-<div id="navigate">
-<br>
-<a class="A" href="z_moongirl_5_c.html">you mean,<br> everyone who I just met?</a>  
-</div>
-
-
-</div>
-</main>
+    <span id="title">
+      and now it’s ready to breathe again. <br><br>
+      thanks to you, <span class="glow" id="user-name">...</span><br><br><br>
+      though... it doesn't need to stay here anymore... 
+    </span>
+    <br>
+    <div id="navigate">
+      <a class="A" href="z_moongirl_5_b_a.html">huh? where would it go?</a>  
+    </div>
+  </div>
 </body>
-</html>
-
-	</body>
 </html>

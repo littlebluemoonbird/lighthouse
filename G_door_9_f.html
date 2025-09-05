@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    .float {
+      display: inline-block;
+      animation: floatUpDown 4s ease-in-out infinite;
+    }
+
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media only screen and (max-width: 800px) {
       pre {
         font-size: .6rem;
       }
-    }</style>
-  
-    <title>The Lighthouse</title>
+    }
+  </style>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="float"> 
 
 (\o/)___________________________________________________________(\o/)
 (/|\)                                                           (/|\)
@@ -37,17 +49,13 @@
 (/|\)                                                           (/|\)
  
  
-        </pre>
-        <span id="thoughts"> A flower..? <br> I remember the last time I saw flowers... </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_9_g.html">thanks!</a>  
+      </pre>
+      <span id="thoughts"> A flower..? <br> I remember the last time I saw flowers... </span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_9_g.html">thanks!</a>
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

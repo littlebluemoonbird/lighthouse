@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    pre {
+      margin: 0;
+      white-space: pre;
+      font-family: "Courier New", monospace;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0s;
+    }
 
+    #thoughts {
+      display: block;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 1s;
+    }
+
+    #navigate {
+      display: block;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 2s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
 
 
 
@@ -26,18 +53,14 @@
         ) ) /-'\  ,_.'
        (,(,/ ((,,/
 
-        </pre>
-        <span id="thoughts"> it's neko! </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_8_a_c.html">[follow neko]</a>  
-          <a class="A" href="F_hallway_8_b.html">[leave neko]</a>  
+      </pre>
+      <span id="thoughts"> it's neko! </span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_8_a_c.html">[follow neko]</a>  
+        <a class="A" href="F_hallway_8_b.html">[leave neko]</a>  
       </div>
-
-
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

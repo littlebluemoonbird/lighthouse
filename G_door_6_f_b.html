@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: .9rem;
+      }
+    }
 
+    #lighthouse {
+      position: relative;
+    }
+
+    #lighthouse pre {
+      position: relative;
+      z-index: 1;
+      white-space: pre-wrap;
+      color: #fff;
+      text-shadow: 0 0 1px #fffcf7, 0 0 3px #e0bbff;
+    }
+
+    #lighthouse pre::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 230, 250, 0) 0%,
+        rgba(255, 200, 255, 0.3) 30%,
+        rgba(200, 245, 255, 0.4) 50%,
+        rgba(180, 255, 255, 0.2) 70%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      mix-blend-mode: screen;
+      animation: glowSweep 4s ease-in-out infinite;
+      z-index: 2;
+      pointer-events: none;
+      border-radius: 8px;
+    }
+
+    @keyframes glowSweep {
+      0%   { transform: translateY(-120%); opacity: 0; }
+      20%  { opacity: 1; }
+      50%  { transform: translateY(0%); }
+      80%  { opacity: 1; }
+      100% { transform: translateY(120%); opacity: 0; }
+    }
+  </style>
+  <title>The Lighthouse</title>
 </head>
+
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
    (\{\            
    { { \,~,        yes! yes!
   { {   \))  *    I am feelin'
@@ -22,19 +69,14 @@
        |/\|          yay!
        (|(/
        `)`)
-        
-</pre>
-    <br>
-    <span id="thoughts">  </span>
-    <br>
-    <div id="navigate">
+      </pre>
+
+      <span id="thoughts"> </span>
+      <br>
+      <div id="navigate">
         <a class="A" href="G_door_6_f_c.html">I'm glad!</a>  
+      </div>
     </div>
-
-
-
-
-    </div>
-    </main>
+  </main>
 </body>
 </html>

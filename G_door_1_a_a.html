@@ -9,7 +9,29 @@
         pre {
           font-size: .9rem;
         }
-      }</style>
+      }#lighthouse pre {
+  display: inline-block;
+  animation: doorTry 3s infinite;
+}
+
+@keyframes doorTry {
+  0%   { transform: translateX(0); }
+  5%   { transform: translateX(-2px); }
+  10%  { transform: translateX(2px); }
+  15%  { transform: translateX(-2px); }
+  20%  { transform: translateX(2px); }
+  25%  { transform: translateX(0); }   /* stop after first shake */
+  
+  50%  { transform: translateX(0); }   /* still pause */
+  
+  55%  { transform: translateX(-2px); }
+  60%  { transform: translateX(2px); }
+  65%  { transform: translateX(-2px); }
+  70%  { transform: translateX(2px); }
+  75%  { transform: translateX(0); }   /* stop after second shake */
+  
+  100% { transform: translateX(0); }   /* rest */
+}</style>
     <title>The Lighthouse</title>
     
 
@@ -38,7 +60,7 @@
     <br>
     </pre>
 
-<span id="thoughts">Fresh snow... <br>The door won’t budge. But there's something carved into it.</span>
+<span id="thoughts">Fresh snow... <br>The door won’t budge. But there's something carved into it.</span><br>
         <a class="A" href="G_door_1_a_b.html">[look closer]</a>  
         <a class="A" href="F_hallway_7_a.html">⇣</a>  
     </div>

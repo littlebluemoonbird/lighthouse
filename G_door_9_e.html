@@ -1,44 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The Lighthouse</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #lighthouse pre {
+      margin: 0; padding: 0;
+      white-space: pre; background: transparent;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.05;
+    }
 
+    .bfly {
+      --d: 0s;
+      display: inline-block;
+      opacity: 0;
+      animation: stepIn 0.8s ease-out forwards;
+      animation-delay: var(--d);
+    }
+
+    @keyframes stepIn {
+      from { opacity: 0; transform: translateY(.4ch) scale(0.9); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (max-width:800px){
+      #lighthouse pre{ font-size:.9rem; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+<pre> 
 ha! haha! hahahahahaha!
 
       since you saved my life,
 
-                                  _ " _
-   _ " _                         (_\|/_)
-  (_\|/_)  _ " _         _ " _    (/|\)
-   (/|\)  (_\|/_) " _   (_\|/_)
-           (/|\)_\|/_)   (/|\)
-                 (/|\)
+                                  <span class="bfly" style="--d:.0s">_ " _</span>
+   <span class="bfly" style="--d:.2s">_ " _</span>                         <span class="bfly" style="--d:.4s">(_\|/_)</span>
+  <span class="bfly" style="--d:.6s">(_\|/_)</span>  <span class="bfly" style="--d:.8s">_ " _</span>         <span class="bfly" style="--d:1s">_ " _</span>    <span class="bfly" style="--d:1.2s">(/|\)</span>
+   <span class="bfly" style="--d:1.4s">(/|\)</span>  <span class="bfly" style="--d:1.6s">(_\|/_)</span>       <span class="bfly" style="--d:1.8s">(_\|/_)</span>
+           <span class="bfly" style="--d:2s">(/|\)</span>         <span class="bfly" style="--d:2.2s">(/|\)</span>
+                 
                           
                  I will give you a gift!
 
  
-        </pre>
-        <span id="thoughts"> </span>
-        <br>
-        <div id="navigate">
-            <a class="A" href="G_door_9_f.html">awh, there's no need</a> 
-            <a class="A" href="F_hallway_5_a.html">there's.. really no need</a>   
+</pre>
+      <span id="thoughts"></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_9_f.html">a gift..?</a> 
+        <a class="A" href="F_hallway_5_a.html">there's.. no need.</a>   
       </div>
-
-      <!-- Art by hjw -->
-
-
     </div>
-    </main>
+  </main>
 </body>
 </html>

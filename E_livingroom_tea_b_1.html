@@ -8,16 +8,39 @@
   <title>The Lighthouse</title>
   <style>
     @media only screen and (max-width: 800px) {
-      pre {
-        font-size: 0.65rem;
-      }
+      pre { font-size: 0.65rem; }
+    }
+
+    .teapot {
+      display: inline-block;
+      white-space: pre;
+      font-family: "Courier New", monospace;
+      animation: liftTilt 4s ease-in-out infinite;
+      transform-origin: bottom right; /* tilt upward from the base */
+    }
+
+    @keyframes liftTilt {
+      0%, 100% { transform: rotate(0deg); }
+      40%      { transform: rotate(12deg); }  /* tilt upward */
+      60%      { transform: rotate(12deg); }  /* hold tilt */
+    }
+
+    #whisper {
+      margin-top: 1rem;
+      font-style: italic;
+      text-align: center;
+    }
+
+    #navigate {
+      margin-top: 1rem;
+      text-align: center;
     }
   </style>
 </head>
 <body>
   <main>
     <div id="lighthouse">
-      <pre> 
+      <pre class="teapot"> 
              _
          __,(_).__
     ___,|_________|.      ____
@@ -32,11 +55,11 @@
       </pre>
 
       <div id="whisper">
-        ...and remembers every hand it’s warmed.<br>
+        ...and remembers every hand it’s warmed.<br><br>
       </div>
 
       <div id="navigate">
-        <a class="A" href="E_livingroom_tea_b_1_a.html">... sip</a>
+        <a class="A" href="E_livingroom_tea_b_1_a.html"> [ sip ] </a>
       </div>
     </div>
   </main>

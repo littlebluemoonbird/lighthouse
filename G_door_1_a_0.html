@@ -5,19 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .9rem;
-        }
-      }</style>
     <title>The Lighthouse</title>
     
+    <style>
+#lighthouse pre {
+  display: inline-block;
+  animation: doorTry 3s infinite;
+}
 
+@keyframes doorTry {
+  0%   { transform: translateX(0); }
+  5%   { transform: translateX(-2px); }
+  10%  { transform: translateX(2px); }
+  15%  { transform: translateX(-2px); }
+  20%  { transform: translateX(2px); }
+  25%  { transform: translateX(0); }   /* stop after first shake */
+  
+  50%  { transform: translateX(0); }   /* still pause */
+  
+  55%  { transform: translateX(-2px); }
+  60%  { transform: translateX(2px); }
+  65%  { transform: translateX(-2px); }
+  70%  { transform: translateX(2px); }
+  75%  { transform: translateX(0); }   /* stop after second shake */
+  
+  100% { transform: translateX(0); }   /* rest */
+}
+    </style>
 </head>
 <body>
     <main>
-    <div id="lighthouse">
-    <pre> 
+      <div id="lighthouse">
+        <pre> 
 |____________________________________________|
 |__||  ||___||  |_|___|___|__|  ||___||  ||__|
 ||__|  |__|__|  |___|___|___||  |__|__|  |__||
@@ -35,13 +54,14 @@
 |LLL|  |LLL|______________|  |  |LLLLL|  |LLL|
 |LLL|__|L|______________|____|__|LLLLL|__|LLL|
     <br>
-    </pre>
+        </pre>
 
-    <span id="thoughts"> it's locked..</span>
-    <div id="navigate">
-        <a class="A" href="F_hallway_7_b.html">⇣</a>  
-    </div>
-    </div>
+        <span id="thoughts"> it's locked..</span>
+        <br>
+        <div id="navigate">
+            <a class="A" href="F_hallway_7_b.html">⇣</a>  
+        </div>
+      </div>
     </main>
 </body>
 </html>

@@ -1,25 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-        pre {
-          font-size: .7rem;
-        }
-      }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>The Lighthouse</title>
 
+  <style>
+    /* wrapper does the one-time pop and then STAYS */
+    .ascii-pop-wrap{
+      display:inline-block;
+      transform: scale(.2) skewX(8deg);
+      opacity:0;
+      animation-name: boingPop;
+      animation-duration: 620ms;
+      animation-timing-function: cubic-bezier(.2,.8,.2,1);
+      animation-fill-mode: both;      /* keep final state */
+      animation-iteration-count: 1;   /* just once */
+      animation-delay: .08s;
+      will-change: transform, opacity;
+    }
+
+    /* inner pre just gently floats forever */
+    .ascii-float{
+      margin:0; padding:0; white-space:pre; line-height:1.05;
+      background: transparent;
+      animation: floaty 4.2s ease-in-out .7s infinite;
+      will-change: transform;
+    }
+
+    /* sparkle for *poof* */
+    .poof{
+      color: var(--yellow-color, #ffd500);
+      text-shadow: 0 0 6px rgba(255,213,0,.85), 0 0 14px rgba(255,213,0,.35);
+      animation: poofBlink 520ms ease-out 2;
+    }
+
+    /* nav fades in (but ASCII never fades out) */
+    #navigate { opacity:0; animation: navIn .7s ease .85s forwards; }
+
+    @keyframes boingPop{
+      0%   { transform: scale(.2) skewX(8deg); opacity:0; }
+      35%  { transform: scale(1.18) skewX(0);  opacity:1; }
+      65%  { transform: scale(.96); }
+      100% { transform: scale(1);               opacity:1; } /* <- stays visible */
+    }
+    @keyframes floaty{
+      0%   { transform: translateY(0) }
+      50%  { transform: translateY(-6px) }
+      100% { transform: translateY(0) }
+    }
+    @keyframes poofBlink{
+      0%   { opacity:0; transform: scale(.9); }
+      35%  { opacity:1; transform: scale(1.12); }
+      100% { opacity:1; transform: scale(1); }
+    }
+    @keyframes navIn{ to {opacity:1} }
+
+    @media (max-width: 800px){
+      .ascii-float { font-size:.7rem; line-height:1.04; }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
 
-                    *poof*
+      <div class="ascii-pop-wrap">
+<pre class="ascii-float"> 
+
+                    <span class="poof">*poof*</span>
 
                           so listen!
                             I was here
@@ -40,18 +90,17 @@ _|___\_\ \__\_|__.__/~__dh_____   my magic is gone..
                                     my wand.. my magic...
                                       I... need...
                                         my....
+
 </pre>
-    <br>
-    <span id="thoughts"></span>
-    <br>
-    <div id="navigate">
-        <a class="A" href="G_door_6_d_c_d.html">I'll do my best to help you, but I..</a>   
-    </div>
+      </div>
 
+      <span id="thoughts"></span>
 
-
+      <div id="navigate">
+        <a class="A" href="G_door_6_d_c_d.html">but..I have to find..</a>
+      </div>
 
     </div>
-    </main>
+  </main>
 </body>
 </html>

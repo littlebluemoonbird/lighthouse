@@ -1,55 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .8rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>The Lighthouse</title>
+  <style>
+    .stage{position:relative;width:max-content}
 
+    /* tweakable offsets */
+    :root{
+      --col: 6ch;   /* horizontal nudge */
+      --row: 9.5em; /* vertical placement */
+      --lift: 18em;
+      --dur: 9s;
+    }
+
+    .rocket{
+      position:absolute;
+      left:var(--col);
+      top:var(--row);
+      animation:lift var(--dur) ease-in infinite;
+      pointer-events:none;
+    }
+
+    @keyframes lift{
+      0%{transform:translateY(0);opacity:1}
+      85%{transform:translateY(calc(-1*var(--lift)));opacity:1}
+      100%{transform:translateY(calc(-1*var(--lift)));opacity:0}
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <div class="stage">
+<pre>
                     *     
                             
         +         +   🌕 we are        
               '             going
           *          +         to   
-              +   /\            the
-  +             .'  '.   *     moooon! 🌕
-        *      /======\            
-              ;:.  _   ;          *
-              |:. (_)  |   +
-              |:.  _   |  
-    +         |:. (_)  |          *
-              ;:.      ;
-            .' \:.    / `.
-            / .-'':._.'`-. \
-            |/    /||\    \|
-      jgs _..--"""````"""--.._
+                                the
+                             moooon! 🌕
+                                
+
+
+
+                             
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+          _..--"""````"""--.._
     _.-'``                    ``'-._
   -'                                '-
- 
-        </pre>
-        <span id="thoughts"> the moon?!</span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_10_c.html">i love this idea</a>  
-          <a class="A" href="F_hallway_6_a.html">I don't like this idea</a>  
+</pre>
+
+<pre class="rocket">
+       *          +           
+         +   /\            
++          .'  '.   *      
+  *       /======\            
+         ;:.  _   ;          *
+         |:. (_)  |   +
+         |:.  _   |  
++        |:. (_)  |          *
+         ;:.      ;
+      .' \:.    / `.
+      / .-'':._.'`-. \
+      |/    /||\    \|
+</pre>
       </div>
 
+      <span id="thoughts">the moon?!</span><br>
 
-
-
+      <div id="navigate">
+        <a class="A" href="G_door_10_c.html">i love this idea</a>
+        <a class="A" href="F_hallway_6_a.html">i don't like this idea</a>
+      </div>
     </div>
-    </main>
+  </main>
 </body>
 </html>

@@ -6,20 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>The Lighthouse</title>
-    
-
+    <style>
+      /* gentle but visible jitter */
+      .vibrate {
+        display: inline-block;
+        animation: vibrate 0.22s infinite;
+      }
+      @keyframes vibrate {
+        0%   { transform: translate(0, 0); }
+        20%  { transform: translate(1px, -1px); }
+        40%  { transform: translate(-1px, 1px); }
+        60%  { transform: translate(1px, 1px); }
+        80%  { transform: translate(-1px, -1px); }
+        100% { transform: translate(0, 0); }
+      }
+    </style>
 </head>
 <body>
     <main>
     <div id="lighthouse">
-    <pre> 
+    <pre class="vibrate"> 
 
           *ping*
-                   oh really...?
-   (\{\             ..... phew..
-   { { \ ,~,      ok. lovely!!
+                     MY WAND!
+   (\{\             GREAT! YES!
+   { { \ ,~,      very lovely..
   { {   \)))    so so lovely!!!!
-   { {  (((    If you help me....
+   { {  (((    If you find it....
     {/{/; ,\  I will give you.....
        (( '    a gift!! I promise!!
         \` \    I pixy promise!!!!!!
@@ -32,15 +45,11 @@
 
 </pre>
     <br>
-    <span id="thoughts">It's no use to ask her now... <br> I better help the pixy first.. </span>
+    <span id="thoughts">It's no use... <br> I better help the pixy first.. </span>
     <br>
     <div id="navigate">
-        <a class="A" href="F_hallway_2_a.html">pin.. I mean, pixy promise</a>  
+        <a class="A" href="F_hallway_2_a.html">pixy promise</a>  
     </div>
-
-
-
-
     </div>
     </main>
 </body>

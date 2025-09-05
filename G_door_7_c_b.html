@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .6rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>The Lighthouse</title>
 
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre {
+        font-size: 0.6rem;
+      }
+    }
+
+    .moon-glow {
+      color: #ffe680;
+      text-shadow: 0 0 4px #fff4b8, 0 0 10px #ffe680;
+      animation: moonPulse 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes moonPulse {
+      0% {
+        text-shadow: 0 0 2px #fff9cc, 0 0 6px #ffe680;
+      }
+      100% {
+        text-shadow: 0 0 6px #fffacd, 0 0 12px #ffe680;
+      }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre> 
            ,                        '           .        '        ,  
    .            .        '       .         ,         
                                                    .       '     
@@ -32,31 +48,27 @@
            ,                        '           .        '        ,  
    .            .        '       .         ,         
                                                    .       '     +
-       +          .-'''''-.     
-                .'         `.   +     .     ________||
-       ___     :             :     |       /        ||  .     '___
-  ____/   \   :               :   ||.    _/      || ||\_______/   \
- /         \  :               :   `|| __/      ,.|| ||             \
-/  ,   '  . \  :             :     |'_______     || ||  ||   .      \
-    |        \  `.         .'   ___|        \__   \\||  ||...    ,   \
-   l|,   '   (     '-...-'        \   '   ,     __\||_//___          
+       +        <span class="moon-glow">  .-'''''-.     </span>
+              <span class="moon-glow">  .'         `.   </span>  +     .     ________||
+       ___   <span class="moon-glow">  :             : </span>   |       /        ||  .     '___
+  ____/   \ <span class="moon-glow">  :               : </span> ||.    _/      || ||\_______/   \
+ /         \<span class="moon-glow">  :               : </span> `|| __/      ,.|| ||             \
+/  ,   '  . \<span class="moon-glow">  :             : </span>   |'_______     || ||  ||   .      \
+    |        \<span class="moon-glow">  `.         .' </span> ___|        \__   \\||  ||...    ,   \
+   l|,   '   (<span class="moon-glow">     '-...-' </span>    \   '   ,     __\||_//___          
  ___|____     \___.,,__    ,    .  ,__             ||//    \    .  ,
            _/~  `""~`"` \_           ''(       ....,||/       '   
  ..,...  __/  -'/  `-._ `\_\__        | \           ||  _______   .
               '`  `\   \  \-.\        /(_1_,..      || /
                                             ______/""""
-        </pre>
-        <span id="title">
-      </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_c_c.html">was this place your home?</a>  
+      </pre>
+      <span id="title"></span>
+      <br />
+      <div id="navigate">
+        <a class="A" href="G_door_7_c_c.html">was this place your home?</a>
       </div>
-
-
-<!-- itz/jgs/ccm -->
-
+      <!-- itz/jgs/ccm -->
     </div>
-    </main>
+  </main>
 </body>
 </html>

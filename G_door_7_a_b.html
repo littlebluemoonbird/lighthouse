@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>  @media only screen and (max-width: 800px) {
-      pre {
-        font-size: .6rem;
-      }
-    }</style>
-    <title>The Lighthouse</title>
-    
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>The Lighthouse</title>
+  <style>
+    @media only screen and (max-width: 800px) {
+      pre { font-size: .6rem; }
+    }
 
+    .float {
+      display: inline-block;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(0); }
+      25%  { transform: translateY(-6px); }
+      50%  { transform: translateY(0); }
+      75%  { transform: translateY(6px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <main>
+  <main>
     <div id="lighthouse">
-    <pre> 
+      <pre class="float"> 
         I am 
            the desert
               dolphin...
@@ -39,17 +50,15 @@
 )`. _ _               `-       ..  - .    . - ~ ~ .    \    ~-` ` `  `. _
 
  
-        </pre>
-        <span id="titles">  
+      </pre>
 
-        </span>
-        <br>
-        <div id="navigate">
-          <a class="A" href="G_door_7_b_a.html">the oracle?</a>  
-          <a class="A" href="G_door_7_c_a.html">memories of old times?</a>  
+      <span id="titles"></span>
+      <br>
+      <div id="navigate">
+        <a class="A" href="G_door_7_b_a.html">the oracle?</a>  
+        <a class="A" href="G_door_7_c_a.html">memories of old times?</a>  
       </div>
-
     </div>
-    </main>
+  </main>
 </body>
 </html>
