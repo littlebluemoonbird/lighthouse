@@ -7,37 +7,31 @@
   <link rel="stylesheet" href="moongirl.css"/>
   <title>The Lighthouse</title>
   <style>
+    :root{
+      /* fluid, smaller on phones, capped on desktop */
+      --ascii-size: clamp(0.25rem, 0.9vw, 0.7rem);
+    }
 
+    body{margin:0;background:#000;color:#fff;font-family:"Courier New",monospace}
 
- @media (max-width: 1200px) {
-    pre { font-size: .8rem; }
-  }
+    .stage{
+      min-height:60vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;
+    }
 
-  @media (max-width: 900px) {
-    pre { font-size: .6rem; }
-  }
+    #output{display:inline-block;max-width:100vw;overflow:auto}
 
-  @media (max-width: 600px) {
-    pre { font-size: .45rem; }
-  }
+    #output pre{
+      white-space:pre;
+      margin:0 auto;
+      text-align:center;
+      font-family:"Courier New",Courier,monospace;
+      font-size:var(--ascii-size);
+      line-height:1.1;
+      letter-spacing:0;
+    }
 
-  @media (max-width: 400px) {
-    pre { font-size: .35rem; }
-  }
-
-@media(max-width:800px){
-  :root{ --ascii-size:8px; }
-}
-    .stage{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center}
-    #output{display:inline-block}
-#output pre {
-  font-family: "Courier New", Courier, monospace; /* strict monospace */
-  font-size: .1em;   /* adjust size */
-  line-height: 1.3;  /* loosen this until proportions feel right */
-  letter-spacing: 0; /* no extra horizontal spacing */
-  text-align: center;
-  margin: 0 auto;
-}
     #title{display:block;text-align:center;margin:.5rem 0}
     #navigate{display:flex;justify-content:center;gap:1rem;margin:.25rem 0}
   </style>
@@ -46,7 +40,7 @@
   <main>
     <div class="stage"><div id="output"></div></div>
 
-    <span id="title">Hello.</span><br><br>	
+    <span id="title">Hello.</span><br><br>
     <div id="navigate">
       <a class="A" href="z_moongirl_3.html">Are you the voice that led me here..?</a>
     </div>

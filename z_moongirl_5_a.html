@@ -6,77 +6,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="moongirl.css"/>
   <title>The Lighthouse</title>
-  <style> 
+  <style>
+    /* Fluid sizing */
+    :root{
+      --text-size: clamp(0.95rem, 2.2vw, 1.25rem);
+      --ascii-size: clamp(0.35rem, 1.1vw, 0.8rem);
+    }
+
+    body{margin:0;background:#000;color:#fff;font-family:"Courier New",monospace}
+
+    .stage{
+      min-height:40vh;display:flex;align-items:center;justify-content:center;text-align:center
+    }
+    #output{display:inline-block;max-width:100vw;overflow:auto}
+    #output pre{
+      white-space:pre;margin:0 auto;text-align:center;
+      font-family:"Courier New",Courier,monospace;
+      font-size:var(--ascii-size);line-height:1.2;letter-spacing:0;
+    }
+
+    /* Title block + staggered lines */
   #title {
-    display: inline-block;
-    text-align: center;
-    line-height: 1.6;
-  }
-
-  #title .line {
-    display: block;
-    opacity: 0;
-    transform: translateY(8px);
-    animation: fadeFloat 1.2s ease-out forwards;
-  }
-
-  #title .line:nth-child(1) { animation-delay: 0.2s; }
-  #title .line:nth-child(2) { animation-delay: 1.2s; }
-  #title .line:nth-child(3) { animation-delay: 2.2s; }
-  #title .line:nth-child(4) { animation-delay: 3.2s; }
-  #title .line:nth-child(5) { animation-delay: 4.2s; }
-
-  @keyframes fadeFloat {
-    from {
-      opacity: 0;
-      transform: translateY(8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  #navigate {
-    opacity: 0;
-    animation: fadeInNav 1.4s ease forwards;
-    animation-delay: 5.6s;
-  }
-
-  @keyframes fadeInNav {
-    to { opacity: 1; }
-  }
-
-@media(max-width:800px){
-  :root{ --ascii-size:8px; }
+  display: block;              /* not inline-block */
+  margin: 0 auto;              /* centers horizontally */
+  text-align: center;          /* centers the lines inside */
+  line-height: 1.6;
+  font-size: var(--text-size);
+  max-width: min(80ch, 92vw);  /* prevents text from getting too wide */
+  padding: 0 1rem;
 }
-    .stage{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center}
-    #output{display:inline-block}
-#output pre {
-  font-family: "Courier New", Courier, monospace; /* strict monospace */
-  font-size: .1em;   /* adjust size */
-  line-height: 1.3;  /* loosen this until proportions feel right */
-  letter-spacing: 0; /* no extra horizontal spacing */
-  text-align: center;
-  margin: 0 auto;
-}
-    #title{display:block;text-align:center;margin:.5rem 0}
-    #navigate{display:flex;justify-content:center;gap:1rem;margin:.25rem 0}
+    #title .line{
+      display:block;opacity:0;transform:translateY(8px);
+      animation:fadeFloat 1.2s ease-out forwards;
+    }
+    #title .line:nth-child(1){animation-delay:.2s}
+    #title .line:nth-child(2){animation-delay:1.2s}
+    #title .line:nth-child(3){animation-delay:2.2s}
+    #title .line:nth-child(4){animation-delay:3.2s}
+    #title .line:nth-child(5){animation-delay:4.2s}
+
+    @keyframes fadeFloat{
+      from{opacity:0;transform:translateY(8px)}
+      to  {opacity:1;transform:translateY(0)}
+    }
+
+    /* Nav appears after lines */
+    #navigate{
+      display:flex;justify-content:center;gap:1rem;margin:.75rem 0 1.25rem;
+      opacity:0;animation:fadeInNav 1.4s ease forwards;animation-delay:5.6s;
+    }
+    @keyframes fadeInNav{to{opacity:1}}
   </style>
 </head>
 <body>
   <main>
     <div class="stage"><div id="output"></div></div>
 
-<span id="title">
-  <span class="line">Well.. the light was never in danger.. only dim.</span>
-  <span class="line">but it steadied. it wandered. like breath.</span>
-  <span class="line">it lived in the flicker, not the flame.</span>
-  <span class="line">and in the thinning glow, it found you.</span>
-</span>
+    <span id="title"><br>
+      <span class="line">Well.. the light was never in danger.. only dim.</span>
+      <span class="line">but it steadied. it wandered. like breath.</span>
+      <span class="line">it lived in the flicker, not the flame.</span>
+      <span class="line">and in the thinning glow, it found you.</span>
+    </span>
 
-
-</span><br><br>    <div id="navigate">
+    <br><br>
+    <div id="navigate">
       <a class="A" href="z_moongirl_5_b.html">it.. did.</a>
     </div>
   </main>
