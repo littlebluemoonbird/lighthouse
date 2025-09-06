@@ -7,6 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       
+@media (max-width: 600px) {
+  body {
+    font-size: 0.5em;     /* super small */
+    line-height: 1.1;
+  }
+
+  /* keep title + nav readable */
+  #title, #navigate, #bottle {
+    font-size: .1rem;
+    line-height: 1.4;
+  }
+}
+
+:root {
+  font-size: clamp(10px, 1.4vw, 16px);
+}
+
+#title, #navigate, #bottle {
+  font-size: clamp(0.4rem, 1.8vw, 1rem);
+  line-height: 1.3;
+}
+
+/* iPhone-ish screens */
+@media (max-width:480px){
+  #title, #navigate, #bottle {
+    font-size: clamp(0.35rem, 2.5vw, 0.7rem);
+    line-height: 1.2;
+  }
+}
+
         :root {
             /* Color */
             --white-color: rgb(255, 255, 255);
@@ -64,6 +94,12 @@
             color: white;
             font-size: small;
         }
+                #bottle {
+            font-style: italic;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            color: white;
+        }
 
       
         .A {
@@ -108,7 +144,7 @@
         }
 		    
         #title{
-			  font-size: 2.5rem;
+			  font-size: 1.5rem;
 		    }
         }
 
@@ -152,7 +188,7 @@
 
 
 </div>
-<span id="thoughts">
+<span id="bottle">
 	·⁎ ˚ 𓄼 · 𓆇 ₊ 𓂃 ⊹⁎ ˚⁎ ˚  𓄼⁎ ˚ 𓄼 · ·⁎ ˚ 𓂃 𓂂𓏸˖* 𓍄 𓄽𓇬𓈒· ⁎ ˚ 𓄼 ·𓆇 ₊ <br>
 	𓂃𓄹𓄺𓂃𓂃𓂃𓂃𓄹𓄺𓂃𓂃𓂃𓂃𓄹𓄺𓂃𓂃𓂃𓂃𓄹𓄺𓂃<br>
 	‧̍̊˙· 𓆝.° ｡˚𓆛˚｡ °.𓆞 ·˙‧̍̊𓆉‧̍.° ｡˚𓆟˚｡ ·˙‧̍̊𓆡° ｡˚𓆜‧̍̊˙· 𓇼<br>
