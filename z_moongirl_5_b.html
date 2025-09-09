@@ -33,15 +33,31 @@
       animation-delay: .8s;
     }
 
+    #later-line {
+      display: block;
+      opacity: 0;
+      margin-top: 1rem;
+      animation: fadeIn 1s ease forwards, shake 2s ease-in-out infinite;
+      animation-delay: 3s; /* show this later */
+    }
+
     #navigate {
       opacity: 0;
-      animation: fadeIn 2s ease forwards;
-      animation-delay: 2.4s;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 5.5s; /* comes after shaking line */
     }
 
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
+    }
+
+    @keyframes shake {
+      0%   { transform: translateX(0); }
+      25%  { transform: translateX(-2px); }
+      50%  { transform: translateX(2px); }
+      75%  { transform: translateX(-1px); }
+      100% { transform: translateX(0); }
     }
 
     .glow {
@@ -82,10 +98,13 @@
     </pre>
 
     <span id="title">
-      and now it’s ready to breathe again. <br><br>
-      thanks to you, <span class="glow" id="user-name">...</span><br><br><br>
-      though... it doesn't need to stay here anymore... 
+      the lighthouse is ready to breathe again. <br><br>
     </span>
+
+    <span id="later-line">
+      though... it doesn't need to stay here anymore...
+    </span>
+
     <br>
     <div id="navigate">
       <a class="A" href="z_moongirl_5_b_a.html">huh? where would it go?</a>  
