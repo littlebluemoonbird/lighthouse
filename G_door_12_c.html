@@ -157,12 +157,10 @@
     // Thoughts: line-by-line reveal, then show nav
     // ---------------------------------------------------------
     const lines = [
-      "Oh…",
-      "a thunder.",
-      "",
-      "Suddenly, I’m brought back to something —",
-      "a memory I didn’t know was still inside me.",
-      "",
+      "a thunder...",
+      "Suddenly, I’m brought back to something",
+      "a memory..",
+      "that I didn’t know was still inside me...",
       "I remember being so small,",
       "wrapped in my mother’s arms.",
       "The storm was loud. I was afraid.",
@@ -185,7 +183,7 @@
         span.textContent = txt;
         title.appendChild(span);
         setTimeout(()=>span.classList.add('show'), delay);
-        delay += 600; // spacing between lines
+        delay += 1200; // spacing between lines
       });
       // Show nav near the end (little buffer)
       setTimeout(()=>{ nav.style.display = 'flex'; }, delay + 200);

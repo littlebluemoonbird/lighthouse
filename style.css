@@ -21,6 +21,10 @@
   margin: 0;
 }
 
+#lighthouse pre {
+  font-size: clamp(0.5rem, 2.5vw, 1.1rem);
+}
+
 html, body {
   background-color: var(--black-color);
   font-family: 'Courier New', Courier, monospace;
@@ -51,12 +55,17 @@ main {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  
   justify-content: center;
   align-content: center;
   align-self: center;
   flex-basis: auto;
   color: var(--white-color);
   background-color: transparent; /* don’t fill this box */
+}
+
+#title {
+
 }
 
 #navigate {
@@ -72,6 +81,8 @@ main {
 
 #thoughts {
   font-style: italic;
+
+  font-size: clamp(0.4rem, 1.2vw, 1rem);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-align: center;
   background-color: transparent;
