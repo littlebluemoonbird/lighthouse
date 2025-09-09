@@ -21,7 +21,9 @@
   margin: 0;
 }
 
-
+#lighthouse pre {
+  font-size: clamp(0.5rem, 2.5vw, 1.1rem);
+}
 
 html, body {
   background-color: var(--black-color);
@@ -109,21 +111,21 @@ main {
 /* Media query */
 @media only screen and (max-width: 768px) {
   html, body {
-    font-size: 0.9rem;
+    font-size: 1.1 rem;
   }
 
   #title, #thoughts {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     padding: 4px;
   }
 
   .A {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding: 6px 10px;
   }
 
   pre {
-    font-size: 0.6rem;
+    font-size: 1.0em;
   }
 }
