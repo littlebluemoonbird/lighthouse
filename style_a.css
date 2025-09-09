@@ -17,6 +17,24 @@
 
 }
 
+pre { font-size: 1.1rem; } /* default desktop size */
+
+@media (max-width: 1200px) {
+  pre { font-size: 0.9rem; }
+}
+
+@media (max-width: 900px) {
+  pre { font-size: 0.7rem; }
+}
+
+@media (max-width: 600px) {
+  pre { font-size: 0.55rem; }
+}
+
+@media (max-width: 400px) {
+  pre { font-size: 0.45rem; }
+}
+
 *{
     padding: var(--side-padding);
     background-color: var(--black-color);
