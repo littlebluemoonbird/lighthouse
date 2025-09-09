@@ -21,9 +21,7 @@
   margin: 0;
 }
 
-#lighthouse pre {
-  font-size: clamp(0.42rem, 2vw, 1rem);
-}
+
 
 html, body {
   background-color: var(--black-color);
